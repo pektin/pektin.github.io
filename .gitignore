@@ -1,0 +1,5 @@
+# Ignore the build directory
+build
+
+# Ignore the documentation fetch from the jam repository
+source/jam
