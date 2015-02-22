@@ -59,6 +59,8 @@ html_theme_options = {
         ("Documentation", "jam/index"),
         ("Github", "http://github.com/pektin/jam", True),
     ],
+
+    'navbar_sidebarrel': False,
 }
 
 # The name for this set of Sphinx documents.
