@@ -7,10 +7,18 @@
     color: #FFF;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ACACAC;
+}
+
 .navbar-default .navbar-text {
     color: #FFF;
 }
 
 .navbar-default .navbar-brand {
     color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #ACACAC;
 }
