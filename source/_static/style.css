@@ -30,6 +30,10 @@
     padding-left: 15px;
 }
 
+.row {
+    margin-top: 15px;
+}
+
 img {
     max-height: 100%;
 }
