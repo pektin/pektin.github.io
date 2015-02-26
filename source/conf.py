@@ -60,8 +60,6 @@ html_theme_options = {
         ("Github", "http://github.com/pektin/jam", True),
     ],
 
-    'navbar_sidebarrel': False,
-    'navbar_pagenav': False,
     'source_link_position': "footer"
 }
 
