@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2994"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="NewJamLogo.svg"
+   inkscape:export-filename="/home/benjamin/Dropbox/jam/docs/logo.png"
+   inkscape:export-xdpi="56.758144"
+   inkscape:export-ydpi="56.758144">
+  <defs
+     id="defs2996">
+    <linearGradient
+       id="linearGradient4315">
+      <stop
+         style="stop-color:#ff332b;stop-opacity:1;"
+         offset="0"
+         id="stop4317" />
+      <stop
+         style="stop-color:#ff621a;stop-opacity:1;"
+         offset="1"
+         id="stop4319" />
+    </linearGradient>
+    <filter
+       id="filter4279"
+       inkscape:label="Ripple"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Horizontal rippling of edges"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence4281"
+         numOctaves="3"
+         baseFrequency="0 0.001"
+         seed="89" />
+      <feColorMatrix
+         id="feColorMatrix4283"
+         values="2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0.5"
+         result="result91" />
+      <feDisplacementMap
+         id="feDisplacementMap4285"
+         in2="result91"
+         yChannelSelector="A"
+         xChannelSelector="R"
+         scale="14.3"
+         in="SourceGraphic" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4315"
+       id="linearGradient4321"
+       x1="58.196766"
+       y1="569.37445"
+       x2="685.89797"
+       y2="569.37445"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4315"
+       id="linearGradient4353"
+       gradientUnits="userSpaceOnUse"
+       x1="58.196766"
+       y1="569.37445"
+       x2="685.89797"
+       y2="569.37445" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4315"
+       id="linearGradient4355"
+       gradientUnits="userSpaceOnUse"
+       x1="58.196766"
+       y1="569.37445"
+       x2="685.89797"
+       y2="569.37445" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4315"
+       id="linearGradient3028"
+       gradientUnits="userSpaceOnUse"
+       x1="58.196766"
+       y1="569.37445"
+       x2="685.89797"
+       y2="569.37445" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4315"
+       id="linearGradient3032"
+       gradientUnits="userSpaceOnUse"
+       x1="58.196766"
+       y1="569.37445"
+       x2="685.89797"
+       y2="569.37445"
+       gradientTransform="matrix(-1,0,0,1,744.09474,0)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9823084"
+     inkscape:cx="309.48324"
+     inkscape:cy="689.01355"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3899"
+     showgrid="false"
+     objecttolerance="10000"
+     guidetolerance="10000"
+     inkscape:snap-grids="true"
+     inkscape:snap-page="false"
+     inkscape:window-width="1804"
+     inkscape:window-height="961"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2999">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3899">
+      <g
+         id="g3023"
+         transform="matrix(0.66044653,0,0,0.66044653,188.14225,112.99083)">
+        <path
+           sodipodi:nodetypes="sssssssccs"
+           inkscape:connector-curvature="0"
+           id="path3776-4"
+           d="m 163.95196,244.75903 c -1.06047,0.002 -1.95522,3.01521 -0.0174,5.77627 0.60222,0.85806 1.60916,1.26967 1.61804,2.69675 0.0105,1.68021 -1.90224,1.5607 -2.31398,2.66195 -0.62555,1.67312 -0.4148,3.51014 0,5.3587 3.15922,14.07925 16.64149,30.10403 16.64149,39.9614 l 0,138.19093 c 0,40.57958 -93.17812,38.94243 -93.17812,38.94243 l 0.0112,-233.42015 z"
+           style="fill:#ef4138;fill-opacity:1;stroke:none" />
+        <path
+           sodipodi:nodetypes="sssssssccs"
+           inkscape:connector-curvature="0"
+           id="path3776"
+           d="m 11.40573,244.76053 c 1.06048,0.002 1.95523,3.01521 0.0174,5.77627 -0.60222,0.85806 -1.6091597,1.26966 -1.6180497,2.69674 -0.0105,1.68022 1.9022497,1.56071 2.3139897,2.66196 0.62555,1.67312 0.4148,3.51013 0,5.3587 -3.1592197,14.07925 -16.6414897,30.10403 -16.6414897,39.9614 l 0,138.19093 c 0,40.57957 93.1781197,38.94242 93.1781197,38.94242 L 88.6445,244.9288 z"
+           style="fill:#ef4138;fill-opacity:1;stroke:none" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path3772"
+           d="m 1.4689003,225.18604 0,16.95287 c 0,0 -0.47979998,3.02642 3.02642,3.02642 3.50622,0 165.0505697,0 165.0505697,0 0,0 2.34362,0.0861 2.34362,-2.34363 0,-2.42975 0,-19.02584 0,-19.02584 0,0 0.2399,-5.41311 -6.15741,-5.41311 -6.39731,0 -158.2226597,0 -158.2226597,0 0,0 -6.04054,-0.67664 -6.04054,6.80329 z"
+           style="fill:#a01d22;fill-opacity:1;stroke:none" />
+      </g>
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot4323"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0.12px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+         transform="matrix(1.1681464,0,0,1.1681464,-39.092328,109.6851)"><flowRegion
+           id="flowRegion4325"><rect
+             id="rect4327"
+             width="335.71429"
+             height="684.28571"
+             x="211.42857"
+             y="256.64789"
+             style="letter-spacing:0.12px;fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara4329"
+           style="font-size:144px;font-weight:500;letter-spacing:0.12px;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Ubuntu Medium"><flowSpan
+             style="font-style:normal;font-weight:500;line-height:0%;letter-spacing:0px;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Ubuntu Medium"
+             id="flowSpan4369">J</flowSpan></flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot4323-8"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0.12px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+         transform="translate(99.025354,32.744513)"><flowRegion
+           id="flowRegion4325-0"><rect
+             id="rect4327-0"
+             width="335.71429"
+             height="684.28571"
+             x="211.42857"
+             y="256.64789"
+             style="letter-spacing:0.12px;fill:#ffffff;fill-opacity:1" /></flowRegion><flowPara
+           id="flowPara4329-8"
+           style="font-size:144px;font-weight:500;letter-spacing:0.12px;fill:#000000;fill-opacity:1;-inkscape-font-specification:Ubuntu Medium">am</flowPara></flowRoot>    </g>
+  </g>
+</svg>

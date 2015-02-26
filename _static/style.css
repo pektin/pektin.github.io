@@ -1,10 +1,11 @@
 .navbar-default {
     background-image: linear-gradient(to bottom, #ef4138 0px, #a01d22 100%);
-
 }
 
 .navbar-default .navbar-nav > li > a {
     color: #FFF;
+    font-size: 18px;
+    line-height: 30px;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -21,4 +22,18 @@
 
 .navbar-default .navbar-brand:hover {
     color: #ACACAC;
+}
+
+.navbar-brand {
+    min-height: 60px;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.row {
+    margin-top: 15px;
+}
+
+img {
+    max-height: 100%;
 }
