@@ -6,8 +6,8 @@ import argparse
 import tempfile
 from subprocess import check_call as call
 
-MASTER_BRANCH = "master"
-BUILD_BRANCH = "build"
+MASTER_BRANCH = "site"
+BUILD_BRANCH = "master"
 
 REMOTE = "git@github.com:pektin/jam.git"
 BUILD = os.path.join("build", "html")
