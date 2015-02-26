@@ -61,6 +61,8 @@ html_theme_options = {
     ],
 
     'navbar_sidebarrel': False,
+    'navbar_pagenav': False,
+    'source_link_position': "footer"
 }
 
 # The name for this set of Sphinx documents.
