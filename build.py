@@ -81,8 +81,9 @@ def deploy():
                     os.remove(file)
 
         # Move new build
-        for file in os.listdir(temp):
-            shutil.move(os.path.join(temp, "html", file), file)
+        path = os.path.join(temp, "html")
+        for file in os.listdir(path):
+            shutil.move(os.path.join(path, file), file)
 
 if __name__ == "__main__":
     main()
