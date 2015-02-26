@@ -82,7 +82,7 @@ def deploy():
 
         # Move new build
         for file in os.listdir(temp):
-            shutil.move(os.path.join(temp, file), file)
+            shutil.move(os.path.join(temp, "html", file), file)
 
 if __name__ == "__main__":
     main()
