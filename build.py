@@ -29,13 +29,17 @@ parser.add_argument(
 )
 parser.add_argument(
     "action",
-    choices=["build", "deploy"],
+    choices=["build", "deploy", "clean"],
     help="What action to perform. Build does a sphinx build, while deploy also puts the build into a build branch.",
 )
 
 
 def main():
     args = parser.parse_args()
+
+    if args.action == "clean":
+        shutil.rmtree("build")
+        return
 
     # First switch to master branch
     call(["git", "checkout", MASTER_BRANCH])
