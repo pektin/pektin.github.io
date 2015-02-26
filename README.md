@@ -16,9 +16,6 @@ sudo apt-get install python-sphinx pip make
 sudo pip install sphinx_bootstrap_theme
 ```
 
-## Usage
+## Deployment
 
-To build the website to build/html, run:
-```
-make html
-```
+The `site` branch is the one used for active development. In order to perform a local build run `./build.py build`. The jam documentation will be fetched and the sphinx site built. With `./build deploy` the build contents will be moved to the `master` branch, which can then be comitted and pushed to update the website.
