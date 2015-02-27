@@ -4,7 +4,7 @@
 
 .navbar-default .navbar-nav > li > a {
     color: #000;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
 }
 
@@ -20,6 +20,10 @@
 
 .row {
     margin-top: 15px;
+}
+
+body {
+    font-size: 16px;
 }
 
 img {

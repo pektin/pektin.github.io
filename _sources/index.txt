@@ -3,8 +3,8 @@
 The Jam Programming Language
 ############################
 
-**A language that combines the expressiveness of dynamic languages with the
-power of modern type systems and native efficiency.**
+**An open source programming language that combines the expressiveness of
+dynamic languages with the power of modern type systems and native efficiency.**
 
 Expressive
 ==========
@@ -30,6 +30,11 @@ Fast
 Jam boasts native efficiency. Using the static type system, the compiler is able
 to convert your high level code into native executables that run on a minimal
 runtime to ensure maximum performance.
+
+Open Source
+===========
+
+Jam is being developed under the GNU General Public License Version 3
 
 .. toctree::
     :hidden:
