@@ -10,7 +10,7 @@ Expressive
 ==========
 
 Jam supports many of the concepts found in modern interpreted languages. It's
-syntax aims to be easy to read and easy to write and completely unambiguous.
+syntax aims to be easy to read, easy to write and completely unambiguous.
 
 Powerful
 ========
