@@ -34,7 +34,8 @@ runtime to ensure maximum performance.
 Open Source
 ===========
 
-Jam is being developed under the GNU General Public License Version 3
+Jam is being developed under the MIT License, giving everyone the freedom to do
+what they want to do with the language.
 
 .. toctree::
     :hidden:
