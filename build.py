@@ -47,7 +47,7 @@ def main():
     # Update the documentation copy
     if args.repo is None:
         with tempfile.TemporaryDirectory() as temp:
-            call("git", "clone", REMOTE, temp)
+            call(["git", "clone", REMOTE, temp])
             copy_docs(temp)
     else:
         copy_docs(args.repo)
