@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>7. Assignments &mdash; Jam</title>
+    <title>8. Assignments &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="8. Methods" href="methods.html" />
-    <link rel="prev" title="6. Variables" href="variables.html" />
+    <link rel="next" title="9. Flow Control" href="control-flow.html" />
+    <link rel="prev" title="7. Variables" href="variables.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -89,11 +89,27 @@
     <div class="col-md-12">
       
   <div class="section" id="assignments">
-<span id="jam-assignments"></span><h1>7. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h1>
+<span id="jam-assignments"></span><h1>8. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h1>
 <p>Assignments are used to directly store values in variables. A single assignment
 may involve any number of values and variables, however the numbers must match
 up. Two values can be assigned to two variables, or to three groups of two
 variables, but three values cannot be assigned to two variables.</p>
+<div class="section" id="syntax">
+<h2>8.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>AssignmentVars:
+    &lt;Variable&gt;
+    &lt;Variable&gt; , &lt;AssignmentVars&gt;
+
+AssignmentVals:
+    &lt;Value&gt;
+    &lt;Value&gt;, &lt;AssignmentVals&gt;
+
+Assignment:
+    &lt;AssignmentVars&gt; = &lt;AssignmentVals&gt;
+    &lt;AssignmentVars&gt; = &lt;Assignment&gt;
+</pre></div>
+</div>
+</div>
 </div>
 
 

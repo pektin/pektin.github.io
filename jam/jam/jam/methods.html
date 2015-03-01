@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Methods &mdash; Jam</title>
+    <title>10. Methods &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -36,7 +36,7 @@
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
     <link rel="next" title="1. Introduction" href="../lekvar/introduction.html" />
-    <link rel="prev" title="7. Assignments" href="assignments.html" />
+    <link rel="prev" title="9.2. Conditionals" href="conditionals.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -89,7 +89,7 @@
     <div class="col-md-12">
       
   <div class="section" id="methods">
-<span id="jam-methods"></span><h1>8. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<span id="jam-methods"></span><h1>10. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
 <p>A method is a scoped group of instructions as a value, that may be executed
 given any number of arguments as input and that may output any number of values.
 A method may be overloaded with different kinds of inputs or outputs.</p>
@@ -98,17 +98,27 @@ arguments. Input to a method must match exactly one overload.</p>
 <p>A method may be defined with a name or anonymously. To overload a method the
 same name must be used for each definition in the same scope.</p>
 <div class="section" id="syntax">
-<h2>8.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<p>A method definition starts with the definition keyword (<tt class="docutils literal"><span class="pre">def</span></tt>) then with an
-optional identifier for the method. Following comes a comma (<tt class="docutils literal"><span class="pre">,</span></tt>) separated
-list of variable declarations within a pair of brackets (<tt class="docutils literal"><span class="pre">()</span></tt>). After that
-a newline is expected, followed by any number of instructions and terminated
-by the end keyword (<tt class="docutils literal"><span class="pre">end</span></tt>).</p>
-<p>A method call is similar. It starts with a value equivalent to a method,
-followed by a comma (<tt class="docutils literal"><span class="pre">,</span></tt>) separated list of values within a pair of brackets
-(<tt class="docutils literal"><span class="pre">()</span></tt>) that map to a list of variables in one of the methods definitions.</p>
+<h2>10.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>Argument:
+    &lt;Variable&gt;
+    &lt;Variable&gt; = &lt;Value&gt;
+
+Arguments:
+    &lt;Argument&gt;
+    &lt;Argument&gt; , &lt;Argument&gt;
+
+MethodEnd:
+     &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
+
+Method:
+    def &lt;Identifier&gt; ( ) &lt;MethodEnd&gt;
+    def &lt;Identifier&gt; ( ) : &lt;Type&gt; &lt;MethodEnd&gt;
+    def &lt;Identifier&gt; ( &lt;Arguments&gt; ) &lt;MethodEnd&gt;
+    def &lt;Identifier&gt; ( &lt;Arguments&gt; ) : &lt;Type&gt; &lt;MethodEnd&gt;
+</pre></div>
+</div>
 <div class="section" id="examples">
-<h3>8.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<h3>10.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>def double(x)
     return x * 2
 end
