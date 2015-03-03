@@ -35,7 +35,7 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="1. Introduction" href="../lekvar/introduction.html" />
+    <link rel="next" title="11. Types" href="types.html" />
     <link rel="prev" title="9.2. Conditionals" href="conditionals.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -99,24 +99,12 @@ arguments. Input to a method must match exactly one overload.</p>
 same name must be used for each definition in the same scope.</p>
 <div class="section" id="syntax">
 <h2>10.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>Argument:
-    &lt;Variable&gt;
-    &lt;Variable&gt; = &lt;Value&gt;
-
-Arguments:
-    &lt;Argument&gt;
-    &lt;Argument&gt; , &lt;Argument&gt;
-
-MethodEnd:
-     &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-
-Method:
-    def &lt;Identifier&gt; ( ) &lt;MethodEnd&gt;
-    def &lt;Identifier&gt; ( ) : &lt;Type&gt; &lt;MethodEnd&gt;
-    def &lt;Identifier&gt; ( &lt;Arguments&gt; ) &lt;MethodEnd&gt;
-    def &lt;Identifier&gt; ( &lt;Arguments&gt; ) : &lt;Type&gt; &lt;MethodEnd&gt;
-</pre></div>
-</div>
+<pre>
+<strong id="grammar-token-Argument">Argument</strong> ::=  <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> [&quot;=&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>]
+<strong id="grammar-token-Method">Method  </strong> ::=  &quot;def&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> &quot;(&quot; [ [<a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> ] &quot;)&quot; [ &quot;:&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> ]
+                  <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+              &quot;end&quot;
+</pre>
 <div class="section" id="examples">
 <h3>10.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>def double(x)

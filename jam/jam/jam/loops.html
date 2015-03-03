@@ -97,24 +97,18 @@ and a for loop for interaction.</p>
 value. These are the break and continue statements.</p>
 <div class="section" id="syntax">
 <h2>9.1.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>Loop:
-    &lt;GenericLoop&gt;
-    &lt;WhileLoop&gt;
-    &lt;ForLoop&gt;
-
-GenericLoop:
-    loop &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-    &lt;Instruction&gt; loop &lt;newline&gt;
-
-WhileLoop:
-    while &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-    &lt;Instruction&gt; while &lt;Value&gt; &lt;newline&gt;
-
-ForLoop:
-    for &lt;Variable&gt; in &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-    &lt;Instruction&gt; for &lt;Variable&gt; in &lt;Value&gt; &lt;newline&gt;
-</pre></div>
-</div>
+<pre>
+<strong id="grammar-token-Loop">Loop       </strong> ::=  <a class="reference internal" href="#grammar-token-GenericLoop"><tt class="xref docutils literal"><span class="pre">GenericLoop</span></tt></a> | <a class="reference internal" href="#grammar-token-WhileLoop"><tt class="xref docutils literal"><span class="pre">WhileLoop</span></tt></a> | <a class="reference internal" href="#grammar-token-ForLoop"><tt class="xref docutils literal"><span class="pre">ForLoop</span></tt></a>
+<strong id="grammar-token-GenericLoop">GenericLoop</strong> ::=  &quot;loop&quot;
+                     <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                 &quot;end&quot;
+<strong id="grammar-token-WhileLoop">WhileLoop  </strong> ::=  &quot;while&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                     <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                 &quot;end&quot;
+<strong id="grammar-token-ForLoop">ForLoop    </strong> ::=  &quot;for&quot; <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> &quot;in&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                     <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                 &quot;end&quot;
+</pre>
 </div>
 </div>
 

@@ -93,8 +93,9 @@
 <p>A floating point is a real number of the builtin type <tt class="docutils literal"><span class="pre">Float</span></tt> or <tt class="docutils literal"><span class="pre">Double</span></tt></p>
 <div class="section" id="syntax">
 <h2>6.2.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<p>A floating point literal consists of two integer literals separated by a dot
-(<tt class="docutils literal"><span class="pre">.</span></tt>), with one integer literal being optional.</p>
+<pre>
+<strong id="grammar-token-Float">Float</strong> ::=  ([<a class="reference internal" href="integers.html#grammar-token-Integer"><tt class="xref docutils literal"><span class="pre">Integer</span></tt></a>]&quot;.&quot; <a class="reference internal" href="integers.html#grammar-token-Integer"><tt class="xref docutils literal"><span class="pre">Integer</span></tt></a> ) | ( <a class="reference internal" href="integers.html#grammar-token-Integer"><tt class="xref docutils literal"><span class="pre">Integer</span></tt></a> &quot;.&quot;[<a class="reference internal" href="integers.html#grammar-token-Integer"><tt class="xref docutils literal"><span class="pre">Integer</span></tt></a>])
+</pre>
 <div class="section" id="examples">
 <h3>6.2.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre>pi = 3.141_592

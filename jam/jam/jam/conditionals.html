@@ -95,33 +95,23 @@ whether a condition has been met or not.</p>
 <p>Jam has two kinds of conditionals: A if conditional and a case conditional.</p>
 <div class="section" id="syntax">
 <h2>9.2.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>Conditional:
-    &lt;IfConditional&gt;
-    &lt;CaseConditional&gt;
-
-ElifClause:
-    elif &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt;
-    elif &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; &lt;ElifClause&gt;
-
-IfConditional:
-    if &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-    if &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; else &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-    if &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; &lt;ElifClause&gt; &lt;newline&gt; end
-    if &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; &lt;ElifClause&gt; &lt;newline&gt; else &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-
-IfConditionalValue:
-    &lt;Instruction&gt; if &lt;Value&gt; &lt;newline&gt;
-    &lt;Instruction&gt; if &lt;Value&gt; else &lt;Instruction&gt; &lt;newline&gt;
-
-WhenClause:
-    when &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt;
-    when &lt;Value&gt; &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt;  &lt;WhenClause&gt;
-
-CaseConditional:
-    case &lt;Value&gt; &lt;newline&gt; &lt;WhenClause&gt; &lt;newline&gt; end
-    case &lt;Value&gt; &lt;newline&gt; &lt;WhenClause&gt; &lt;newline&gt; else &lt;newline&gt; &lt;InstructionSet&gt; &lt;newline&gt; end
-</pre></div>
-</div>
+<pre>
+<strong id="grammar-token-Conditional">Conditional    </strong> ::=  <a class="reference internal" href="#grammar-token-IfConditional"><tt class="xref docutils literal"><span class="pre">IfConditional</span></tt></a> | <a class="reference internal" href="#grammar-token-CaseConditional"><tt class="xref docutils literal"><span class="pre">CaseConditional</span></tt></a>
+<strong id="grammar-token-IfConditional">IfConditional  </strong> ::=  &quot;if&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     [ &quot;elif&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     ]* [ &quot;else&quot;
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     ] &quot;end&quot;
+<strong id="grammar-token-CaseConditional">CaseConditional</strong> ::=  &quot;case&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     [ &quot;when&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     ]* [ &quot;else&quot;
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     ] &quot;end&quot;
+</pre>
 </div>
 </div>
 

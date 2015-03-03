@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Assignments &mdash; Jam</title>
+    <title>12. Type Casting &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="9. Flow Control" href="control-flow.html" />
-    <link rel="prev" title="7. Variables" href="variables.html" />
+    <link rel="next" title="1. Introduction" href="../lekvar/introduction.html" />
+    <link rel="prev" title="11. Types" href="types.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -88,17 +88,26 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="assignments">
-<span id="jam-assignments"></span><h1>8. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h1>
-<p>Assignments are used to directly store values in variables. A single assignment
-may involve any number of values and variables, however the numbers must match
-up. Two values can be assigned to two variables, or to three groups of two
-variables, but three values cannot be assigned to two variables.</p>
+  <div class="section" id="type-casting">
+<span id="jam-type-casting"></span><h1>12. Type Casting<a class="headerlink" href="#type-casting" title="Permalink to this headline">¶</a></h1>
+<p>Type casting allows the programmer to convert between different types of
+variables. Type casting is either implicit or explicit. Implicit casts are
+inferred by the compiler, while explicit casts require the programmer to specify
+the cast.</p>
+<p>When an operation is done to a value all implicit casts are checked for that
+same operation. Although the direct type of the value takes precedence, having
+ambiguity between implicitly cast types is invalid.</p>
+<p>When a value is passed to a function, the value may be implicitly cast to the
+type of the respective argument if required.</p>
 <div class="section" id="syntax">
-<h2>8.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>12.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-AssignmentVars">AssignmentVars</strong> ::=  [<a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a>
-<strong id="grammar-token-Assignment">Assignment    </strong> ::=  [<a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot;]* <a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+<strong id="grammar-token-TypeCast">TypeCast       </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;as&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a>
+<strong id="grammar-token-TypeCastDef">TypeCastDef    </strong> ::=  <a class="reference internal" href="#grammar-token-ImplicitCastDef"><tt class="xref docutils literal"><span class="pre">ImplicitCastDef</span></tt></a> | <a class="reference internal" href="#grammar-token-ExplicitCastDef"><tt class="xref docutils literal"><span class="pre">ExplicitCastDef</span></tt></a>
+<strong id="grammar-token-ImplicitCastDef">ImplicitCastDef</strong> ::=  &quot;def&quot; &quot;self&quot; &quot;:&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a>
+                         <tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt>
+                     &quot;end&quot;
+<strong id="grammar-token-ExplicitCastDef">ExplicitCastDef</strong> ::=  &quot;def&quot; &quot;self&quot; &quot;as&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a>
 </pre>
 </div>
 </div>
@@ -116,7 +125,7 @@ variables, but three values cannot be assigned to two variables.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/jam/jam/jam/assignments.txt"
+  <a href="../../../_sources/jam/jam/jam/type-casting.txt"
      rel="nofollow">Source</a>
 </div>
       

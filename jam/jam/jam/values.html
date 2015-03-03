@@ -95,12 +95,9 @@ describes that values representation in memory. Values are an abstract concept
 which will be used by other parts of the language.</p>
 <p>Values may be used as input for instructions or other values. Values may have
 side effects.</p>
-<div class="highlight-python"><div class="highlight"><pre>Value:
-    &lt;Identifier&gt;
-    &lt;Literals&gt;
-    &lt;Methods&gt;
-</pre></div>
-</div>
+<pre>
+<strong id="grammar-token-Value">Value</strong> ::=  <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> | <tt class="xref docutils literal"><span class="pre">Literals</span></tt> | <tt class="xref docutils literal"><span class="pre">Methods</span></tt> | <a class="reference internal" href="types.html#grammar-token-Class"><tt class="xref docutils literal"><span class="pre">Class</span></tt></a> | <a class="reference internal" href="type-casting.html#grammar-token-TypeCast"><tt class="xref docutils literal"><span class="pre">TypeCast</span></tt></a>
+</pre>
 </div>
 
 
