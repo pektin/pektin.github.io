@@ -3,8 +3,8 @@
 The Jam Programming Language
 ############################
 
-**An open source programming language that combines the expressiveness of
-dynamic languages with the power of modern type systems and native efficiency.**
+.. rubric:: An open source programming language that combines the expressiveness of
+    dynamic languages with the power of modern type systems and native efficiency.
 
 Expressive
 ==========
