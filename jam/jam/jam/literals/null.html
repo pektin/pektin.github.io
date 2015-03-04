@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.3. Strings &mdash; Jam</title>
+    <title>6.5. Null &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="top" title="Jam" href="../../../../index.html" />
     <link rel="up" title="6. Literals" href="../literals.html" />
-    <link rel="next" title="6.4. Booleans" href="booleans.html" />
-    <link rel="prev" title="6.2. Floats" href="floats.html" />
+    <link rel="next" title="7. Variables" href="../variables.html" />
+    <link rel="prev" title="6.4. Booleans" href="booleans.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -88,71 +88,19 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="strings">
-<span id="jam-literals-strings"></span><h1>6.3. Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
-<p>A string is a sequence of byte data representing characters of a certain format.
-There are two different types of strings, ones which allow special characters
-and string interpolation and ones which have no special formatting. These are
-called format and wysiwyg strings respectively. All strings are of the builtin
-type <tt class="docutils literal"><span class="pre">String</span></tt>.</p>
-<div class="section" id="syntax">
-<h2>6.3.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<p>Format strings start and end with double quotes (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) and may contain any of
-the following escape sequences:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Sequence</th>
-<th class="head">Meaning</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\&quot;</span></tt></td>
-<td>Literal double quote (<tt class="docutils literal"><span class="pre">&quot;</span></tt>)</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\\</span></tt></td>
-<td>Literal backslash (<tt class="docutils literal"><span class="pre">\</span></tt>)</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\0</span></tt></td>
-<td>Binary zero</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\a</span></tt></td>
-<td>BEL character</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\b</span></tt></td>
-<td>Backspace</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\f</span></tt></td>
-<td>Formfeed</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\n</span></tt></td>
-<td>Newlines</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\r</span></tt></td>
-<td>Carriage return</td>
-</tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\t</span></tt></td>
-<td>Horizontal Tab</td>
-</tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\v</span></tt></td>
-<td>Vertical Tab</td>
-</tr>
-</tbody>
-</table>
-<p>Format strings also support string interpolation. String interpolation starts
-with a hashtag and open curlybrace (<tt class="docutils literal"><span class="pre">#{</span></tt>), followed by any value and ends with
-a closing curlybrace (<tt class="docutils literal"><span class="pre">}</span></tt>).</p>
-<p>Wysiwyg strings start and end with backticks (<tt class="docutils literal"><span class="pre">`</span></tt>) and have no special
-formatting.</p>
-<div class="section" id="examples">
-<h3>6.3.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<pre>
-<strong id="grammar-token-String">String</strong> ::=  &quot;\&quot;&quot; .* &quot;\&quot;&quot;
-</pre>
+  <div class="section" id="null">
+<span id="jam-null"></span><h1>6.5. Null<a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">null</span></tt> value represents nothing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">null</span></tt> value can only be assigned to
+<a class="reference internal" href="../types.html#jam-types-nullability"><em>nullable types</em></a>.</p>
 </div>
+<div class="section" id="syntax">
+<h2>6.5.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<pre>
+<strong id="grammar-token-Null">Null</strong> ::=  &quot;null&quot;
+</pre>
 </div>
 </div>
 
@@ -169,7 +117,7 @@ formatting.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../../_sources/jam/jam/jam/literals/strings.txt"
+  <a href="../../../../_sources/jam/jam/jam/literals/null.txt"
      rel="nofollow">Source</a>
 </div>
       
