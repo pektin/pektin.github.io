@@ -95,15 +95,25 @@ false. Booleans are of the builtin type <tt class="docutils literal"><span class
 <div class="section" id="syntax">
 <h2>6.4.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-Booleans">Booleans</strong> ::=  &quot;true&quot; | &quot;false&quot;
+<strong id="grammar-token-Boolean">Boolean</strong> ::=  &quot;true&quot; | &quot;false&quot;
 </pre>
-<div class="section" id="example">
-<h3>6.4.1.1. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python"><div class="highlight"><pre># Print: bar
-if false
-    print(&quot;foo&quot;)
-elif true
-    print(&quot;bar&quot;)
+<div class="section" id="examples">
+<h3>6.4.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre># Boolean variables used in a conditional block
+state = true
+
+if state == true
+    print(&quot;This will print\n&quot;)
+else
+    print(&quot;This will not\n&quot;)
+end
+
+
+# Boolean value used in a conditional block
+if true
+    print(&quot;This will always print\n&quot;)
+else
+   print(&quot;This will never print\n&quot;)
 end
 </pre></div>
 </div>

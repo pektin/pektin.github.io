@@ -97,6 +97,9 @@ called format and wysiwyg strings respectively. All strings are of the builtin
 type <tt class="docutils literal"><span class="pre">String</span></tt>.</p>
 <div class="section" id="syntax">
 <h2>6.3.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<pre>
+<strong id="grammar-token-String">String</strong> ::=  &quot;\&quot;&quot; .* &quot;\&quot;&quot;
+</pre>
 <p>Format strings start and end with double quotes (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) and may contain any of
 the following escape sequences:</p>
 <table border="1" class="docutils">
@@ -149,9 +152,15 @@ a closing curlybrace (<tt class="docutils literal"><span class="pre">}</span></t
 formatting.</p>
 <div class="section" id="examples">
 <h3>6.3.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<pre>
-<strong id="grammar-token-String">String</strong> ::=  &quot;\&quot;&quot; .* &quot;\&quot;&quot;
-</pre>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># String assigned to a Variable</span>
+<span class="c"># Double quotes are convention for String assignments</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Harold&quot;</span>
+
+
+<span class="c"># This function will print out &quot;My name is Harrold&quot; with a newline</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;My name is #{name}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
