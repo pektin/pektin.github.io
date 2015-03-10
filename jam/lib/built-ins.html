@@ -95,56 +95,99 @@ language. Those which provide the base for which the rest of the standard
 library is built upon.</p>
 <div class="section" id="functions">
 <h2>1.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p><cite>puts(String)</cite></p>
+<dl class="docutils">
+<dt><cite>print(*values:String[])</cite></dt>
+<dd>Outputs values to stdout</dd>
+</dl>
 </div>
 <div class="section" id="values">
 <h2>1.2. Values<a class="headerlink" href="#values" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt><cite>nan:Float</cite></dt>
+<dt><cite>const nan:Real</cite></dt>
 <dd>Representation for floating point not-a-number value.</dd>
-<dt><cite>inf:Float</cite></dt>
+<dt><cite>const inf:Real</cite></dt>
 <dd>Representation for floating point infinity value. Use <cite>-inf</cite> for negative
 infinity.</dd>
-<dt><cite>null</cite></dt>
+<dt><cite>const null</cite></dt>
 <dd>A value for the absence of a value. Can only be assigned to
 variables that have a null-able type.</dd>
+<dt><cite>const true:Bool</cite></dt>
+<dd>The boolean value of one</dd>
+<dt><cite>const false:Bool</cite></dt>
+<dd>The boolean value of zero</dd>
 </dl>
 </div>
 <div class="section" id="types">
 <h2>1.3. Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt><cite>type Byte</cite></dt>
-<dd>A generic 8 bit value</dd>
+<dt><cite>class Byte</cite></dt>
+<dd>A generic 8 bit piece of memory.</dd>
+<dt><cite>class Bool</cite></dt>
+<dd>A one bit value. Has a range of 0 to 1.</dd>
 </dl>
-<div class="section" id="character-types">
-<h3>1.3.1. Character Types<a class="headerlink" href="#character-types" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt><cite>type Char</cite></dt>
-<dd>A single character</dd>
-<dt><cite>type String</cite></dt>
-<dd>An array of characters</dd>
-</dl>
-</div>
-<div class="section" id="floating-point-types">
-<h3>1.3.2. Floating point Types<a class="headerlink" href="#floating-point-types" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt><cite>type Half</cite></dt>
-<dd>A 16bit Floating point value</dd>
-<dt><cite>type Float</cite></dt>
-<dd>A 32bit Floating point value</dd>
-<dt><cite>type Double</cite></dt>
-<dd>A 64bit Floating point value</dd>
-</dl>
-</div>
 <div class="section" id="integer-types">
-<h3>1.3.3. Integer Types<a class="headerlink" href="#integer-types" title="Permalink to this headline">¶</a></h3>
+<h3>1.3.1. Integer Types<a class="headerlink" href="#integer-types" title="Permalink to this headline">¶</a></h3>
+<p>Types specifically used to represent integer numbers.</p>
 <dl class="docutils">
-<dt><cite>type Short</cite></dt>
-<dd>A 16bit signed Integer value</dd>
-<dt><cite>type Int</cite></dt>
-<dd>A 32bit signed Integer value</dd>
-<dt><cite>type Long</cite></dt>
-<dd>A 64bit signed Integer value</dd>
+<dt><cite>class Int</cite></dt>
+<dd>Generic integer class that dynamically expands to larger sizes when needed.
+This class is slower, but in return has no limit in size.</dd>
+<dt><cite>class UInt</cite></dt>
+<dd>Generic unsigned integer class that dynamically expands to larger sizes
+when needed. This class is slower, but in return has not limit in size.</dd>
+<dt><cite>class Int8</cite></dt>
+<dd>A 8 bit integer class. Has a range of −128 to 127.</dd>
+<dt><cite>class UInt8</cite></dt>
+<dd>A 8 bit unsigned integer class. Has a range of 0 to 255.</dd>
+<dt><cite>class Int16</cite></dt>
+<dd>A 16 bit integer class. Has a range of −32,768 to 32,767.</dd>
+<dt><cite>class UInt16</cite></dt>
+<dd>A 16 bit unsigned integer class. Has a range of 0 to 65,535.</dd>
+<dt><cite>class Int32</cite></dt>
+<dd>A 32 bit integer class. Has a range of −2,147,483,648 to 2,147,483,647.</dd>
+<dt><cite>class UInt32</cite></dt>
+<dd>A 32 bit unsigned integer class. Has a range of 0 to 4,294,967,295.</dd>
+<dt><cite>class Int64</cite></dt>
+<dd>A 64 bit integer class. Has a range of
+−9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.</dd>
+<dt><cite>class UInt64</cite></dt>
+<dd>A 64 bit unsigned integer class. Has a range of 0 to
+18,446,744,073,709,551,615.</dd>
+<dt><cite>class Int128</cite></dt>
+<dd>A 128 bit integer class. Has a range of
+−170,141,183,460,469,231,731,687,303,715,884,105,728 to
+170,141,183,460,469,231,731,687,303,715,884,105,727.</dd>
+<dt><cite>class UInt128</cite></dt>
+<dd>A 128 bit unsigned integer class. Has a range of 0 to
+340,282,366,920,938,463,463,374,607,431,768,211,455.</dd>
+<dt><cite>class Size</cite></dt>
+<dd>A unsigned integer class, whose maximal value is always larger or equal to
+the maximal memory address of the running system.</dd>
+</dl>
+</div>
+<div class="section" id="real-types">
+<h3>1.3.2. Real Types<a class="headerlink" href="#real-types" title="Permalink to this headline">¶</a></h3>
+<p>Types specifically used to represent real numbers.</p>
+<dl class="docutils">
+<dt><cite>class Real</cite></dt>
+<dd>Generic real number class with arbitrary precision.</dd>
+<dt><cite>class Float16</cite></dt>
+<dd>A 16 bit IEEE floating point value.</dd>
+<dt><cite>class Float32</cite></dt>
+<dd>A 32 bit IEEE floating point value.</dd>
+<dt><cite>class Float64</cite></dt>
+<dd>A 32 bit IEEe floating point value.</dd>
+</dl>
+</div>
+<div class="section" id="character-types">
+<h3>1.3.3. Character Types<a class="headerlink" href="#character-types" title="Permalink to this headline">¶</a></h3>
+<p>Types specifically used to represent characters in memory.</p>
+<dl class="docutils">
+<dt><cite>class Char</cite></dt>
+<dd>A single 8 bit character.</dd>
+<dt><cite>class String</cite></dt>
+<dd>A array of characters in a specific format. Supported formats are ASCII,
+UTF-8, UTF-16 and UTF-32.</dd>
 </dl>
 </div>
 </div>
