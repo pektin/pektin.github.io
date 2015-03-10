@@ -1,17 +1,18 @@
 import sys
 import os
 
-import sphinx_bootstrap_theme
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
+
+#-- Temporary until importing the other config file works
+
+# Inherit configuration from the jam docs
+#sys.path.append(os.getcwd())
+
+#from jam.conf import *
+
 extensions = [
     'sphinx.ext.todo',
 ]
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -20,28 +21,30 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Jam'
-copyright = u'2015, Benjamin Schaaf'
+project = 'Jam'
 
-# The version info for the project you're documenting, acts as replacement for
-# |version| and |release|, also used in various other places throughout the
-# built documents.
+# The short X.Y version.
 version = '0.0'
+# The full version, including alpha/beta/rc tags.
 release = '0.0.1'
+
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = 'sphinx'
+
+# Keep warnings as "system message" paragraphs in the built documents.
+keep_warnings = True
+
+#--
+
+
+import sphinx_bootstrap_theme
+
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ['_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 exclude_patterns = []
-
-# The name of the Pygments (syntax highlighting) style to use.
-#pygments_style = 'sphinx'
-
-# A list of ignored prefixes for module index sorting.
-#modindex_common_prefix = []
-
-# If true, keep warnings as "system message" paragraphs in the built documents.
-#keep_warnings = False
-
 
 # -- Options for HTML output ----------------------------------------------
 
