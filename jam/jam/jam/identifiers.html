@@ -93,10 +93,15 @@
 <p>Identifiers are used to identify values in Jam. When an identifier is used by
 itself, it is understood as a reference to everything that was defined with that
 same identifier.</p>
+<p>When a reference is resolved, each scope up the tree is checked for the
+reference as an attribute. When no references are found, or when there is an
+ambiguity for which attribute is referenced, the reference becomes invalid.</p>
+<p>Identifiers are also used to get attributes of values explicit.</p>
 <div class="section" id="syntax">
 <h2>5.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
 <strong id="grammar-token-Identifier">Identifier</strong> ::=  ([a-zA-Z_][a-zA-Z_0-9]*)
+<strong id="grammar-token-Attribute">Attribute </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;.&quot; <a class="reference internal" href="#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a>
 </pre>
 <div class="section" id="examples">
 <h3>5.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>

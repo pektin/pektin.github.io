@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4. Values &mdash; Jam</title>
+    <title>13. Templates &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="5. Identifiers" href="identifiers.html" />
-    <link rel="prev" title="3. Instructions" href="instructions.html" />
+    <link rel="next" title="1. Introduction" href="../lekvar/introduction.html" />
+    <link rel="prev" title="12. Type Casting" href="type-casting.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -88,16 +88,40 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="values">
-<span id="jam-values"></span><h1>4. Values<a class="headerlink" href="#values" title="Permalink to this headline">¶</a></h1>
-<p>A value represents a piece of data in memory. Every value has a type, which
-describes that values representation in memory. Values are an abstract concept
-which will be used by other parts of the language.</p>
-<p>Values may be used as input for instructions or other values. Values may have
-side effects.</p>
+  <div class="section" id="templates">
+<span id="jam-templates"></span><h1>13. Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h1>
+<p>A template is similar to a type, but instead of defining all behaviour for
+instances, templates only describe a subset. Templates are akin to abstract base
+classes from other languages, but behave more like interfaces.</p>
+<div class="section" id="syntax">
+<h2>13.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-Value">Value</strong> ::=  <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> | <tt class="xref docutils literal"><span class="pre">Literals</span></tt> | <tt class="xref docutils literal"><span class="pre">Methods</span></tt> | <a class="reference internal" href="types.html#grammar-token-Class"><tt class="xref docutils literal"><span class="pre">Class</span></tt></a> | <a class="reference internal" href="type-casting.html#grammar-token-TypeCast"><tt class="xref docutils literal"><span class="pre">TypeCast</span></tt></a> | <a class="reference internal" href="identifiers.html#grammar-token-Attribute"><tt class="xref docutils literal"><span class="pre">Attribute</span></tt></a>
+<strong id="grammar-token-TemplateInclude">TemplateInclude</strong> ::=  &quot;include&quot; <a class="reference internal" href="#grammar-token-Template"><tt class="xref docutils literal"><span class="pre">Template</span></tt></a>
+<strong id="grammar-token-Template">Template       </strong> ::=  &quot;template&quot; <tt class="xref docutils literal"><span class="pre">identifier</span></tt>
+                         <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><tt class="xref docutils literal"><span class="pre">ClassInstructionSet</span></tt></a>
+                     &quot;end&quot;
 </pre>
+<div class="section" id="examples">
+<h3>13.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>template Person
+    name:String
+
+    def new(n)
+        name = n
+    end
+end
+
+class Employee
+    include Person
+end
+
+class Client
+    include Person
+end
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -113,7 +137,7 @@ side effects.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/jam/jam/jam/values.txt"
+  <a href="../../../_sources/jam/jam/jam/templates.txt"
      rel="nofollow">Source</a>
 </div>
       
