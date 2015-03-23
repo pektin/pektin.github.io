@@ -97,25 +97,25 @@ functions. Ideally these functions could be inlined during optimisation,
 removing the overhead of a function call.</p>
 <div class="section" id="backend-builtins">
 <h2>2.1. Backend Builtins<a class="headerlink" href="#backend-builtins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre>module _builtins
-    class Byte
-    def intAdd(Byte[n], Byte[n]) infer n
-    def floatAdd(Byte[n], Byte[n]) infer n
-    def intSub(Byte[n], Byte[n]) infer n
-    def floatSub(Byte[n], Byte[n]) infer n
-    def intMul(Byte[n], Byte[n]) infer n
-    def floatMul(Byte[n], Byte[n]) infer n
-    def intDiv(Byte[n], Byte[n]) infer n
-    def floatDiv(Byte[n], Byte[n]) infer n
-    def intMod(Byte[n], Byte[n]) infer n
-    def floatMod(Byte[n], Byte[n]) infer n
-    def leftShift(Byte[n], Byte[n]) infer n
-    def logicalRightShift(Byte[n], Byte[n]) infer n
-    def arithmeticRightShift(Byte[n], Byte[n]) infer n
-    def and(Byte[n], Byte[n]) infer n
-    def or(Byte[n], Byte[n]) infer n
-    def xor(Byte[n], Byte[n]) infer n
-end
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">module</span><span class="w"> </span><span class="n">_builtins</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="n">Byte</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="k">in</span><span class="n">tAdd</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">floatAdd</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="k">in</span><span class="n">tSub</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">floatSub</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="k">in</span><span class="n">tMul</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">floatMul</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="k">in</span><span class="n">tDiv</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">floatDiv</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="k">in</span><span class="n">tMod</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">floatMod</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">leftShift</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">logicalRightShift</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">arithmeticRightShift</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">and</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">or</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">xor</span>(<span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">],</span><span class="w"> </span><span class="n">Byte</span><span class="err">[</span><span class="n">n</span><span class="err">]</span>)<span class="w"> </span><span class="k">in</span><span class="n">fer</span><span class="w"> </span><span class="n">n</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </div>
