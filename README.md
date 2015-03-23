@@ -12,8 +12,8 @@ The website currently uses the Sphinx documentation generator, along with the bo
 
 ### On Ubuntu
 ```
-sudo apt-get install python-sphinx pip make
-sudo pip install sphinx_bootstrap_theme
+sudo apt-get install python3-sphinx python3-pip make
+sudo pip3 install sphinx_bootstrap_theme
 ```
 
 ## Deployment
