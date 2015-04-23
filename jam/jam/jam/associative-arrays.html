@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>16. Templates &mdash; Jam</title>
+    <title>15. Associative Arrays &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="17. Unittests" href="unittests.html" />
-    <link rel="prev" title="15. Associative Arrays" href="associative-arrays.html" />
+    <link rel="next" title="16. Templates" href="templates.html" />
+    <link rel="prev" title="14. Arrays" href="arrays.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -88,39 +88,24 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="templates">
-<span id="jam-templates"></span><h1>16. Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h1>
-<p>A template is similar to a type, but instead of defining all behaviour for
-instances, templates only describe a subset. Templates are akin to abstract base
-classes from other languages, but behave more like interfaces.</p>
+  <div class="section" id="associative-arrays">
+<span id="jam-associative-arrays"></span><h1>15. Associative Arrays<a class="headerlink" href="#associative-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Associative arrays, also known as dictionaries and hash tables, are a
+collection of key-value pairs, with keys being unique.</p>
+<p>Associative arrays are created through a set of key-value pairs.</p>
+<div class="section" id="types">
+<h2>15.1. Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<p>The type of an associative array is defined in the same way it&#8217;s values are,
+through a single map of a type to another.</p>
+</div>
 <div class="section" id="syntax">
-<h2>16.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>15.2. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-TemplateInclude">TemplateInclude</strong> ::=  &quot;include&quot; <a class="reference internal" href="#grammar-token-Template"><tt class="xref docutils literal"><span class="pre">Template</span></tt></a>
-<strong id="grammar-token-Template">Template       </strong> ::=  &quot;template&quot; <tt class="xref docutils literal"><span class="pre">identifier</span></tt>
-                         <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><tt class="xref docutils literal"><span class="pre">ClassInstructionSet</span></tt></a>
-                     &quot;end&quot;
+<strong id="grammar-token-AssociativeArrayType">AssociativeArrayType   </strong> ::=  &quot;{&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;}&quot;
+<strong id="grammar-token-AssociativeArrayValue">AssociativeArrayValue  </strong> ::=  &quot;{&quot; <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><tt class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></tt></a> ((&quot;,&quot; |
+                             ) <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><tt class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></tt></a>)* &quot;}&quot;
+<strong id="grammar-token-AssociativeArrayElement">AssociativeArrayElement</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;-&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
 </pre>
-<div class="section" id="examples">
-<h3>16.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">template</span><span class="w"> </span><span class="n">Person</span>
-<span class="w">    </span><span class="n">name</span><span class="o">:</span><span class="n">String</span>
-
-<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="n">new</span>(<span class="n">n</span>)
-<span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
-<span class="w">    </span><span class="k">end</span>
-<span class="k">end</span>
-
-<span class="k">class</span><span class="w"> </span><span class="n">Employee</span>
-<span class="w">    </span><span class="k">in</span><span class="n">clude</span><span class="w"> </span><span class="n">Person</span>
-<span class="k">end</span>
-
-<span class="k">class</span><span class="w"> </span><span class="n">Client</span>
-<span class="w">    </span><span class="k">in</span><span class="n">clude</span><span class="w"> </span><span class="n">Person</span>
-<span class="k">end</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -137,7 +122,7 @@ classes from other languages, but behave more like interfaces.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/jam/jam/jam/templates.txt"
+  <a href="../../../_sources/jam/jam/jam/associative-arrays.txt"
      rel="nofollow">Source</a>
 </div>
       
