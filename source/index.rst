@@ -20,6 +20,9 @@ The Jam Programming Language
     average = sum_length / length if length > 0 else 0
     print("Average line length: #{average}")
 
+.. note::
+    The above example is not yet supported by the language
+
 Expressive
 ==========
 
