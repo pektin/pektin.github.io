@@ -6,6 +6,20 @@ The Jam Programming Language
 .. rubric:: An open source programming language that combines the expressiveness of
     dynamic languages with the power of modern type systems and native efficiency.
 
+::
+
+    import sys
+
+    sum_length = length = 0
+
+    for line in sys.stdin
+        length += 1
+        sum_length += line.length
+    end
+
+    average = sum_length / length if length > 0 else 0
+    print("Average line length: #{average}")
+
 Expressive
 ==========
 
