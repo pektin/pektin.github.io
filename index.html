@@ -90,6 +90,23 @@
 <span id="index"></span><h1>The Jam Programming Language<a class="headerlink" href="#the-jam-programming-language" title="Permalink to this headline">¶</a></h1>
 <p class="rubric">An open source programming language that combines the expressiveness of
 dynamic languages with the power of modern type systems and native efficiency.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">import</span><span class="w"> </span><span class="n">sys</span>
+
+<span class="n">sum_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span>
+<span class="w">    </span><span class="n">length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="n">sum_length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">line</span><span class="o">.</span><span class="n">length</span>
+<span class="k">end</span>
+
+<span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="m">0</span>
+<span class="n">print</span>(<span class="s">&quot;Average line length: #{average}&quot;</span>)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The above example is not yet supported by the language</p>
+</div>
 <div class="section" id="expressive">
 <h2>Expressive<a class="headerlink" href="#expressive" title="Permalink to this headline">¶</a></h2>
 <p>Jam supports many of the concepts found in modern interpreted languages. It&#8217;s
