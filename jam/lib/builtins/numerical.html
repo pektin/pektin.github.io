@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.3. Builtin Numerical Types &mdash; Jam</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="Jam" href="../../../index.html" />
+    <link rel="up" title="1. Builtin Functions, Values and Types" href="../builtins.html" />
+    <link rel="next" title="The Jam Tutorial" href="../../tutorial/index.html" />
+    <link rel="prev" title="1.2. Builtin Functions" href="functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/logo.png">
+        </a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About</a></li>
+                <li><a href="../../index.html">Documentation</a></li>
+                <li><a href="http://github.com/pektin/jam">Github</a></li>
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="builtin-numerical-types">
+<span id="jam-builtins-numerical"></span><h1>1.3. Builtin Numerical Types<a class="headerlink" href="#builtin-numerical-types" title="Permalink to this headline">¶</a></h1>
+<p>Jam provides both a set of generic numerical classes which abstract away the
+underlying implementation, as well as common numerical types bound to their
+underlying implementation.</p>
+<div class="section" id="generic-numerical-classes">
+<h2>1.3.1. Generic Numerical Classes<a class="headerlink" href="#generic-numerical-classes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="n">Int</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div><p>A generic integer class, either signed or unsigned able to represent
+virtually infinitely large numbers (limited only by memory) and the default
+type for any integer literal.</p>
+<p>Note that being unrestricted has a performance impact on the class. For
+performance critical code the use of sized integer types is suggested.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Int</span>
+<span class="n">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Int</span>
+<span class="n">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Int</span>
+<span class="n">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Int</span>
+<span class="n">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Int</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>All standard mathematical operations except normal division are
+supported by this class.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">Real</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Ints may be implicitly cast to real numbers, resulting in normal
+divisions of integers returning reals.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int8</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int16</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int32</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int64</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int128</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Ints may be explicitly cast to any sized integer type, possibly
+resulting in an exception if the size of the integer is larger than the
+requested type.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte</span><span class="err">[]</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>The underlying representation can be obtained by explicitly casting to a
+Byte array.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UInt</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>The <cite>Int</cite> class may be explicitly cast to <cite>UInt</cite>. If the number is
+negative an exception is thrown.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">Int</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>The <cite>UInt</cite> class may be implicitly cast to <cite>Int</cite>.</div></blockquote>
+</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="n">Real</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UReal</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div><p>A generic real number class is an arbitrary precision floating point number
+and the default type for any real number literal.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="n">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="n">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="n">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="n">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>All standard mathematical operations except integer division are
+supported by this class.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Float32</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Float64</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any real may be cast to any sized floating point type, possibly
+resulting in an exception if the sizes are incompatible.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any real may also be explicitly cast to an integer. The resulting
+integer is guaranteed to be rounded to the correct integer number.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte</span><span class="err">[]</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>The underlying representation can be obtained by explicitly casting to a
+Byte array.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sized-numeric-classes">
+<h2>1.3.2. Sized Numeric Classes<a class="headerlink" href="#sized-numeric-classes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="n">Int8</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Int16</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Int32</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Int64</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Int128</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt8</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt16</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt32</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt64</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UInt128</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div><p>Each <cite>IntXXX</cite> and <cite>UIntXXX</cite> class is a direct mapping to integers (signed
+or unsigned) of <cite>XXX</cite> number of bits. Operations with these types are
+typically single instructions and thereby faster than their generic
+counterparts.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>All operations except for normal division are supported.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">Int</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>IntXXX</cite> or <cite>UIntXXX</cite> may be implicitly cast to <cite>Int</cite></div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">UInt</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>UIntXXX</cite> may be implicitly cast to <cite>UInt</cite></div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">IntXXX</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UIntXXX</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>T</cite> may be explicitly cast to any other sized integer type.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte</span><span class="err">[]</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>IntXXX</cite> or <cite>UIntXXX</cite> may be cast to it&#8217;s underlying representation.</div></blockquote>
+</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="n">Float32</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Float64</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UFloat32</span>
+<span class="k">class</span><span class="w"> </span><span class="n">UFloat64</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div><p>Each <cite>FloatXX</cite> and <cite>UFloatXX</cite> class is a direct mapping to floating point
+numbers (signed or unsigned) of <cite>XX</cite> number of bits. Operations with these
+types are typically single instructions and thereby a lot faster than their
+generic counterparts.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="n">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>All operations except for integer division are supported.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">Real</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>FloatXX</cite> or <cite>UFloatXX</cite> may be implicitly cast to <cite>Real</cite>.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="o">:</span><span class="n">UReal</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>UFloatXX</cite> may be implicitly cast to <cite>UReal</cite></div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">FloatXX</span>
+<span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UFloatXX</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>T</cite> may be explicitly cast to any other sized integer type.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte</span><span class="err">[]</span>
+</pre></div>
+</div>
+<p></p>
+<blockquote>
+<div>Any <cite>FloatXX</cite> or <cite>UFloatXX</cite> may be cast to it&#8217;s underlying
+representation.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../../_sources/jam/lib/builtins/numerical.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
