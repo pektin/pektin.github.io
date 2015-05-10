@@ -13,8 +13,8 @@ The Jam Programming Language
     sum_length = length = 0
 
     for line in sys.stdin
-        length += 1
-        sum_length += line.length
+      length += 1
+      sum_length += line.length
     end
 
     average = sum_length / length if length > 0 else 0
