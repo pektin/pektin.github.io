@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>17. Visibility &mdash; Jam</title>
+    <title>16. Enumerations &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="../index.html" />
-    <link rel="next" title="18. Templates" href="templates.html" />
-    <link rel="prev" title="16. Enumerations" href="enumerations.html" />
+    <link rel="next" title="17. Visibility" href="visibility.html" />
+    <link rel="prev" title="15. Associative Arrays" href="associative-arrays.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -88,19 +88,17 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="visibility">
-<span id="jam-visibility"></span><h1>17. Visibility<a class="headerlink" href="#visibility" title="Permalink to this headline">¶</a></h1>
-<p>Visibility refers to certain restrictions that can be imposed on attribute
-access. When the visibility of an attribute is considered &#8220;private&#8221;, it can only
-be accessed inside the context of it&#8217;s parent, when it is considered &#8220;public&#8221; it
-may be accessed from any context and when it is considered &#8220;protected&#8221;, it may
-only be accessed inside the context of it&#8217;s parent or any inheriting context.</p>
-<p>Visibility may only be defined in a static context, ie. one whose existence is
-not dependent. The visibility is by default public.</p>
+  <div class="section" id="enumerations">
+<span id="jam-enumerations"></span><h1>16. Enumerations<a class="headerlink" href="#enumerations" title="Permalink to this headline">¶</a></h1>
+<p>An Enumeration (or enum for short) is a type whose only valid values are a set of
+named constants. These constants themselves may be of any type, including the
+enumeration itself.</p>
 <div class="section" id="syntax">
-<h2>17.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>16.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-Visibility">Visibility</strong> ::=  &quot;public&quot; | &quot;private&quot; | &quot;protected&quot;
+<strong id="grammar-token-Enumeration">Enumeration</strong> ::=  [<a class="reference internal" href="visibility.html#grammar-token-Visibility"><tt class="xref docutils literal"><span class="pre">Visibility</span></tt></a>] &quot;enum&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a>
+                   (<a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a>[ &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> ]
+                 )* &quot;end&quot;
 </pre>
 </div>
 </div>
@@ -118,7 +116,7 @@ not dependent. The visibility is by default public.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/jam/jam/jam/visibility.txt"
+  <a href="../../../_sources/jam/jam/jam/enumerations.txt"
      rel="nofollow">Source</a>
 </div>
       
