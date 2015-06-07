@@ -10,6 +10,7 @@ The Jam Programming Language
 
     import sys
 
+    # Compute the average line length from stdin
     sum_length = length = 0
 
     for line in sys.stdin
