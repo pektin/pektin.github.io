@@ -10,8 +10,8 @@
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/style.css" type="text/css" />
     
@@ -29,7 +29,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
@@ -107,10 +107,12 @@ must return.</p>
 <div class="section" id="syntax">
 <h2>11.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-Argument">Argument</strong> ::=  <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> [&quot;=&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>]
-<strong id="grammar-token-Method">Method  </strong> ::=  [<a class="reference internal" href="visibility.html#grammar-token-Visibility"><tt class="xref docutils literal"><span class="pre">Visibility</span></tt></a>] &quot;def&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> &quot;(&quot; [ [<a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> ] &quot;)&quot; [ &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> ]
-                (<a class="reference internal" href="instructions.html#grammar-token-InstructionSet"><tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt></a> | (&quot;return&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>])
-              )* &quot;end&quot;
+<strong id="grammar-token-Argument">Argument       </strong> ::=  <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> [&quot;=&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>]
+<strong id="grammar-token-MethodType">MethodType     </strong> ::=  &quot;(&quot; [<a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;)&quot; [ &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> ]
+<strong id="grammar-token-MethodPrototype">MethodPrototype</strong> ::=  <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> &quot;(&quot; [ [<a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="#grammar-token-Argument"><tt class="xref docutils literal"><span class="pre">Argument</span></tt></a> ] &quot;)&quot; [ &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> ]
+<strong id="grammar-token-Method">Method         </strong> ::=  [<a class="reference internal" href="visibility.html#grammar-token-Visibility"><tt class="xref docutils literal"><span class="pre">Visibility</span></tt></a>] &quot;def&quot; <a class="reference internal" href="#grammar-token-MethodPrototype"><tt class="xref docutils literal"><span class="pre">MethodPrototype</span></tt></a>
+                       (<a class="reference internal" href="instructions.html#grammar-token-InstructionSet"><tt class="xref docutils literal"><span class="pre">InstructionSet</span></tt></a> | (&quot;return&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>])
+                     )* &quot;end&quot;
 </pre>
 <div class="section" id="examples">
 <h3>11.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
