@@ -191,8 +191,15 @@ exactly two values, while unary require exactly one.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="order-of-operations">
+<h2>7.2. Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h2>
+<p>For Binary Operations, Order of Operations is ranked using the PEDMAS system.
+The operations in descending rank order are Parenthesis, Exponents, Division,
+Multiplication, Addition, Subtraction. A group of operations of the same rank
+will be executed from left to right.</p>
 <div class="section" id="syntax">
-<h3>7.1.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
 <pre>
 <strong id="grammar-token-ComparisonOperator">ComparisonOperator </strong> ::=  &quot;!=&quot; | &quot;==&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot; | &quot;is&quot; | &quot;!is&quot;
 <strong id="grammar-token-ComparisonOperation">ComparisonOperation</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> [<a class="reference internal" href="#grammar-token-ComparisonOperator"><tt class="xref docutils literal"><span class="pre">ComparisonOperator</span></tt></a> <a class="reference internal" href="#grammar-token-ComparisonOperation"><tt class="xref docutils literal"><span class="pre">ComparisonOperation</span></tt></a>]
@@ -202,6 +209,125 @@ exactly two values, while unary require exactly one.</p>
 <strong id="grammar-token-UnaryOperation">UnaryOperation     </strong> ::=  [<a class="reference internal" href="#grammar-token-UnaryOperator"><tt class="xref docutils literal"><span class="pre">UnaryOperator</span></tt></a>] <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
 <strong id="grammar-token-Operation">Operation          </strong> ::=  <a class="reference internal" href="#grammar-token-UnaryOperation"><tt class="xref docutils literal"><span class="pre">UnaryOperation</span></tt></a> | <a class="reference internal" href="#grammar-token-BinaryOperation"><tt class="xref docutils literal"><span class="pre">BinaryOperation</span></tt></a>
 </pre>
+</div>
+<div class="section" id="examples">
+<h3>7.2.2. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="mathematical">
+<h2>7.3. Mathematical<a class="headerlink" href="#mathematical" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Addition</span>
+<span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 8</span>
+<span class="n">total_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6.8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2.3</span><span class="w"> </span><span class="c">#=&gt; 9.1</span>
+
+<span class="c"># Subtraction</span>
+<span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; -2</span>
+<span class="n">total_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6.8</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2.3</span><span class="w"> </span><span class="c">#=&gt; 4.5</span>
+
+<span class="c"># Multiplication</span>
+<span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 15</span>
+<span class="n">depreciation_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">-</span><span class="m">5.3</span><span class="w"> </span><span class="c">#=&gt; -10.6</span>
+
+<span class="c"># Division</span>
+<span class="n">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2.0</span><span class="w"> </span><span class="c">#=&gt; 2.5</span>
+
+<span class="c"># Integer Division</span>
+<span class="n">portion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 3</span>
+<span class="n">half</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="c">#=&gt; 2</span>
+
+<span class="c"># Exponentiation</span>
+<span class="n">y_coord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_coord</span><span class="o">**</span><span class="m">2</span>
+<span class="n">decay_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="o">**-</span><span class="m">2</span><span class="w"> </span><span class="c">#=&gt; 0.25</span>
+
+<span class="c"># Modulo</span>
+<span class="n">TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="equivalence">
+<h2>7.4. Equivalence<a class="headerlink" href="#equivalence" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Equality</span>
+<span class="k">if</span><span class="w"> </span><span class="n">num_sides</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span>
+<span class="w">    </span><span class="nb">print</span>(<span class="s">&quot;Shape is a square&quot;</span>)
+<span class="k">end</span>
+
+<span class="c"># Inverse Equality</span>
+<span class="k">if</span><span class="w"> </span><span class="n">num_eyes</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span><span class="nb">print</span>(<span class="s">&quot;Not human&quot;</span>)
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="relational">
+<h2>7.5. Relational<a class="headerlink" href="#relational" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Smaller than</span>
+<span class="k">while</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span>
+<span class="w">    </span><span class="nb">print</span>(<span class="n">count</span>)
+<span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
+<span class="k">end</span>
+
+<span class="c"># Smaller than or equal to</span>
+<span class="c">#TODO</span>
+
+<span class="c"># Larger than</span>
+<span class="k">if</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">high_score</span>
+<span class="w">    </span><span class="n">high_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">score</span>
+<span class="k">end</span>
+
+<span class="c"># Larger than or equal to</span>
+<span class="c">#TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="identity">
+<h2>7.6. Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Identity Equivalence</span>
+<span class="c">#TODO</span>
+
+<span class="c"># Inverse Identity Equivalence</span>
+<span class="c">#TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="containment">
+<h2>7.7. Containment<a class="headerlink" href="#containment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c">#TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logical">
+<h2>7.8. Logical<a class="headerlink" href="#logical" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># And</span>
+<span class="k">if</span><span class="w"> </span><span class="n">total_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">final_exam_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c">#passed</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c">#failed</span>
+<span class="k">end</span>
+
+<span class="c"># Or</span>
+<span class="k">if</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">difficulty_setting</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span><span class="n">difficulty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="k">end</span>
+
+<span class="c"># Logical Not</span>
+<span class="c">#TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bitwise">
+<h2>7.9. Bitwise<a class="headerlink" href="#bitwise" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># And</span>
+<span class="c">#TODO</span>
+
+<span class="c"># Or</span>
+<span class="c">#TODO</span>
+
+<span class="c"># Exclusive Or</span>
+<span class="c">#TODO</span>
+
+<span class="c"># Bitwise Inverse</span>
+<span class="n">TODO</span>
+</pre></div>
 </div>
 </div>
 </div>
