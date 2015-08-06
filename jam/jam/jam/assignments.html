@@ -104,28 +104,28 @@ variables, but three values cannot be assigned to two variables.</p>
 <h3>9.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="single-variable">
 <h4>9.1.1.1. Single Variable<a class="headerlink" href="#single-variable" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="n">width</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">5</span>
-<span class="n">length</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">10</span>
-<span class="n">height</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">6</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+<span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
+<span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>
 
-<span class="n">futureState</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="n">currentState</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="n">futureState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="multi-variable">
 <h4>9.1.1.2. Multi Variable<a class="headerlink" href="#multi-variable" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Defines a Rectangular Prism</span>
-<span class="n">width</span><span class="err">,</span><span class="w"> </span><span class="n">length</span><span class="err">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">5</span><span class="err">,</span><span class="w"> </span><span class="m">10</span><span class="err">,</span><span class="w"> </span><span class="m">6</span>
+<span class="n">width</span><span class="err">,</span><span class="w"> </span><span class="n">length</span><span class="err">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="err">,</span><span class="w"> </span><span class="m">10</span><span class="err">,</span><span class="w"> </span><span class="m">6</span>
 
 
 <span class="c"># The upperLimit is set to the currentPosition, then</span>
 <span class="c"># The currentPosition is set to the lowerLimit</span>
-<span class="n">upperLimit</span><span class="err">,</span><span class="w"> </span><span class="n">currentPosition</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="n">currentPosition</span><span class="err">,</span><span class="w"> </span><span class="n">lowerLimit</span>
+<span class="n">upperLimit</span><span class="err">,</span><span class="w"> </span><span class="n">currentPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentPosition</span><span class="err">,</span><span class="w"> </span><span class="n">lowerLimit</span>
 
 
 <span class="c"># velocity is equal to speed which is equal to 55.25, and</span>
 <span class="c"># mass is equal to weight which is 100</span>
-<span class="n">velocity</span><span class="err">,</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="n">speed</span><span class="err">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">55.25</span><span class="err">,</span><span class="w"> </span><span class="m">100</span>
+<span class="n">velocity</span><span class="err">,</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="err">,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">55.25</span><span class="err">,</span><span class="w"> </span><span class="m">100</span>
 </pre></div>
 </div>
 </div>

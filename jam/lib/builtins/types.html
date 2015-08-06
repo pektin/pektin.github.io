@@ -103,18 +103,18 @@ virtually infinitely large numbers (limited only by memory) and the default
 type for any integer literal.</p>
 <p>Note that being unrestricted has a performance impact on the class. For
 performance critical code the use of sized integer types is suggested.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="n">other</span><span class="nb">:Int</span>
-<span class="k">self</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="n">other</span><span class="nb">:Int</span>
-<span class="k">self</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="n">other</span><span class="nb">:Int</span>
-<span class="k">self</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="n">other</span><span class="nb">:Int</span>
-<span class="k">self</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="n">other</span><span class="nb">:Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
+<span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
+<span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
+<span class="k">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
+<span class="k">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>All standard mathematical operations except normal division are
 supported by this class.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
 </pre></div>
 </div>
 <p></p>
@@ -147,7 +147,7 @@ Byte array.</div></blockquote>
 <blockquote>
 <div>The <cite>Int</cite> class may be explicitly cast to <cite>UInt</cite>. If the number is
 negative an exception is thrown.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
@@ -162,11 +162,11 @@ negative an exception is thrown.</div></blockquote>
 <blockquote>
 <div><p>A generic real number class is an arbitrary precision floating point number
 and the default type for any real number literal.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">Real</span>
-<span class="k">self</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">Real</span>
-<span class="k">self</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">Real</span>
-<span class="k">self</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">Real</span>
-<span class="k">self</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="k">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<span class="k">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
 </pre></div>
 </div>
 <p></p>
@@ -217,23 +217,23 @@ Byte array.</div></blockquote>
 or unsigned) of <cite>XXX</cite> number of bits. Operations with these types are
 typically single instructions and thereby faster than their generic
 counterparts.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>All operations except for normal division are supported.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>IntXXX</cite> or <cite>UIntXXX</cite> may be implicitly cast to <cite>Int</cite></div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:UInt</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">UInt</span>
 </pre></div>
 </div>
 <p></p>
@@ -265,23 +265,23 @@ counterparts.</p>
 numbers (signed or unsigned) of <cite>XX</cite> number of bits. Operations with these
 types are typically single instructions and thereby a lot faster than their
 generic counterparts.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
-<span class="k">self</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="n">other</span><span class="nb">:</span><span class="n">T</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<span class="k">self</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>All operations except for integer division are supported.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>FloatXX</cite> or <cite>UFloatXX</cite> may be implicitly cast to <cite>Real</cite>.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="nb">:</span><span class="n">UReal</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">UReal</span>
 </pre></div>
 </div>
 <p></p>
