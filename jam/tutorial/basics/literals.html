@@ -147,9 +147,9 @@
 </tbody>
 </table>
 <p>For literals of a type other than <tt class="docutils literal"><span class="pre">Int</span></tt> use casting:</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="m">127</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int8</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="m">127</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int8</span>
 
-<span class="o">-</span><span class="m">52</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UInt</span><span class="w"> </span><span class="c"># Invalid!</span>
+<span class="nb">-</span><span class="m">52</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">UInt</span><span class="w"> </span><span class="c"># Invalid!</span>
 </pre></div>
 </div>
 <p>Large numbers are difficult to read, so jam allows for separating groups of
@@ -163,30 +163,30 @@ digits by an <tt class="docutils literal"><span class="pre">_</span></tt>:</p>
 </div>
 <p>The following operations are supported by integers:</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Addition</span>
-<span class="m">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 15</span>
+<span class="m">10</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 15</span>
 
 <span class="c"># Subtraction</span>
-<span class="m">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 5</span>
+<span class="m">10</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 5</span>
 
 <span class="c"># Multiplication</span>
-<span class="m">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 50</span>
+<span class="m">10</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 50</span>
 
 <span class="c"># Integer Division</span>
-<span class="m">10</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 2</span>
-<span class="m">5</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 1</span>
+<span class="m">10</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="c">#=&gt; 2</span>
+<span class="m">5</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 1</span>
 
 <span class="c"># Division through implicit typecasting</span>
-<span class="m">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 1.666_666_666..</span>
+<span class="m">5</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 1.666_666_666..</span>
 
 <span class="c"># Exponentiation</span>
-<span class="m">4</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c">#=&gt; 16</span>
+<span class="m">4</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c">#=&gt; 16</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p>Language reference on <a class="reference internal" href="../../jam/jam/literals/integers.html#jam-literals-integers"><em>integer literals</em></a>
 Language reference on <a class="reference internal" href="../../jam/jam/operations.html#jam-operations"><em>operations</em></a></p>
-<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins/numerical.html#jam-builtins-numerical"><em>numericals</em></a></p>
+<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins/types.html#jam-builtin-numerical"><em>numericals</em></a></p>
 </div>
 </div>
 <div class="section" id="floats">
@@ -239,26 +239,26 @@ The other possible types are:</p>
 </div>
 <p>The following operations apply to floats:</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Addition</span>
-<span class="m">3.2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; 8.6</span>
+<span class="m">3.2</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; 8.6</span>
 
 <span class="c"># Subtraction</span>
-<span class="m">3.2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; -2.2</span>
+<span class="m">3.2</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; -2.2</span>
 
 <span class="c"># Multiplication</span>
-<span class="m">3.2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; 17.28</span>
+<span class="m">3.2</span><span class="w"> </span><span class="err">*</span><span class="w"> </span><span class="m">5.4</span><span class="w"> </span><span class="c">#=&gt; 17.28</span>
 
 <span class="c"># Division</span>
-<span class="m">8.1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">5.2</span><span class="w"> </span><span class="c">#=&gt; 1.557_692_308</span>
+<span class="m">8.1</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="m">5.2</span><span class="w"> </span><span class="c">#=&gt; 1.557_692_308</span>
 
 <span class="c"># Exponentiation</span>
-<span class="m">4.3</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="m">2.1</span><span class="w"> </span><span class="c">#=&gt; 21.3935_9435</span>
+<span class="m">4.3</span><span class="w"> </span><span class="err">**</span><span class="w"> </span><span class="m">2.1</span><span class="w"> </span><span class="c">#=&gt; 21.3935_9435</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p>Language reference on <a class="reference internal" href="../../jam/jam/literals/floats.html#jam-literals-floats"><em>float literals</em></a>
 Language reference on <a class="reference internal" href="../../jam/jam/operations.html#jam-operations"><em>operations</em></a></p>
-<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins/numerical.html#jam-builtins-numerical"><em>numericals</em></a></p>
+<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins/types.html#jam-builtin-numerical"><em>numericals</em></a></p>
 </div>
 </div>
 <div class="section" id="booleans">
@@ -268,7 +268,7 @@ Language reference on <a class="reference internal" href="../../jam/jam/operatio
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p>Language reference on <a class="reference internal" href="../../jam/jam/literals/booleans.html#jam-literals-booleans"><em>boolean literals</em></a></p>
-<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins/constants.html#jam-builtins-constants"><em>constants</em></a></p>
+<p class="last">Library reference on <a class="reference internal" href="../../lib/builtins.html#jam-builtins"><em>constants</em></a></p>
 </div>
 </div>
 </div>

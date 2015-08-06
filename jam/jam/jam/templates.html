@@ -104,19 +104,19 @@ classes from other languages, but behave more like interfaces.</p>
 <div class="section" id="examples">
 <h3>20.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="k">template</span><span class="w"> </span><span class="n">Person</span>
-<span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="n">String</span>
+<span class="w">  </span><span class="n">name</span><span class="nb">:</span><span class="n">String</span>
 
 <span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">new</span>(<span class="n">n</span>)
-<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="n">n</span>
 <span class="w">  </span><span class="k">end</span>
 <span class="k">end</span>
 
 <span class="k">class</span><span class="w"> </span><span class="n">Employee</span>
-<span class="w">  </span><span class="k">in</span><span class="n">clude</span><span class="w"> </span><span class="n">Person</span>
+<span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="n">Person</span>
 <span class="k">end</span>
 
 <span class="k">class</span><span class="w"> </span><span class="n">Client</span>
-<span class="w">  </span><span class="k">in</span><span class="n">clude</span><span class="w"> </span><span class="n">Person</span>
+<span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="n">Person</span>
 <span class="k">end</span>
 </pre></div>
 </div>

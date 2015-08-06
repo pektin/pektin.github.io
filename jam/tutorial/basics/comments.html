@@ -98,12 +98,12 @@ modern editors have built-in shortcuts to comment out multiple lines of code,
 this is a non-issue.</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Returns the given Fibonacci number</span>
 <span class="c"># Guaranteed to run in linear time</span>
-<span class="k">def</span><span class="w"> </span><span class="n">fib</span>(<span class="n">n</span><span class="o">:</span><span class="n">Int</span>)
+<span class="k">def</span><span class="w"> </span><span class="n">fib</span>(<span class="n">n</span><span class="nb">:Int</span>)
 <span class="w">    </span><span class="c"># Formula for finding the nth Fibonacci number</span>
 <span class="w">    </span><span class="c"># Uses the golden ratio constant (Phi) and it&#39;s reciprocal (phi)</span>
-<span class="w">    </span><span class="n">const</span><span class="w"> </span><span class="n">Phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.618_033_988_749_894_848_204_586</span>
-<span class="w">    </span><span class="n">const</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="n">Phi</span>
-<span class="w">    </span><span class="n">return</span><span class="w"> </span>((<span class="n">Phi</span><span class="o">**</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>(<span class="o">-</span><span class="n">phi</span>)<span class="o">**</span><span class="n">n</span>)<span class="w"> </span><span class="o">/</span><span class="w"> </span>(<span class="n">Phi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">phi</span>))<span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Int</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Phi</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">1.618_033_988_749_894_848_204_586</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="m">1</span><span class="nb">/</span><span class="n">Phi</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span>((<span class="n">Phi</span><span class="nb">**</span><span class="n">n</span><span class="w"> </span><span class="err">-</span><span class="w"> </span>(<span class="nb">-</span><span class="n">phi</span>)<span class="nb">**</span><span class="n">n</span>)<span class="w"> </span><span class="err">/</span><span class="w"> </span>(<span class="n">Phi</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="n">phi</span>))<span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int</span>
 <span class="k">end</span>
 </pre></div>
 </div>
