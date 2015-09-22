@@ -95,14 +95,21 @@ builtin <tt class="docutils literal"><span class="pre">puts</span></tt> function
 <div class="highlight-Jam"><div class="highlight"><pre><span class="nb">puts</span>(<span class="s">&quot;Hello World!&quot;</span>)
 </pre></div>
 </div>
-<p>Jam source files generally have the extension <tt class="docutils literal"><span class="pre">.jm</span></tt>. To compile and run a
-source file, use the jam compiler script <tt class="docutils literal"><span class="pre">jam.py</span></tt>.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./jam.py hello_world.jm
+<p>Jam source files generally have the extension <tt class="docutils literal"><span class="pre">.jm</span></tt>. To run a source file, use
+the jam compiler script <tt class="docutils literal"><span class="pre">jam</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./jam hello_world.jm
+<span class="c"># or</span>
+<span class="nv">$ </span>./jam run hello_world.jm
 </pre></div>
 </div>
-<p>For further options, such as outputting a llvm-ir file, use the standard help
-option.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./jam.py --help
+<p>You can also compile to an executable:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./jam c hello_world.jm
+<span class="c"># or</span>
+<span class="nv">$ </span>./jam compile hello_world.jm
+</pre></div>
+</div>
+<p>For further options, such as verbosity and profiling run:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./jam --help
 </pre></div>
 </div>
 <div class="admonition note">

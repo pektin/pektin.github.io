@@ -105,8 +105,9 @@ external packages.</p>
 <div class="section" id="syntax">
 <h2>18.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <pre>
-<strong id="grammar-token-ImportPath">ImportPath</strong> ::=  [ &quot;.&quot;+ ] <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> [ &quot;.&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> ]*
-<strong id="grammar-token-Import">Import    </strong> ::=  &quot;import&quot; <a class="reference internal" href="#grammar-token-ImportPath"><tt class="xref docutils literal"><span class="pre">ImportPath</span></tt></a> [ &quot;as&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> ]
+<strong id="grammar-token-ImportPath">ImportPath        </strong> ::=  <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> [ &quot;.&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> ]*
+<strong id="grammar-token-RelativeImportPath">RelativeImportPath</strong> ::=  [ &quot;.&quot;* ] <a class="reference internal" href="#grammar-token-ImportPath"><tt class="xref docutils literal"><span class="pre">ImportPath</span></tt></a>
+<strong id="grammar-token-Import">Import            </strong> ::=  &quot;import&quot; <a class="reference internal" href="#grammar-token-RelativeImportPath"><tt class="xref docutils literal"><span class="pre">RelativeImportPath</span></tt></a> [ &quot;as&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><tt class="xref docutils literal"><span class="pre">Identifier</span></tt></a> ]
 </pre>
 </div>
 </div>

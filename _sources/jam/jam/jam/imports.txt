@@ -19,8 +19,9 @@ in the local context as. This is useful for avoiding ambiguities, especially for
 external packages.
 
 Syntax
-------
+======
 
 .. productionlist::
-    ImportPath: [ "."+ ] `Identifier` [ "." `Identifier` ]*
-    Import: "import" `ImportPath` [ "as" `Identifier` ]
+    ImportPath: `Identifier` [ "." `Identifier` ]*
+    RelativeImportPath: [ "."* ] `ImportPath`
+    Import: "import" `RelativeImportPath` [ "as" `Identifier` ]
