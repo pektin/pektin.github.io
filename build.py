@@ -11,7 +11,7 @@ BUILD_BRANCH = "master"
 
 REMOTE = "git@github.com:pektin/jam.git"
 BUILD = os.path.join("build", "html")
-REMOTE_SOURCE = os.path.join("source", "jam")
+REMOTE_SOURCE = os.path.join("source", "docs")
 
 NO_DELETE = {
     ".git",

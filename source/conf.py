@@ -3,7 +3,7 @@ import os
 
 # Inherit configuration from the jam docs
 sys.path.append(os.getcwd())
-from jam.conf import *
+from docs.conf import *
 
 import sphinx_bootstrap_theme
 
