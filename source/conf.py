@@ -27,7 +27,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {
     'navbar_links': [
         ("About", "about"),
-        ("Documentation", "jam/index"),
+        ("Documentation", "docs/index"),
         ("Github", "http://github.com/pektin/jam", True),
     ],
 
