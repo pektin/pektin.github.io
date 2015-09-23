@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. String Formatting &mdash; Jam</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.3.4/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Jam" href="../../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/logo.png">
+        </a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../jam/index.html">Documentation</a></li>
+                <li><a href="http://github.com/pektin/jam">Github</a></li>
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="string-formatting">
+<span id="tut-string-formatting"></span><h1>4. String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">¶</a></h1>
+<p>String are denoted by a pair of <tt class="docutils literal"><span class="pre">&quot;</span></tt> and may span multiple lines.</p>
+<div class="section" id="interpolation">
+<h2>4.1. Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">String Interpolation is not yet supported.</p>
+</div>
+<p>In order to insert values into strings jam supports a concept called string
+interpolation. Anything inside a string between a <tt class="docutils literal"><span class="pre">#{</span></tt> and a <tt class="docutils literal"><span class="pre">}</span></tt> is
+cast to a <tt class="docutils literal"><span class="pre">String</span></tt> and inserted into the string.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Harold&quot;</span>
+
+<span class="c"># This will print out &quot;My name is Harold&quot;</span>
+<span class="nb">puts</span>(<span class="s">&quot;My name is #{name}&quot;</span>)
+</pre></div>
+</div>
+</div>
+<div class="section" id="special-characters">
+<h2>4.2. Special Characters<a class="headerlink" href="#special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Strings have a set of special sequences for characters not easily represented
+in source code.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sequence</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\&quot;</span></tt></td>
+<td>Literal <tt class="docutils literal"><span class="pre">&quot;</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\\</span></tt></td>
+<td>Literal <tt class="docutils literal"><span class="pre">\</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\0</span></tt></td>
+<td>Null character</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\a</span></tt></td>
+<td>BEL character</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\b</span></tt></td>
+<td>Backspace</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\f</span></tt></td>
+<td>Formfeed</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\n</span></tt></td>
+<td>Newlines</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\r</span></tt></td>
+<td>Carriage return</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\t</span></tt></td>
+<td>Horizontal Tab</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\v</span></tt></td>
+<td>Vertical Tab</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\#{</span></tt></td>
+<td>Literal <tt class="docutils literal"><span class="pre">#{</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="wysywyg-strings">
+<h2>4.3. WYSYWYG Strings<a class="headerlink" href="#wysywyg-strings" title="Permalink to this headline">¶</a></h2>
+<p>A special subset of string denoted by a pair of <tt class="docutils literal"><span class="pre">`</span></tt> has the same behaviour as
+stings, except they do not support interpolation or special characters.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># This will print `#{foo} \0 &quot;&quot;`</span>
+<span class="nb">puts</span>(<span class="s">`#{foo} \0 &quot;&quot;`</span>)
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../jam/literals/strings.html#jam-literals-strings"><em>Strings language reference</em></a></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/docs/tut/string-formatting.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
