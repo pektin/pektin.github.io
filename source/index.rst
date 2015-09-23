@@ -59,4 +59,4 @@ what they want to do with the language.
     :hidden:
 
     about
-    jam/index
+    docs/index
