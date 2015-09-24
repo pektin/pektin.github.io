@@ -140,7 +140,7 @@ Hello World!
 <div class="section" id="further-options">
 <h2>1.4. Further Options<a class="headerlink" href="#further-options" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam r --help
-usage: jam run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+usage: jam run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
 
 positional arguments:
   <span class="nb">source         </span>the <span class="nb">source </span>file to run. Leave out <span class="k">for</span> interactive mode
@@ -151,8 +151,10 @@ optional arguments:
   -p, --profile  run the profiler, printing profiling data after completion
   -v, --verbose  use verbose logging. Supply multiple <span class="nb">times </span>to increase
                  verbosity
+  -O X           optimisation level
+
 <span class="nv">$ </span>jam c --help
-usage: jam compile <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-o FILE<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+usage: jam compile <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span>-o FILE<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
 
 positional arguments:
   <span class="nb">source                </span>the <span class="nb">source </span>file to compile. Leave out to <span class="nb">read </span>from
@@ -165,6 +167,7 @@ optional arguments:
                         completion
   -v, --verbose         use verbose logging. Supply multiple <span class="nb">times </span>to increase
                         verbosity
+  -O X                  optimisation level
   -o FILE, --output FILE
                         the file to write the executable to. Leave out to <span class="nb">let</span>
 <span class="nb">                        </span>jam guess the name
