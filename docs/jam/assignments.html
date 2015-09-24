@@ -97,22 +97,22 @@
     <div class="col-md-12">
       
   <div class="section" id="assignments">
-<span id="jam-assignments"></span><h1>9. Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h1>
+<span id="jam-assignments"></span><h1>9. Assignments</h1>
 <p>Assignments are used to directly store values in variables. A single assignment
 may involve any number of values and variables, however the numbers must match
 up. Two values can be assigned to two variables, or to three groups of two
 variables, but three values cannot be assigned to two variables.</p>
 <div class="section" id="syntax">
-<h2>9.1. Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<h2>9.1. Syntax</h2>
 <pre>
 <strong id="grammar-token-AssignmentVars">AssignmentVars</strong> ::=  [<a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a>
 <strong id="grammar-token-Assignment">Assignment    </strong> ::=  [<a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot;]* <a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
 </pre>
 </div>
 <div class="section" id="examples">
-<h2>9.2. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>9.2. Examples</h2>
 <div class="section" id="single-variable">
-<h3>9.2.1. Single Variable<a class="headerlink" href="#single-variable" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.1. Single Variable</h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
 <span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span>
@@ -122,7 +122,7 @@ variables, but three values cannot be assigned to two variables.</p>
 </div>
 </div>
 <div class="section" id="multi-variable">
-<h3>9.2.2. Multi Variable<a class="headerlink" href="#multi-variable" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.2. Multi Variable</h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Defines a Rectangular Prism</span>
 <span class="n">width</span><span class="err">,</span><span class="w"> </span><span class="n">length</span><span class="err">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="err">,</span><span class="w"> </span><span class="m">10</span><span class="err">,</span><span class="w"> </span><span class="m">6</span>
 
