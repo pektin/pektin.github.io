@@ -27,7 +27,25 @@ p.rubric {
     font-size: 18px;
 }
 
+#wrapper {
+    min-height: 100%;
+    padding-bottom: 43px;
+}
+
+.container {
+    overflow: auto;
+}
+
+footer {
+    position: relative;
+    margin-top: -43px; /* negative value of footer height */
+    height: 43px;
+    clear:both;
+}
+
 body {
+    height: 100%;
+    margin: 0;
     font-size: 16px;
 }
 
