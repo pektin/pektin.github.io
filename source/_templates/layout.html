@@ -3,3 +3,15 @@
 
 {# Custom CSS overrides #}
 {% set bootswatch_css_custom = ['_static/style.css'] %}
+
+{% block doctype %}{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        {{ super() }}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}
