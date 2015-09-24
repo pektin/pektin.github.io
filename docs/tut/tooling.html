@@ -34,6 +34,9 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
+    <link rel="up" title="The Jam Tutorial" href="../tut.html" />
+    <link rel="next" title="2. Hello World" href="helloworld.html" />
+    <link rel="prev" title="The Jam Tutorial" href="../tut.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -131,6 +134,40 @@ Hello World!
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam c hello_world.jm -o a.out
 <span class="nv">$ </span>./a.out
 Hello World!
+</pre></div>
+</div>
+</div>
+<div class="section" id="further-options">
+<h2>1.4. Further Options<a class="headerlink" href="#further-options" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam r --help
+usage: jam run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+
+positional arguments:
+  <span class="nb">source         </span>the <span class="nb">source </span>file to run. Leave out <span class="k">for</span> interactive mode
+
+optional arguments:
+  -h, --help     show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -V, --version  print the jam version number and terminate
+  -p, --profile  run the profiler, printing profiling data after completion
+  -v, --verbose  use verbose logging. Supply multiple <span class="nb">times </span>to increase
+                 verbosity
+<span class="nv">$ </span>jam c --help
+usage: jam compile <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-o FILE<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+
+positional arguments:
+  <span class="nb">source                </span>the <span class="nb">source </span>file to compile. Leave out to <span class="nb">read </span>from
+                        stdin
+
+optional arguments:
+  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -V, --version         print the jam version number and terminate
+  -p, --profile         run the profiler, printing profiling data after
+                        completion
+  -v, --verbose         use verbose logging. Supply multiple <span class="nb">times </span>to increase
+                        verbosity
+  -o FILE, --output FILE
+                        the file to write the executable to. Leave out to <span class="nb">let</span>
+<span class="nb">                        </span>jam guess the name
 </pre></div>
 </div>
 </div>
