@@ -37,9 +37,6 @@ html_theme_options = {
 # The name for this set of Sphinx documents.
 html_title = "Jam"
 
-# A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
-
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 html_logo = "_static/logo.png"
@@ -60,7 +57,7 @@ html_add_permalinks = None
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
-html_extra_path = ["_extra"]
+html_extra_path = ["_extra", "_extra/.nojekyll", "_extra/.gitignore"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
