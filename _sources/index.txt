@@ -3,8 +3,9 @@
 The Jam Programming Language
 ############################
 
-.. rubric:: An open source programming language that combines the expressiveness of
-    dynamic languages with the power of modern type systems and native efficiency.
+.. rubric:: An open source programming language that combines the expressiveness
+    of dynamic languages with a powerful static type system for native
+    efficiency.
 
 ::
 
@@ -12,7 +13,6 @@ The Jam Programming Language
 
     # Compute the average line length from stdin
     sum_length = length = 0
-
     for line in sys.stdin
       length += 1
       sum_length += line.length
@@ -22,38 +22,29 @@ The Jam Programming Language
     print("Average line length: #{average}")
 
 .. note::
-    The above example is not yet supported by the language
+    The above example is not yet entirely supported by the language
 
-Expressive
-==========
-
-Jam supports many of the concepts found in modern interpreted languages. It's
-syntax aims to be easy to read, easy to write and completely unambiguous.
-
-Powerful
+Features
 ========
 
-Jam's type system supports a mix of static and dynamic typing. The programmer is
-given the option of declaring a type or keeping it generic. The compiler
-intuitively infers static types that fit to the situation, rather than impose
-unnecessary restrictions.
+* strong, static duck-typing, with optional type annotations
+* fast compiling
+* compiles to efficient native code
+* Object Oriented Programming* and functional style*
+* easily replaceable frontend/backend defaulting to Jam/LLVM
+* metaprogramming* (dependent types, metaclasses)
+* efficient C bindings*
 
-Jam's type system does however have specific restrictions on concepts such as
-the ``null`` value, that ensure that common mistakes are caught before they
-cause a problem.
-
-Fast
-====
-
-Jam boasts native efficiency. Using the static type system, the compiler is able
-to convert your high level code into native executables that run on a minimal
-runtime to ensure maximum performance.
+\* Some features are not yet supported by the language
 
 Open Source
 ===========
 
 Jam is being developed under the MIT License, giving everyone the freedom to do
-what they want to do with the language.
+what they want to do with the language. Contributions on Github_ are always
+welcome
+
+.. _Github: https://github.com/pektin/jam
 
 .. toctree::
     :hidden:

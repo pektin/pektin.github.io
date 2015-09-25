@@ -96,13 +96,13 @@
       
   <div class="section" id="the-jam-programming-language">
 <span id="index"></span><h1>The Jam Programming Language</h1>
-<p class="rubric">An open source programming language that combines the expressiveness of
-dynamic languages with the power of modern type systems and native efficiency.</p>
+<p class="rubric">An open source programming language that combines the expressiveness
+of dynamic languages with a powerful static type system for native
+efficiency.</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="k">import</span><span class="w"> </span><span class="n">sys</span>
 
 <span class="c"># Compute the average line length from stdin</span>
 <span class="n">sum_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-
 <span class="k">for</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span>
 <span class="w">  </span><span class="n">length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
 <span class="w">  </span><span class="n">sum_length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">line</span><span class="o">.</span><span class="n">length</span>
@@ -114,33 +114,26 @@ dynamic languages with the power of modern type systems and native efficiency.</
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The above example is not yet supported by the language</p>
+<p class="last">The above example is not yet entirely supported by the language</p>
 </div>
-<div class="section" id="expressive">
-<h2>Expressive</h2>
-<p>Jam supports many of the concepts found in modern interpreted languages. It&#8217;s
-syntax aims to be easy to read, easy to write and completely unambiguous.</p>
-</div>
-<div class="section" id="powerful">
-<h2>Powerful</h2>
-<p>Jam&#8217;s type system supports a mix of static and dynamic typing. The programmer is
-given the option of declaring a type or keeping it generic. The compiler
-intuitively infers static types that fit to the situation, rather than impose
-unnecessary restrictions.</p>
-<p>Jam&#8217;s type system does however have specific restrictions on concepts such as
-the <tt class="docutils literal"><span class="pre">null</span></tt> value, that ensure that common mistakes are caught before they
-cause a problem.</p>
-</div>
-<div class="section" id="fast">
-<h2>Fast</h2>
-<p>Jam boasts native efficiency. Using the static type system, the compiler is able
-to convert your high level code into native executables that run on a minimal
-runtime to ensure maximum performance.</p>
+<div class="section" id="features">
+<h2>Features</h2>
+<ul class="simple">
+<li>strong, static duck-typing, with optional type annotations</li>
+<li>fast compiling</li>
+<li>compiles to efficient native code</li>
+<li>Object Oriented Programming* and functional style*</li>
+<li>easily replaceable frontend/backend defaulting to Jam/LLVM</li>
+<li>metaprogramming* (dependent types, metaclasses)</li>
+<li>efficient C bindings*</li>
+</ul>
+<p>* Some features are not yet supported by the language</p>
 </div>
 <div class="section" id="open-source">
 <h2>Open Source</h2>
 <p>Jam is being developed under the MIT License, giving everyone the freedom to do
-what they want to do with the language.</p>
+what they want to do with the language. Contributions on <a class="reference external" href="https://github.com/pektin/jam">Github</a> are always
+welcome</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

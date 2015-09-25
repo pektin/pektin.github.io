@@ -18,6 +18,14 @@
     padding-left: 15px;
 }
 
+.form-control {
+    height: 44px;
+}
+
+.navbar-form .form-control {
+    width: 210px;
+}
+
 .row {
     margin-top: 15px;
 }
