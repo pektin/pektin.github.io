@@ -1,25 +1,19 @@
 #!/usr/bin/env python3
 
 import os
+from os import path
 import shutil
 import argparse
 import tempfile
 from subprocess import check_call as call
 
-MASTER_BRANCH = "site"
+SOURCE_BRANCH = "site"
 BUILD_BRANCH = "master"
 
 REMOTE = "git@github.com:pektin/jam.git"
-BUILD = os.path.join("build", "html")
-REMOTE_SOURCE = os.path.join("source", "docs")
-
-NO_DELETE = {
-    ".git",
-    ".nojekyll",
-    "CNAME",
-    "LICENSE",
-    "README.md",
-}
+DOCS_PATH = "docs"
+SOURCE_DOCS_PATH = path.join("source", "docs")
+BUILD_PATH = path.join("build", "html")
 
 parser = argparse.ArgumentParser(prog="./build.py", description="Build script for lets-jam.org")
 parser.add_argument(
@@ -41,9 +35,6 @@ def main():
         shutil.rmtree("build")
         return
 
-    # First switch to master branch
-    call(["git", "checkout", MASTER_BRANCH])
-
     # Update the documentation copy
     if args.repo is None:
         with tempfile.TemporaryDirectory() as temp:
@@ -53,41 +44,40 @@ def main():
         copy_docs(args.repo)
 
     # Build docs
-    call(["sphinx-build", "-b", "html", "source", BUILD])
+    call(["sphinx-build", "-b", "html", "source", BUILD_PATH])
 
     if args.action == "deploy":
         deploy()
 
-def copy_docs(path):
+def copy_docs(docs_path):
     # First remove current docs copy if need be
-    if os.path.isdir(REMOTE_SOURCE):
-        shutil.rmtree(REMOTE_SOURCE)
+    if path.isdir(SOURCE_DOCS_PATH):
+        shutil.rmtree(SOURCE_DOCS_PATH)
 
     # Then copy new docs from path
-    shutil.copytree(os.path.join(path, "docs"), REMOTE_SOURCE)
+    shutil.copytree(path.join(docs_path, DOCS_PATH), SOURCE_DOCS_PATH)
 
 def deploy():
     # Copy build to a temporary directory
     with tempfile.TemporaryDirectory() as temp:
         print("Copying build to {}".format(temp))
-        #temp = os.path.join("temp", "build")
-        shutil.move(BUILD + "/", temp)
+        shutil.move(path.join(BUILD_PATH, ""), temp)
 
         # Change to build branch
         call(["git", "checkout", BUILD_BRANCH])
 
         # Remove all build files
         for file in os.listdir():
-            if file not in NO_DELETE:
-                if os.path.isdir(file):
-                    shutil.rmtree(file)
-                else:
-                    os.remove(file)
+            if file == ".git": continue
+            if path.isdir(file):
+                shutil.rmtree(file)
+            else:
+                os.remove(file)
 
         # Move new build
-        path = os.path.join(temp, "html")
-        for file in os.listdir(path):
-            shutil.move(os.path.join(path, file), file)
+        html_path = path.join(temp, "html")
+        for file in os.listdir(html_path):
+            shutil.move(path.join(html_path, file), file)
 
 if __name__ == "__main__":
     main()
