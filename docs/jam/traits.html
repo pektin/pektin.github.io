@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>20. Templates &mdash; Jam</title>
+    <title>20. Traits &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -96,23 +96,26 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="templates">
-<span id="jam-templates"></span><h1>20. Templates</h1>
-<p>A template is similar to a type, but instead of defining all behaviour for
-instances, templates only describe a subset. Templates are akin to abstract base
-classes from other languages, but behave more like interfaces.</p>
+  <div class="section" id="traits">
+<h1>20. Traits</h1>
+<p>Traits represent a promise of a type. It combines the functionality of an
+abstract base class and an interface. A trait may define a set of functions,
+with or without implementation, and instance variables.</p>
+<p>A class may enforce fulfilment of a trait by inheriting it. By inheriting a
+trait, the class mixes in the set of functions and instance variables, while
+ensuring unimplemented functions are implemented. Traits may also inherit from
+each other in the same way as classes.</p>
 <div class="section" id="syntax">
 <h2>20.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-TemplateInclude">TemplateInclude</strong> ::=  &quot;include&quot; <a class="reference internal" href="#grammar-token-Template"><tt class="xref docutils literal"><span class="pre">Template</span></tt></a>
-<strong id="grammar-token-Template">Template       </strong> ::=  &quot;template&quot; <tt class="xref docutils literal"><span class="pre">identifier</span></tt>
-                       <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><tt class="xref docutils literal"><span class="pre">ClassInstructionSet</span></tt></a>
-                     &quot;end&quot;
+<strong id="grammar-token-Trait">Trait</strong> ::=  &quot;trait&quot; <tt class="xref docutils literal"><span class="pre">identifier</span></tt>
+             <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><tt class="xref docutils literal"><span class="pre">ClassInstructionSet</span></tt></a>
+           &quot;end&quot;
 </pre>
 </div>
 <div class="section" id="examples">
 <h2>20.2. Examples</h2>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">template</span><span class="w"> </span><span class="n">Person</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="n">trait</span><span class="w"> </span><span class="n">Person</span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="n">String</span>
 
 <span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">new</span>(<span class="n">n</span>)
@@ -120,12 +123,10 @@ classes from other languages, but behave more like interfaces.</p>
 <span class="w">  </span><span class="k">end</span>
 <span class="k">end</span>
 
-<span class="k">class</span><span class="w"> </span><span class="n">Employee</span>
-<span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="n">Person</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Person</span>
 <span class="k">end</span>
 
-<span class="k">class</span><span class="w"> </span><span class="n">Client</span>
-<span class="w">  </span><span class="n">include</span><span class="w"> </span><span class="n">Person</span>
+<span class="k">class</span><span class="w"> </span><span class="n">Client</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Person</span>
 <span class="k">end</span>
 </pre></div>
 </div>
@@ -148,7 +149,7 @@ classes from other languages, but behave more like interfaces.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../_sources/docs/jam/templates.txt"
+  <a href="../../_sources/docs/jam/traits.txt"
      rel="nofollow">Source</a>
 </div>
       
