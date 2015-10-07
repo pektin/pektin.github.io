@@ -1,5 +1,3 @@
-.. _index:
-
 The Jam Programming Language
 ############################
 
