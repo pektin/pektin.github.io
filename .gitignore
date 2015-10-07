@@ -1,5 +1,9 @@
 # Ignore the build directory
 build
 
+# Sphinx stuff
+.buildinfo
+.doctrees
+
 # Ignore the documentation fetch from the jam repository
 source/docs
