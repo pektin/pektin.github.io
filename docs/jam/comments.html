@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2. Comments &mdash; Jam</title>
+    <title>1. Comments &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -34,9 +34,9 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
-    <link rel="up" title="The Jam Language Reference" href="../jam.html" />
-    <link rel="next" title="3. Instructions" href="instructions.html" />
-    <link rel="prev" title="1. Introduction" href="introduction.html" />
+    <link rel="up" title="The Jam Language Reference" href="index.html" />
+    <link rel="next" title="2. Instructions" href="instructions.html" />
+    <link rel="prev" title="The Jam Language Reference" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -97,7 +97,7 @@
     <div class="col-md-12">
       
   <div class="section" id="comments">
-<h1>2. Comments</h1>
+<h1>1. Comments</h1>
 <p>Comments allow the programmer to add a form of metadata to code in the form of
 natural language. They allow a programmer to add descriptions otherwise
 impossible to add with standard code for themselves or others. It is advised to
@@ -106,23 +106,23 @@ clutter.</p>
 <p>Multi-line comments do not exist, primarily because most modern code editing
 tools have shortcuts to achieve the same thing.</p>
 <div class="section" id="syntax">
-<h2>2.1. Syntax</h2>
+<h2>1.1. Syntax</h2>
 <pre>
 <strong id="grammar-token-Comment">Comment</strong> ::=  (&quot;#&quot; .*
              )
 </pre>
 </div>
 <div class="section" id="examples">
-<h2>2.2. Examples</h2>
+<h2>1.2. Examples</h2>
 <div class="section" id="single-line-comments">
-<h3>2.2.1. Single Line Comments</h3>
+<h3>1.2.1. Single Line Comments</h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Find the distance using pythag</span>
 <span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>(<span class="n">x</span><span class="o">**</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">**</span><span class="m">2</span>)<span class="o">**</span><span class="m">0.5</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="multi-line-comments">
-<h3>2.2.2. Multi-line Comments</h3>
+<h3>1.2.2. Multi-line Comments</h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># This is how Multi-line Comments will be written</span>
 <span class="c"># Having sequential single line comments is more efficient</span>
 <span class="c"># Due to modern code editing tools</span>
@@ -131,7 +131,7 @@ tools have shortcuts to achieve the same thing.</p>
 </div>
 </div>
 <div class="section" id="compilation">
-<h2>2.3. Compilation</h2>
+<h2>1.3. Compilation</h2>
 <p>Comments are only compiled when compiling in debug mode and otherwise ignored.</p>
 </div>
 </div>
