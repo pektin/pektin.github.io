@@ -3,20 +3,6 @@ Types
 
 Types describe how values behave and what they are made of.
 
-Type Inference
-==============
-
-When a type is not specified, the compiler has to infer it.
-
-For a variable, the type is determined by all assignments to that variable.
-When a variable is assigned a value of a superset type, the type of the variable
-changes to the superset. A variable cannot be assigned any value of a type that
-is incompatible.
-
-For a argument, the type is determined by every action involving that argument.
-From this it builds a "type expectation" that is used at compile time to check
-whether arguments are valid.
-
 Nullability
 ===========
 
@@ -31,7 +17,18 @@ Classes
 
 A class is a user defined type. A class may have instance fields and methods,
 which can be accessed as attributes. It may also inherit functionality from
-other types, or include functionality from templates.
+other types, or include functionality from :doc:`traits`.
+
+Metaclasses
+===========
+
+Since a core concept of Jam is that everything is an object, and objects have
+types, classes must therefore also have a type. The type of a class is called a
+metaclass. A metaclass is a class whose instances are classes, as such they
+define the attributes and functionality of the class itself.
+
+.. note::
+    There is no syntax for metaclasses yet.
 
 Syntax
 ======

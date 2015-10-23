@@ -122,8 +122,14 @@ compatible overloads.</p>
 <dd>Another kind of method</dd>
 </dl>
 </div>
+<div class="section" id="type-inference">
+<h2>10.1. Type Inference</h2>
+<p>For a argument, the type is determined by every action involving that argument.
+From this it builds a &#8220;type expectation&#8221; that is used at compile time to check
+whether arguments are valid.</p>
+</div>
 <div class="section" id="syntax">
-<h2>10.1. Syntax</h2>
+<h2>10.2. Syntax</h2>
 <pre>
 <strong id="grammar-token-Argument">Argument       </strong> ::=  <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> [&quot;=&quot; <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>]
 <strong id="grammar-token-MethodType">MethodType     </strong> ::=  &quot;(&quot; [<a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> &quot;)&quot; [ &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><tt class="xref docutils literal"><span class="pre">Type</span></tt></a> ]
@@ -134,7 +140,7 @@ compatible overloads.</p>
 </pre>
 </div>
 <div class="section" id="examples">
-<h2>10.2. Examples</h2>
+<h2>10.3. Examples</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">double</span>(<span class="n">x</span><span class="o">:</span><span class="nb">Float</span>)<span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Float</span>
 <span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">2</span>
 <span class="k">end</span>

@@ -99,29 +99,29 @@
   <div class="section" id="types">
 <h1>12. Types</h1>
 <p>Types describe how values behave and what they are made of.</p>
-<div class="section" id="type-inference">
-<h2>12.1. Type Inference</h2>
-<p>When a type is not specified, the compiler has to infer it.</p>
-<p>For a variable, the type is determined by all assignments to that variable.
-When a variable is assigned a value of a superset type, the type of the variable
-changes to the superset. A variable cannot be assigned any value of a type that
-is incompatible.</p>
-<p>For a argument, the type is determined by every action involving that argument.
-From this it builds a &#8220;type expectation&#8221; that is used at compile time to check
-whether arguments are valid.</p>
-</div>
 <div class="section" id="nullability">
-<h2>12.2. Nullability</h2>
+<h2>12.1. Nullability</h2>
 <p>A type may be explicitly marked as nullable, meaning that the <tt class="docutils literal"><span class="pre">null</span></tt> value may
 be assigned to it. A nullable type does not allow member access unless the value
 is checked for <tt class="docutils literal"><span class="pre">null</span></tt>, or is cast to the type&#8217;s non-nullable counterpart.</p>
 <p>A type may be marked as nullable either at definition or declaration.</p>
 </div>
 <div class="section" id="classes">
-<h2>12.3. Classes</h2>
+<h2>12.2. Classes</h2>
 <p>A class is a user defined type. A class may have instance fields and methods,
 which can be accessed as attributes. It may also inherit functionality from
-other types, or include functionality from templates.</p>
+other types, or include functionality from <a class="reference internal" href="traits.html"><em>Traits</em></a>.</p>
+</div>
+<div class="section" id="metaclasses">
+<h2>12.3. Metaclasses</h2>
+<p>Since a core concept of Jam is that everything is an object, and objects have
+types, classes must therefore also have a type. The type of a class is called a
+metaclass. A metaclass is a class whose instances are classes, as such they
+define the attributes and functionality of the class itself.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is no syntax for metaclasses yet.</p>
+</div>
 </div>
 <div class="section" id="syntax">
 <h2>12.4. Syntax</h2>
