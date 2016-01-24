@@ -34,16 +34,13 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
-    <link rel="up" title="5. Literals" href="../literals.html" />
-    <link rel="next" title="5.4. Symbols" href="symbols.html" />
-    <link rel="prev" title="5.2. Floats" href="floats.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
     <div id="wrapper">
         
 
@@ -102,13 +99,13 @@
 There are two different types of strings, ones which allow special characters
 and string interpolation and ones which have no special formatting. These are
 called format and wysiwyg strings respectively. All strings are of the builtin
-type <tt class="docutils literal"><span class="pre">String</span></tt>.</p>
+type <code class="docutils literal"><span class="pre">String</span></code>.</p>
 <div class="section" id="syntax">
 <h2>5.3.1. Syntax</h2>
 <pre>
 <strong id="grammar-token-String">String</strong> ::=  &quot;\&quot;&quot; .* &quot;\&quot;&quot;
 </pre>
-<p>Format strings start and end with double quotes (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) and may contain any of
+<p>Format strings start and end with double quotes (<code class="docutils literal"><span class="pre">&quot;</span></code>) and may contain any of
 the following escape sequences:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -121,42 +118,42 @@ the following escape sequences:</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\&quot;</span></tt></td>
-<td>Literal double quote (<tt class="docutils literal"><span class="pre">&quot;</span></tt>)</td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\&quot;</span></code></td>
+<td>Literal double quote (<code class="docutils literal"><span class="pre">&quot;</span></code>)</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\\</span></tt></td>
-<td>Literal backslash (<tt class="docutils literal"><span class="pre">\</span></tt>)</td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\\</span></code></td>
+<td>Literal backslash (<code class="docutils literal"><span class="pre">\</span></code>)</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\0</span></tt></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\0</span></code></td>
 <td>Binary zero</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\a</span></tt></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\a</span></code></td>
 <td>BEL character</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\b</span></tt></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\b</span></code></td>
 <td>Backspace</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\f</span></tt></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\f</span></code></td>
 <td>Formfeed</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\n</span></tt></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\n</span></code></td>
 <td>Newlines</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\r</span></tt></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\r</span></code></td>
 <td>Carriage return</td>
 </tr>
-<tr class="row-even"><td><tt class="docutils literal"><span class="pre">\t</span></tt></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">\t</span></code></td>
 <td>Horizontal Tab</td>
 </tr>
-<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">\v</span></tt></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">\v</span></code></td>
 <td>Vertical Tab</td>
 </tr>
 </tbody>
 </table>
 <p>Format strings also support string interpolation. String interpolation starts
-with a hashtag and open curlybrace (<tt class="docutils literal"><span class="pre">#{</span></tt>), followed by any value and ends with
-a closing curlybrace (<tt class="docutils literal"><span class="pre">}</span></tt>).</p>
-<p>Wysiwyg strings start and end with backticks (<tt class="docutils literal"><span class="pre">`</span></tt>) and have no special
+with a hashtag and open curlybrace (<code class="docutils literal"><span class="pre">#{</span></code>), followed by any value and ends with
+a closing curlybrace (<code class="docutils literal"><span class="pre">}</span></code>).</p>
+<p>Wysiwyg strings start and end with backticks (<code class="docutils literal"><span class="pre">`</span></code>) and have no special
 formatting.</p>
 <div class="section" id="examples">
 <h3>5.3.1.1. Examples</h3>

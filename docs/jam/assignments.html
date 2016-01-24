@@ -34,16 +34,13 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
-    <link rel="up" title="The Jam Language Reference" href="index.html" />
-    <link rel="next" title="9. Flow Control" href="control-flow.html" />
-    <link rel="prev" title="7. Variables" href="variables.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
     <div id="wrapper">
         
 
@@ -105,8 +102,9 @@ of variables, respectively.</p>
 <div class="section" id="syntax">
 <h2>8.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-AssignmentVars">AssignmentVars</strong> ::=  [<a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="variables.html#grammar-token-Variable"><tt class="xref docutils literal"><span class="pre">Variable</span></tt></a>
-<strong id="grammar-token-Assignment">Assignment    </strong> ::=  [<a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot;]* <a class="reference internal" href="#grammar-token-AssignmentVars"><tt class="xref docutils literal"><span class="pre">AssignmentVars</span></tt></a> &quot;=&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a> &quot;,&quot;]* <a class="reference internal" href="values.html#grammar-token-Value"><tt class="xref docutils literal"><span class="pre">Value</span></tt></a>
+<strong id="grammar-token-Assignable">Assignable    </strong> ::=  <a class="reference internal" href="variables.html#grammar-token-Variable"><code class="xref docutils literal"><span class="pre">Variable</span></code></a> | <a class="reference internal" href="operations.html#grammar-token-IndexOperation"><code class="xref docutils literal"><span class="pre">IndexOperation</span></code></a> | <a class="reference internal" href="identifiers.html#grammar-token-Attribute"><code class="xref docutils literal"><span class="pre">Attribute</span></code></a>
+<strong id="grammar-token-AssignmentVars">AssignmentVars</strong> ::=  [<a class="reference internal" href="#grammar-token-Assignable"><code class="xref docutils literal"><span class="pre">Assignable</span></code></a> &quot;,&quot;]* <a class="reference internal" href="#grammar-token-Assignable"><code class="xref docutils literal"><span class="pre">Assignable</span></code></a>
+<strong id="grammar-token-Assignment">Assignment    </strong> ::=  [<a class="reference internal" href="#grammar-token-AssignmentVars"><code class="xref docutils literal"><span class="pre">AssignmentVars</span></code></a> &quot;=&quot;]* <a class="reference internal" href="#grammar-token-AssignmentVars"><code class="xref docutils literal"><span class="pre">AssignmentVars</span></code></a> &quot;=&quot; [<a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;,&quot;]* <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
 </pre>
 </div>
 <div class="section" id="examples">
@@ -135,6 +133,18 @@ of variables, respectively.</p>
 <span class="c"># velocity is equal to speed which is equal to 55.25, and</span>
 <span class="c"># mass is equal to weight which is 100</span>
 <span class="n">velocity,</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed,</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">55.25</span><span class="n">,</span><span class="w"> </span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indexing-assignment">
+<h3>8.2.3. Indexing Assignment</h3>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c">#TODO</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attribute-assignment">
+<h3>8.2.4. Attribute Assignment</h3>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c">#TODO</span>
 </pre></div>
 </div>
 </div>

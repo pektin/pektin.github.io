@@ -42,7 +42,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
     <div id="wrapper">
         
 
@@ -97,16 +97,22 @@
       
   <div class="section" id="about-jam">
 <h1>About Jam</h1>
-<p>Jam is the result of a theory: That all code written in dynamic programming
-languages such as <a class="reference external" href="http://ruby-lang.org">Ruby</a> and <a class="reference external" href="http://python.org">Python</a> can be efficiently translated to equivalent
-code in a non-dynamic language such as C++ or <a class="reference external" href="http://dlang.org">D</a> and thereby compiled. Jam is a
-language that tries to emulate the high level dynamic nature of <a class="reference external" href="http://ruby-lang.org">Ruby</a> and
-<a class="reference external" href="http://python.org">Python</a> in a statically typed, compiled environment.</p>
+<div class="section" id="concept">
+<h2>Concept</h2>
+<p>Jam is an attempt to bridge the gap between dynamic, interpreted languages and
+static compiles ones.</p>
+<p>Effectively most useful language constructs from languages such as <a class="reference external" href="http://ruby-lang.org">Ruby</a> and
+<a class="reference external" href="http://python.org">Python</a> can be statically verified and compiled to something as natively
+efficient as if the equivalent were written in languages such as C++ or <a class="reference external" href="http://dlang.org">D</a>.</p>
+<p>Because of this, it is possible to combine a lot of the type safety and other
+neat features from static compiled languages with the dynamic nature common to
+interpreted ones. This includes types as values, monkey-patching and
+duck-typing.</p>
+</div>
 <div class="section" id="syntax">
 <h2>Syntax</h2>
-<p>The syntax of Jam is heavily inspired by <a class="reference external" href="http://ruby-lang.org">Ruby</a> and <a class="reference external" href="http://python.org">Python</a>, with the occasional
-hint of other languages. The syntax was designed after the type system and
-builds upon it.</p>
+<p>Jam syntax is heavily inspired by <a class="reference external" href="http://ruby-lang.org">Ruby</a> with a hint of <a class="reference external" href="http://python.org">Python</a> and <a class="reference external" href="http://dlang.org">D</a>, designed
+with readability and writeability in mind.</p>
 </div>
 </div>
 

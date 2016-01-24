@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
     <div id="wrapper">
         
 
@@ -99,43 +99,39 @@
 <p class="rubric">An open source programming language that combines the expressiveness
 of dynamic languages with a powerful static type system for native
 efficiency.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">import</span><span class="w"> </span><span class="n">sys</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Compute the average line length from stdin</span>
+<span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">lines</span>()
+<span class="n">length_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">sum</span>()
 
-<span class="c"># Compute the average line length from stdin</span>
-<span class="n">sum_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-<span class="k">for</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span>
-<span class="w">  </span><span class="n">length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
-<span class="w">  </span><span class="n">sum_length</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">line</span><span class="o">.</span><span class="n">length</span>
+<span class="k">if</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length_sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">length</span>
+<span class="w">  </span><span class="n">print</span>(<span class="s">&quot;Average line length: #{average}&quot;</span>)
 <span class="k">end</span>
-
-<span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="m">0</span>
-<span class="n">print</span>(<span class="s">&quot;Average line length: #{average}&quot;</span>)
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The above example is not yet entirely supported by the language</p>
 </div>
+<div class="toctree-wrapper compound">
+</div>
 <div class="section" id="features">
 <h2>Features</h2>
 <ul class="simple">
-<li>strong, static duck-typing, with optional type annotations</li>
-<li>fast compiling</li>
-<li>compiles to efficient native code</li>
-<li>Object Oriented Programming* and functional style*</li>
-<li>easily replaceable frontend/backend defaulting to Jam/LLVM</li>
-<li>metaprogramming* (dependent types, metaclasses)</li>
-<li>efficient C bindings*</li>
+<li>Strong, static duck-typing, with optional type annotations</li>
+<li>Common value semantics between values and types*</li>
+<li>Fast compiling*</li>
+<li>Compiles to efficient native code</li>
+<li>Non-restrictive towards programming paradigms</li>
+<li>Powerful meta-programming* (dependent types, meta-classes)</li>
+<li>Efficient C bindings*</li>
 </ul>
-<p>* Some features are not yet supported by the language</p>
+<p>* Some features are yet to be implemented</p>
 </div>
 <div class="section" id="open-source">
 <h2>Open Source</h2>
-<p>Jam is being developed under the MIT License, giving everyone the freedom to do
-what they want to do with the language. Contributions on <a class="reference external" href="https://github.com/pektin/jam">Github</a> are always
-welcome</p>
-<div class="toctree-wrapper compound">
-</div>
+<p>Jam is licensed under MIT, giving everyone the freedom to do what they want to
+do with the language. Contributions on <a class="reference external" href="https://github.com/pektin/jam">Github</a> are always welcome.</p>
 </div>
 </div>
 

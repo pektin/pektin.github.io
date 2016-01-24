@@ -7,45 +7,41 @@ The Jam Programming Language
 
 ::
 
-    import sys
-
     # Compute the average line length from stdin
-    sum_length = length = 0
-    for line in sys.stdin
-      length += 1
-      sum_length += line.length
-    end
+    lines = io.stdin.lines()
+    length_sum = lines.sum()
 
-    average = sum_length / length if length > 0 else 0
-    print("Average line length: #{average}")
+    if lines.length > 0
+      average = length_sum / lines.length
+      print("Average line length: #{average}")
+    end
 
 .. note::
     The above example is not yet entirely supported by the language
-
-Features
-========
-
-* strong, static duck-typing, with optional type annotations
-* fast compiling
-* compiles to efficient native code
-* Object Oriented Programming* and functional style*
-* easily replaceable frontend/backend defaulting to Jam/LLVM
-* metaprogramming* (dependent types, metaclasses)
-* efficient C bindings*
-
-\* Some features are not yet supported by the language
-
-Open Source
-===========
-
-Jam is being developed under the MIT License, giving everyone the freedom to do
-what they want to do with the language. Contributions on Github_ are always
-welcome
-
-.. _Github: https://github.com/pektin/jam
 
 .. toctree::
     :hidden:
 
     about
     docs/index
+
+Features
+========
+
+* Strong, static duck-typing, with optional type annotations
+* Common value semantics between values and types*
+* Fast compiling*
+* Compiles to efficient native code
+* Non-restrictive towards programming paradigms
+* Powerful meta-programming* (dependent types, meta-classes)
+* Efficient C bindings*
+
+\* Some features are yet to be implemented
+
+Open Source
+===========
+
+Jam is licensed under MIT, giving everyone the freedom to do what they want to
+do with the language. Contributions on Github_ are always welcome.
+
+.. _Github: https://github.com/pektin/jam
