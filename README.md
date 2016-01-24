@@ -1,21 +1,37 @@
 # lets-jam.org
 
-The website for the Jam programming language
+The website for the Jam programming language.
 
 ## Requirements
 
-The website currently uses the Sphinx documentation generator, along with the bootstrap theme. You will need to install all of the following:
+The website currently uses the Sphinx documentation generator, along with the
+bootstrap theme. You will need to install all of the following:
 
- - Sphinx: http://sphinx-doc.org/
- - Boostrap: http://ryan-roemer.github.io/sphinx-bootstrap-theme/
- - make
+- [Sphinx](http://sphinx-doc.org/)
+- [Sphinx Boostrap](http://ryan-roemer.github.io/sphinx-bootstrap-theme/)
+- make
 
 ### On Ubuntu
-```
+
+```bash
 sudo apt-get install python3-sphinx python3-pip make
 sudo pip3 install sphinx_bootstrap_theme
 ```
 
-## Deployment
+## Building
 
-The `site` branch is the one used for active development. In order to perform a local build run `./build.py build`. The jam documentation will be fetched and the sphinx site built. With `./build deploy` the build contents will be moved to the `master` branch, which can then be comitted and pushed to update the website.
+Building is done using the `build.py` build script. By default `build.py` will
+fetch a temporary clone of [Jam](https://github.com/pektin/jam) for the
+documentation. If you have a local copy use the `--repo` or `-r` arguments to
+use the local copy instead. `build.py` has 3 commands:
+
+* `build` makes a local build.
+* `deploy` makes a local build in the `master` branch to be pushed to github in
+  order to deploy the site.
+* `clean` removes the local build data.
+
+For more help run:
+
+```bash
+./build.py --help
+```
