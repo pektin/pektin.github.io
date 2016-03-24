@@ -34,6 +34,9 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
+    <link rel="up" title="The Jam Tutorial" href="index.html" />
+    <link rel="next" title="7. Control Flow" href="control-flow.html" />
+    <link rel="prev" title="5. Literals" href="literals.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -97,7 +100,7 @@
 <h1>6. Variables</h1>
 <p>Variables are mutable containers for values. Because Jam is statically typed,
 every variables has exactly one type. It is however never necessary to
-explicitly specify the type of a variable as the compiler will infer one.</p>
+explicitly specify the type of a variable, as the compiler will infer one.</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Explicitly declare `x` as an integer and assign 12</span>
 <span class="n">x</span><span class="o">:</span><span class="nb">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span>
 
@@ -110,22 +113,12 @@ explicitly specify the type of a variable as the compiler will infer one.</p>
 <p class="last">Although by design a variable&#8217;s type never needs to be defined, this is not
 the case yet.</p>
 </div>
-<p>Jam does not differentiate between a declaration and an assignment, thus
-variables are implicitly declared on their first assignment. This holds inside
-local scopes as well.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Declaration and assignment</span>
+<p>Jam does not differentiate between a declaration and an assignment. Variables
+are implicitly created on their first assignment.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># assignment that implicitly creates a variable</span>
 <span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>
 <span class="c"># Just an assignment</span>
 <span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
-
-<span class="c"># Works for local scopes</span>
-<span class="c"># `b` does not have to be declared before the if block</span>
-<span class="k">if</span><span class="w"> </span><span class="n">some_condition</span>
-<span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;yes&quot;</span>
-<span class="k">else</span>
-<span class="w">  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;no&quot;</span>
-<span class="k">end</span>
-<span class="nb">puts</span>(<span class="n">b</span>)
 </pre></div>
 </div>
 <p>A variable&#8217;s type may not change. Therefore assignment a value not compatible

@@ -34,6 +34,9 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
+    <link rel="up" title="The Jam Tutorial" href="index.html" />
+    <link rel="next" title="4. String Formatting" href="string-formatting.html" />
+    <link rel="prev" title="2. Hello World" href="helloworld.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -98,15 +101,11 @@
 <p>Jam supports only one kind of comment, which spans for a single line. Since most
 modern editors have built-in shortcuts to comment out multiple lines of code,
 this is a non-issue.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Returns the given Fibonacci number</span>
-<span class="c"># Guaranteed to run in constant time</span>
-<span class="k">def</span><span class="w"> </span><span class="n">fib</span>(<span class="n">n</span><span class="o">:</span><span class="nb">Int</span>)
-<span class="w">    </span><span class="c"># Formula for finding the nth Fibonacci number</span>
-<span class="w">    </span><span class="c"># Uses the golden ratio constant (Phi) and it&#39;s reciprocal (phi)</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.618_033_988_749_894_848_204_586</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="n">Phi</span>
-<span class="w">    </span><span class="n">return</span><span class="w"> </span>((<span class="n">Phi</span><span class="o">**</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>(<span class="o">-</span><span class="n">phi</span>)<span class="o">**</span><span class="n">n</span>)<span class="w"> </span><span class="o">/</span><span class="w"> </span>(<span class="n">Phi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">phi</span>))<span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int</span>
-<span class="k">end</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># The golden ratio (Phi)</span>
+<span class="k">const</span><span class="w"> </span><span class="n">Phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.618_033_988_749_894_848_204_586</span>
+
+<span class="c"># and it&#39;s reciprocal (phi)</span>
+<span class="k">const</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="n">Phi</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
