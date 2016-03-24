@@ -136,6 +136,8 @@ The type of the return value may be explicitly stated.</p>
 <span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pythag_hypotenuse</span>(<span class="m">12.3</span><span class="n">,</span><span class="w"> </span><span class="m">8.3</span>)
 </pre></div>
 </div>
+<div class="section" id="overloading">
+<h2>8.1. Overloading</h2>
 <p>Methods may be &#8216;overloaded&#8217; with different arguments/argument types. This
 concept should be used sparingly, but avoids unnecessary name clutter (ie.
 <code class="docutils literal"><span class="pre">printf</span></code>, <code class="docutils literal"><span class="pre">fprintf</span></code>, <code class="docutils literal"><span class="pre">sprintf</span></code> and <code class="docutils literal"><span class="pre">snprintf</span></code> from C)</p>
@@ -165,6 +167,9 @@ means ambiguity, which results in a compiler error.</p>
 <span class="n">not_right</span>(<span class="m">4</span>)
 </pre></div>
 </div>
+</div>
+<div class="section" id="specialisation">
+<h2>8.2. Specialisation</h2>
 <p>Methods whose arguments do not have a defined type are considered to be more
 generic than those that do. Because of this, the non-generic methods are checked
 for matching overloads separately and before the generic ones are. This allows
@@ -186,6 +191,32 @@ for specialisation.</p>
 <span class="n">pythag_hypotenuse</span>(<span class="m">5</span><span class="n">,</span><span class="w"> </span><span class="m">2</span>)<span class="w"> </span><span class="c"># Uses the specialisation for integers</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="method-closures">
+<h2>8.3. Method Closures</h2>
+<p>Methods always operate inside the context they are defined in. Methods are
+allowed to be defined within non-static (created at runtime) contexts, such as
+other methods.</p>
+<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">say_factory</span>(<span class="n">greeting</span><span class="o">:</span><span class="n">String</span>)
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">say_greeting</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
+<span class="w">    </span><span class="nb">puts</span>(<span class="s">&quot;#{greeting} #{name}&quot;</span>)
+<span class="w">  </span><span class="k">end</span>
+
+<span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">say_greeting</span>
+<span class="k">end</span>
+
+<span class="n">say_hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">say_factory</span>(<span class="s">&quot;Hello,&quot;</span>)
+<span class="n">say_yo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">say_factory</span>(<span class="s">&quot;yo&quot;</span>)
+
+<span class="c"># Hello, Jam</span>
+<span class="n">say_hello</span>(<span class="s">&quot;Jam&quot;</span>)
+<span class="c"># yo closure</span>
+<span class="n">say_yo</span>(<span class="s">&quot;closure&quot;</span>)
+</pre></div>
+</div>
+</div>
+<div class="section" id="method-values">
+<h2>8.4. Method Values</h2>
 <p>Methods can also be used as values themselves, in the same exact way as any
 other value. This works together with overloads and specialisation.</p>
 <div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">do_twice</span>(<span class="n">action</span>)
@@ -199,6 +230,7 @@ other value. This works together with overloads and specialisation.</p>
 
 <span class="n">do_twice</span>(<span class="n">lazy</span><span class="w"> </span><span class="n">say_hello</span>)
 </pre></div>
+</div>
 </div>
 </div>
 
