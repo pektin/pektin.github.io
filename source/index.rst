@@ -13,7 +13,7 @@ The Jam Programming Language
 
     if lines.length > 0
       average = length_sum / lines.length
-      print("Average line length: #{average}")
+      puts("Average line length: #{average}")
     end
 
 .. note::
