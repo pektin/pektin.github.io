@@ -12,8 +12,11 @@ The Jam Programming Language
 
     if lines.length > 0
       average = lines.map($length).sum() / lines.length
-      puts("Average line length: #{average}")
+    else
+      average = 0
     end
+
+    puts("Average line length: #{average}")
 
 .. note::
     The above example is not yet entirely supported by the language
