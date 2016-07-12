@@ -9,10 +9,9 @@ The Jam Programming Language
 
     # Compute the average line length from stdin
     lines = io.stdin.lines()
-    length_sum = lines.sum()
 
     if lines.length > 0
-      average = length_sum / lines.length
+      average = lines.map($length).sum() / lines.length
       puts("Average line length: #{average}")
     end
 
@@ -29,11 +28,11 @@ Features
 ========
 
 * Strong, static duck-typing, with optional type annotations
-* Common value semantics between values and types*
+* Common value semantics between values and types
 * Fast compiling*
 * Compiles to efficient native code
 * Non-restrictive towards programming paradigms
-* Powerful meta-programming* (dependent types, meta-classes)
+* Powerful meta-programming (dependent types, meta-classes)
 * Efficient C bindings*
 
 \* Some features are yet to be implemented

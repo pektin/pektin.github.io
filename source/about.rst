@@ -13,7 +13,7 @@ efficient as if the equivalent were written in languages such as C++ or D_.
 
 Because of this, it is possible to combine a lot of the type safety and other
 neat features from static compiled languages with the dynamic nature common to
-interpreted ones. This includes types as values, monkey-patching and
+interpreted ones. This includes types as values, monkey-patching and effective
 duck-typing.
 
 Syntax
