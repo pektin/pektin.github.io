@@ -99,14 +99,16 @@
 <p class="rubric">An open source programming language that combines the expressiveness
 of dynamic languages with a powerful static type system for native
 efficiency.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Compute the average line length from stdin</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Compute the average line length from stdin</span>
 <span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">lines</span>()
-<span class="n">length_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">sum</span>()
 
 <span class="k">if</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span>
-<span class="w">  </span><span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">length_sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">length</span>
-<span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;Average line length: #{average}&quot;</span>)
+<span class="w">  </span><span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">map</span>(<span class="n">$length</span>)<span class="o">.</span><span class="n">sum</span>()<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">lines</span><span class="o">.</span><span class="n">length</span>
+<span class="k">else</span>
+<span class="w">  </span><span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
 <span class="k">end</span>
+
+<span class="nb">puts</span>(<span class="s">&quot;Average line length: #{average}&quot;</span>)
 </pre></div>
 </div>
 <div class="admonition note">
@@ -119,11 +121,11 @@ efficiency.</p>
 <h2>Features</h2>
 <ul class="simple">
 <li>Strong, static duck-typing, with optional type annotations</li>
-<li>Common value semantics between values and types*</li>
+<li>Common value semantics between values and types</li>
 <li>Fast compiling*</li>
 <li>Compiles to efficient native code</li>
 <li>Non-restrictive towards programming paradigms</li>
-<li>Powerful meta-programming* (dependent types, meta-classes)</li>
+<li>Powerful meta-programming (dependent types, meta-classes)</li>
 <li>Efficient C bindings*</li>
 </ul>
 <p>* Some features are yet to be implemented</p>

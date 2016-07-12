@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>7. Variables &mdash; Jam</title>
+    <title>1. Installing &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Tutorial" href="index.html" />
-    <link rel="next" title="8. Control Flow" href="control-flow.html" />
-    <link rel="prev" title="6. Literals" href="literals.html" />
+    <link rel="next" title="2. Tooling" href="tooling.html" />
+    <link rel="prev" title="The Jam Tutorial" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -96,38 +96,55 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="variables">
-<h1>7. Variables</h1>
-<p>Variables are mutable containers for values. Because Jam is statically typed,
-every variables has exactly one type. It is however never necessary to
-explicitly specify the type of a variable, as the compiler will infer one.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Explicitly declare `x` as an integer and assign 12</span>
-<span class="n">x</span><span class="o">:</span><span class="nb">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12</span>
-
-<span class="c"># Let the compiler infer the type of `greeting` to be  `String`</span>
-<span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span>
-</pre></div>
+  <div class="section" id="installing">
+<h1>1. Installing</h1>
+<p>Currently Jam is only provided as a python module. In order to install the Jam
+compiler tool, clone or download the source repository from <a class="reference external" href="https://github.com/pektin/jam">Github</a>. Once
+downloaded, run <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> to symlink all tools into your <code class="docutils literal"><span class="pre">/usr/bin</span></code>
+directory.</p>
+<p>Jam assumes you have the following dependencies installed:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Python 3.4 (or later)</div>
+<div class="line">llvm-3.6 shared library (built without assertions)</div>
+<div class="line">clang-3.6</div>
 </div>
+</div></blockquote>
+<p>See the following sections for installing those dependencies for a specific OS/Dist.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Although by design a variable&#8217;s type never needs to be defined, this is not
-the case yet.</p>
+<p class="last">Once the compiler is bootstrapped, a proper install procedure will be
+written. Until then this works well enough.</p>
 </div>
-<p>Jam does not differentiate between a declaration and an assignment. Variables
-are implicitly created on their first assignment.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># assignment that implicitly creates a variable</span>
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>
-<span class="c"># Just an assignment</span>
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<div class="section" id="ubuntu-14-04-trusty-tahr">
+<h2>1.1. Ubuntu &gt;= 14.04 (Trusty Tahr)</h2>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>apt-get install python3 libllvm3.6 llvm-runtime clang-3.6
 </pre></div>
 </div>
-<p>A variable&#8217;s type may not change. Therefore assignment a value not compatible
-with its type is not allowed.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span>
-<span class="c"># TypeError:</span>
-<span class="c"># Cannot assign `&quot;Hello World&quot;` of type String to variable `a` of type `Int`</span>
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;String&quot;</span>
+</div>
+<div class="section" id="ubuntu-14-04">
+<h2>1.2. Ubuntu &lt; 14.04</h2>
+<p>See <a class="reference external" href="http://apt.llvm.org">apt.llvm.org</a> for instructions on how to set up your
+system to fetch the llvm 3.6 packages.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>apt-get install python3 libllvm3.6 llvm-runtime clang-3.6
 </pre></div>
+</div>
+</div>
+<div class="section" id="darwin-osx-journaled">
+<h2>1.3. Darwin (OSX Journaled)</h2>
+<p>If you haven&#8217;t already, install <a class="reference external" href="http://brew.sh">brew</a>.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>brew install python3
+</pre></div>
+</div>
+<p>The llvm-3.6 library on brew is built with assertions, which break the Jam code
+generator. As a workaround you will have to install llvm-3.6 from source, or
+make due with possible bugs.</p>
+<p>You can download the source for llvm 3.6 from
+<a class="reference external" href="http://llvm.org/releases/download.html">http://llvm.org/releases/download.html</a> and build with:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>./configure --enable-shared --disable-assertions
+make install
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -147,7 +164,7 @@ with its type is not allowed.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../_sources/docs/tut/variables.txt"
+  <a href="../../_sources/docs/tut/installing.txt"
      rel="nofollow">Source</a>
 </div>
       

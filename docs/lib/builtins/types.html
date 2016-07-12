@@ -100,7 +100,7 @@
 <h1>1.2. Builtin Types</h1>
 <div class="section" id="generic-numerical-classes">
 <h2>1.2.1. Generic Numerical Classes</h2>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="nb">Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nb">Int</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">UInt</span>
 </pre></div>
 </div>
@@ -111,7 +111,7 @@ virtually infinitely large numbers (limited only by memory) and the default
 type for any integer literal.</p>
 <p>Note that being unrestricted has a performance impact on the class. For
 performance critical code the use of sized integer types is suggested.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
 <span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
 <span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
 <span class="k">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="nb">Int</span>
@@ -122,14 +122,14 @@ performance critical code the use of sized integer types is suggested.</p>
 <blockquote>
 <div>All standard mathematical operations except normal division are
 supported by this class.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Ints may be implicitly cast to real numbers, resulting in normal
 divisions of integers returning reals.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int8</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int8</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int16</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int32</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int64</span>
@@ -141,28 +141,28 @@ divisions of integers returning reals.</div></blockquote>
 <div>Ints may be explicitly cast to any sized integer type, possibly
 resulting in an exception if the size of the integer is larger than the
 requested type.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>The underlying representation can be obtained by explicitly casting to a
 Byte array.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">UInt</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">UInt</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>The <cite>Int</cite> class may be explicitly cast to <cite>UInt</cite>. If the number is
 negative an exception is thrown.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>The <cite>UInt</cite> class may be implicitly cast to <cite>Int</cite>.</div></blockquote>
 </div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="n">Real</span>
 <span class="k">class</span><span class="w"> </span><span class="n">UReal</span>
 </pre></div>
 </div>
@@ -170,7 +170,7 @@ negative an exception is thrown.</div></blockquote>
 <blockquote>
 <div><p>A generic real number class is an arbitrary precision floating point number
 and the default type for any real number literal.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
 <span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
 <span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
 <span class="k">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">Real</span>
@@ -181,22 +181,22 @@ and the default type for any real number literal.</p>
 <blockquote>
 <div>All standard mathematical operations except integer division are
 supported by this class.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Float32</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Float32</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Float64</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
-<div>Any real may be cast to any sized floating point type, possibly
-resulting in an exception if the sizes are incompatible.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int</span>
+<div>Any real may be cast to any sized floating point type.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any real may also be explicitly cast to an integer. The resulting
-integer is guaranteed to be rounded to the correct integer number.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
+integer is guaranteed to be rounded to the correct integer number. May
+result in an exception if the real is too large.</div></blockquote>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
 </pre></div>
 </div>
 <p></p>
@@ -207,7 +207,7 @@ Byte array.</div></blockquote>
 </div>
 <div class="section" id="sized-numeric-classes">
 <h2>1.2.2. Sized Numeric Classes</h2>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="nb">Int8</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nb">Int8</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">Int16</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">Int32</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">Int64</span>
@@ -225,7 +225,7 @@ Byte array.</div></blockquote>
 or unsigned) of <cite>XXX</cite> number of bits. Operations with these types are
 typically single instructions and thereby faster than their generic
 counterparts.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
@@ -235,33 +235,33 @@ counterparts.</p>
 <p></p>
 <blockquote>
 <div>All operations except for normal division are supported.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="nb">Int</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>IntXXX</cite> or <cite>UIntXXX</cite> may be implicitly cast to <cite>Int</cite></div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="nb">UInt</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="nb">UInt</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>UIntXXX</cite> may be implicitly cast to <cite>UInt</cite></div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">IntXXX</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">IntXXX</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UIntXXX</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>T</cite> may be explicitly cast to any other sized integer type.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>IntXXX</cite> or <cite>UIntXXX</cite> may be cast to it&#8217;s underlying representation.</div></blockquote>
 </div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">class</span><span class="w"> </span><span class="nb">Float32</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nb">Float32</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">Float64</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">UFloat32</span>
 <span class="k">class</span><span class="w"> </span><span class="nb">UFloat64</span>
@@ -273,7 +273,7 @@ counterparts.</p>
 numbers (signed or unsigned) of <cite>XX</cite> number of bits. Operations with these
 types are typically single instructions and thereby a lot faster than their
 generic counterparts.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
 <span class="k">self</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">other</span><span class="o">:</span><span class="n">T</span>
@@ -283,26 +283,26 @@ generic counterparts.</p>
 <p></p>
 <blockquote>
 <div>All operations except for integer division are supported.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="n">Real</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>FloatXX</cite> or <cite>UFloatXX</cite> may be implicitly cast to <cite>Real</cite>.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="o">:</span><span class="n">UReal</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="o">:</span><span class="n">UReal</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>UFloatXX</cite> may be implicitly cast to <cite>UReal</cite></div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">FloatXX</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">FloatXX</span>
 <span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">UFloatXX</span>
 </pre></div>
 </div>
 <p></p>
 <blockquote>
 <div>Any <cite>T</cite> may be explicitly cast to any other sized integer type.</div></blockquote>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">self</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Byte[]</span>
 </pre></div>
 </div>
 <p></p>

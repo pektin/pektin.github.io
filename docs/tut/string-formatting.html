@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>4. String Formatting &mdash; Jam</title>
+    <title>5. String Formatting &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Tutorial" href="index.html" />
-    <link rel="next" title="5. Literals" href="literals.html" />
-    <link rel="prev" title="3. Comments" href="comments.html" />
+    <link rel="next" title="6. Literals" href="literals.html" />
+    <link rel="prev" title="4. Comments" href="comments.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -97,10 +97,10 @@
     <div class="col-md-12">
       
   <div class="section" id="string-formatting">
-<h1>4. String Formatting</h1>
+<h1>5. String Formatting</h1>
 <p>String are denoted by a pair of <code class="docutils literal"><span class="pre">&quot;</span></code> and may span multiple lines.</p>
 <div class="section" id="interpolation">
-<h2>4.1. Interpolation</h2>
+<h2>5.1. Interpolation</h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">String Interpolation is not yet supported.</p>
@@ -108,7 +108,7 @@
 <p>In order to insert values into strings jam supports a concept called string
 interpolation. Anything inside a string between a <code class="docutils literal"><span class="pre">#{</span></code> and a <code class="docutils literal"><span class="pre">}</span></code> is
 cast to a <code class="docutils literal"><span class="pre">String</span></code> and inserted into the string.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Harold&quot;</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Harold&quot;</span>
 
 <span class="c"># This will print out &quot;My name is Harold&quot;</span>
 <span class="nb">puts</span>(<span class="s">&quot;My name is #{name}&quot;</span>)
@@ -116,7 +116,7 @@ cast to a <code class="docutils literal"><span class="pre">String</span></code> 
 </div>
 </div>
 <div class="section" id="special-characters">
-<h2>4.2. Special Characters</h2>
+<h2>5.2. Special Characters</h2>
 <p>Strings have a set of special sequences for characters not easily represented
 in source code.</p>
 <table border="1" class="docutils">
@@ -167,16 +167,16 @@ in source code.</p>
 </table>
 </div>
 <div class="section" id="wysywyg-strings">
-<h2>4.3. WYSYWYG Strings</h2>
+<h2>5.3. WYSYWYG Strings</h2>
 <p>A special subset of string denoted by a pair of <code class="docutils literal"><span class="pre">`</span></code> has the same behaviour as
 stings, except they do not support interpolation or special characters.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># This will print `#{foo} \0 &quot;&quot;`</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># This will print `#{foo} \0 &quot;&quot;`</span>
 <span class="nb">puts</span>(<span class="s">`#{foo} \0 &quot;&quot;`</span>)
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="../jam/literals/strings.html"><em>Strings language reference</em></a></p>
+<p class="last"><a class="reference internal" href="../jam/literals/strings.html"><span class="doc">Strings language reference</span></a></p>
 </div>
 </div>
 </div>

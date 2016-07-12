@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1. Tooling &mdash; Jam</title>
+    <title>2. Tooling &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Tutorial" href="index.html" />
-    <link rel="next" title="2. Hello World" href="helloworld.html" />
-    <link rel="prev" title="The Jam Tutorial" href="index.html" />
+    <link rel="next" title="3. Hello World" href="helloworld.html" />
+    <link rel="prev" title="1. Installing" href="installing.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -97,15 +97,15 @@
     <div class="col-md-12">
       
   <div class="section" id="tooling">
-<h1>1. Tooling</h1>
+<h1>2. Tooling</h1>
 <p>Jam provides a variety of tools useful for working in the language. All of these
 are accessible through the central <code class="docutils literal"><span class="pre">jam</span></code> binary.</p>
 <div class="section" id="interactive">
-<h2>1.1. Interactive</h2>
+<h2>2.1. Interactive</h2>
 <p>Running <code class="docutils literal"><span class="pre">jam</span></code> without any arguments opens up an interactive compiler session.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam
 Jam v0.1a interactive compiler
-<span class="c">#|</span>
+<span class="c1">#|</span>
 </pre></div>
 </div>
 <p>Source can now be written directly into the terminal. Leaving a blank line will
@@ -113,72 +113,72 @@ make the tool compile and run the written source. Source written between blank
 lines will currently not carry over.</p>
 </div>
 <div class="section" id="running">
-<h2>1.2. Running</h2>
+<h2>2.2. Running</h2>
 <p>Invoking <code class="docutils literal"><span class="pre">jam</span></code> on a file compiles and runs it directly. Jam source files
 typically have a <code class="docutils literal"><span class="pre">.jm</span></code> extension.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam hello_world.jm
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam hello_world.jm
 Hello World!
 </pre></div>
 </div>
 <p>Alternatively you can use the <code class="docutils literal"><span class="pre">run</span></code> or just <code class="docutils literal"><span class="pre">r</span></code> command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam run hello_world.jm
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam run hello_world.jm
 Hello World!
-<span class="nv">$ </span>jam r hello_world.jm
+$ jam r hello_world.jm
 Hello World!
 </pre></div>
 </div>
 </div>
 <div class="section" id="compiling">
-<h2>1.3. Compiling</h2>
+<h2>2.3. Compiling</h2>
 <p>Source files can also be compiled to executable binaries using the <code class="docutils literal"><span class="pre">compile</span></code>
 or just <code class="docutils literal"><span class="pre">c</span></code> command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam compile hello_world.jm
-<span class="nv">$ </span>jam c hello_world.jm
-<span class="nv">$ </span>./hello_world
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam compile hello_world.jm
+$ jam c hello_world.jm
+$ ./hello_world
 Hello World!
 </pre></div>
 </div>
 <p>Use the <code class="docutils literal"><span class="pre">-o</span></code> option to specify an output file name.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam c hello_world.jm -o a.out
-<span class="nv">$ </span>./a.out
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam c hello_world.jm -o a.out
+$ ./a.out
 Hello World!
 </pre></div>
 </div>
 </div>
 <div class="section" id="further-options">
-<h2>1.4. Further Options</h2>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>jam r --help
-usage: jam run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+<h2>2.4. Further Options</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jam r --help
+usage: jam run <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span>source<span class="o">]</span>
 
 positional arguments:
-  <span class="nb">source         </span>the <span class="nb">source </span>file to run. Leave out <span class="k">for</span> interactive mode
+  <span class="nb">source</span>         the <span class="nb">source</span> file to run. Leave out <span class="k">for</span> interactive mode
 
 optional arguments:
-  -h, --help     show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -h, --help     show this <span class="nb">help</span> message and <span class="nb">exit</span>
   -V, --version  print the jam version number and terminate
   -p, --profile  run the profiler, printing profiling data after completion
-  -v, --verbose  use verbose logging. Supply multiple <span class="nb">times </span>to increase
+  -v, --verbose  use verbose logging. Supply multiple <span class="nb">times</span> to increase
                  verbosity
   -O X           optimisation level
 
-<span class="nv">$ </span>jam c --help
-usage: jam compile <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span>-o FILE<span class="o">]</span> <span class="o">[</span><span class="nb">source</span><span class="o">]</span>
+$ jam c --help
+usage: jam compile <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="o">[</span>-p<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-O X<span class="o">]</span> <span class="o">[</span>-o FILE<span class="o">]</span> <span class="o">[</span>source<span class="o">]</span>
 
 positional arguments:
-  <span class="nb">source                </span>the <span class="nb">source </span>file to compile. Leave out to <span class="nb">read </span>from
+  <span class="nb">source</span>                the <span class="nb">source</span> file to compile. Leave out to <span class="nb">read</span> from
                         stdin
 
 optional arguments:
-  -h, --help            show this <span class="nb">help </span>message and <span class="nb">exit</span>
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
   -V, --version         print the jam version number and terminate
   -p, --profile         run the profiler, printing profiling data after
                         completion
-  -v, --verbose         use verbose logging. Supply multiple <span class="nb">times </span>to increase
+  -v, --verbose         use verbose logging. Supply multiple <span class="nb">times</span> to increase
                         verbosity
   -O X                  optimisation level
   -o FILE, --output FILE
                         the file to write the executable to. Leave out to <span class="nb">let</span>
-<span class="nb">                        </span>jam guess the name
+                        jam guess the name
 </pre></div>
 </div>
 </div>

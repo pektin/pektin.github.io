@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>8. Methods &mdash; Jam</title>
+    <title>9. Methods &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -35,7 +35,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Tutorial" href="index.html" />
-    <link rel="prev" title="7. Control Flow" href="control-flow.html" />
+    <link rel="next" title="10. Lambdas" href="lambdas.html" />
+    <link rel="prev" title="8. Control Flow" href="control-flow.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -96,11 +97,11 @@
     <div class="col-md-12">
       
   <div class="section" id="methods">
-<h1>8. Methods</h1>
+<h1>9. Methods</h1>
 <p>In order to separate program logic and allow reuse, code can be grouped together
 inside a method. In order to run the code defined inside a method, the method
 must be &#8216;called&#8217;.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">introduction</span>()
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">introduction</span>()
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;Hello!&quot;</span>)
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;I am Jam&quot;</span>)
 <span class="k">end</span>
@@ -116,7 +117,7 @@ argument may be left out.</p>
 <p class="last"><code class="docutils literal"><span class="pre">puts</span></code> is also a method, part of a whole set of methods predefined by the
 language.</p>
 </div>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span>)
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;Hello, #{name}!&quot;</span>)
 <span class="k">end</span>
 
@@ -126,7 +127,7 @@ language.</p>
 </div>
 <p>A method may also return a set of values that can then be used by the caller.
 The type of the return value may be explicitly stated.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># Calculates the length of a hypotenuse,</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Calculates the length of a hypotenuse,</span>
 <span class="c"># given the lengths of the other two sides of a right-angled triangle.</span>
 <span class="k">def</span><span class="w"> </span><span class="n">pythag_hypotenuse</span>(<span class="n">a</span><span class="o">:</span><span class="n">Real,</span><span class="w"> </span><span class="n">b</span><span class="o">:</span><span class="n">Real</span>)<span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Real</span>
 <span class="w">  </span><span class="c"># The sqrt method returns the square root of its argument.</span>
@@ -137,11 +138,11 @@ The type of the return value may be explicitly stated.</p>
 </pre></div>
 </div>
 <div class="section" id="overloading">
-<h2>8.1. Overloading</h2>
+<h2>9.1. Overloading</h2>
 <p>Methods may be &#8216;overloaded&#8217; with different arguments/argument types. This
 concept should be used sparingly, but avoids unnecessary name clutter (ie.
 <code class="docutils literal"><span class="pre">printf</span></code>, <code class="docutils literal"><span class="pre">fprintf</span></code>, <code class="docutils literal"><span class="pre">sprintf</span></code> and <code class="docutils literal"><span class="pre">snprintf</span></code> from C)</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;Hello, #{name}!&quot;</span>)
 <span class="k">end</span>
 
@@ -155,7 +156,7 @@ concept should be used sparingly, but avoids unnecessary name clutter (ie.
 </div>
 <p>A method call must always match exactly one overload. Matching more than one
 means ambiguity, which results in a compiler error.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">not_right</span>(<span class="n">number</span><span class="o">:</span><span class="nb">Int</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">not_right</span>(<span class="n">number</span><span class="o">:</span><span class="nb">Int</span>)
 <span class="w">  </span><span class="nb">puts</span>(<span class="n">number</span>)
 <span class="k">end</span>
 
@@ -169,12 +170,12 @@ means ambiguity, which results in a compiler error.</p>
 </div>
 </div>
 <div class="section" id="specialisation">
-<h2>8.2. Specialisation</h2>
+<h2>9.2. Specialisation</h2>
 <p>Methods whose arguments do not have a defined type are considered to be more
 generic than those that do. Because of this, the non-generic methods are checked
 for matching overloads separately and before the generic ones are. This allows
 for specialisation.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="c"># A generic implementation</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># A generic implementation</span>
 <span class="k">def</span><span class="w"> </span><span class="n">pythag_hypotenuse</span>(<span class="n">a,</span><span class="w"> </span><span class="n">b</span>)
 <span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">sqrt</span>(<span class="n">a</span><span class="o">**</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="o">**</span><span class="m">2</span>)
 <span class="k">end</span>
@@ -193,11 +194,11 @@ for specialisation.</p>
 </div>
 </div>
 <div class="section" id="method-closures">
-<h2>8.3. Method Closures</h2>
+<h2>9.3. Method Closures</h2>
 <p>Methods always operate inside the context they are defined in. Methods are
 allowed to be defined within non-static (created at runtime) contexts, such as
 other methods.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">say_factory</span>(<span class="n">greeting</span><span class="o">:</span><span class="n">String</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_factory</span>(<span class="n">greeting</span><span class="o">:</span><span class="n">String</span>)
 <span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">say_greeting</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
 <span class="w">    </span><span class="nb">puts</span>(<span class="s">&quot;#{greeting} #{name}&quot;</span>)
 <span class="w">  </span><span class="k">end</span>
@@ -216,10 +217,10 @@ other methods.</p>
 </div>
 </div>
 <div class="section" id="method-values">
-<h2>8.4. Method Values</h2>
+<h2>9.4. Method Values</h2>
 <p>Methods can also be used as values themselves, in the same exact way as any
 other value. This works together with overloads and specialisation.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span class="k">def</span><span class="w"> </span><span class="n">do_twice</span>(<span class="n">action</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">do_twice</span>(<span class="n">action</span>)
 <span class="w">  </span><span class="n">action</span>()
 <span class="w">  </span><span class="n">action</span>()
 <span class="k">end</span>
