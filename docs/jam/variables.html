@@ -98,28 +98,35 @@
       
   <div class="section" id="variables">
 <h1>7. Variables</h1>
-<p>Variables are temporary containers for values. A variable is created at the
-point where it is first used. A variable may only have a single type that must
-be compatible with all of the variable&#8217;s usage.</p>
-<p>Contrary to it&#8217;s name, a variable may also be defined as constant/immutable. A
-immutable variable may only be set to a single value, once. After the value has
-been set, it may not be changed. Any member functions that mutate the value are
-illegal.</p>
-<div class="section" id="type-inference">
-<h2>7.1. Type Inference</h2>
-<p>The type of a variable may be declared any number of times. If the type is
-declared more than once, each declaration has to be compatible. If no type
-declaration is given, it is inferred by the compiler.</p>
-<p>The type of a variable is inferred by all <a class="reference internal" href="assignments.html"><span class="doc">Assignments</span></a> to it. If a
-variable is assigned a value of a type and is later assigned a value of a
-supertype of the initial assignment, the variables type is inferred to the
-supertype.</p>
+<p>Variables are temporary containers for values. The value stored in the container
+may only be of a single type, for each variable. This makes it easier to reason
+about what a variable can/is storing at any point in time.</p>
+<div class="section" id="variable-inference">
+<h2>7.1. Variable Inference</h2>
+<p>Variables do not require any special syntax to create. Simply assign to an
+unused <a class="reference internal" href="identifiers.html"><span class="doc">Identifiers</span></a> and a new variable will be created in the current
+scope.</p>
+<p>Variables are also inferred through control flow blocks, if they are guaranteed
+to exist in all execution paths.</p>
+<div class="section" id="example">
+<h3>7.1.1. Example</h3>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">condition</span>
+<span class="w">  </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="k">else</span>
+<span class="w">  </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span>(<span class="n">foo</span>)<span class="w"> </span><span class="c"># foo is inferred into this context</span>
+</pre></div>
 </div>
-<div class="section" id="syntax">
-<h2>7.2. Syntax</h2>
-<pre>
-<strong id="grammar-token-Variable">Variable</strong> ::=  [<a class="reference internal" href="visibility.html#grammar-token-Visibility"><code class="xref docutils literal"><span class="pre">Visibility</span></code></a>] [&quot;const&quot;] <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a> [&quot;:&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a>]
-</pre>
+</div>
+</div>
+<div class="section" id="type-inference">
+<h2>7.2. Type Inference</h2>
+<p>The type of a variable is inferred by all <a class="reference internal" href="assignments.html"><span class="doc">Assignments</span></a> to it. If a
+variable is assigned multiple values that have a common supertype, the variable
+is inferred to be of that supertype. Type inference can be overriden using the
+<a class="reference internal" href="operations.html"><span class="doc">&#8220;Type of&#8221; operation</span></a>.</p>
 </div>
 </div>
 

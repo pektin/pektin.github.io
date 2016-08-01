@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5.1. Integers &mdash; Jam</title>
+    <title>17. Modifiers &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -34,9 +34,9 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
-    <link rel="up" title="5. Literals" href="index.html" />
-    <link rel="next" title="5.2. Floats" href="floats.html" />
-    <link rel="prev" title="5. Literals" href="index.html" />
+    <link rel="up" title="The Jam Language Reference" href="../index.html" />
+    <link rel="next" title="17.1. Constant" href="constant.html" />
+    <link rel="prev" title="16. Enumerations" href="../enumerations.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -96,26 +96,29 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="integers">
-<h1>5.1. Integers</h1>
-<p>A integer is a whole number of the builtin type <code class="docutils literal"><span class="pre">Int</span></code>.</p>
-<p>See the <a class="reference internal" href="../../lib/builtins/types.html"><span class="doc">builtin library</span></a> for more information
-regarding the Integer type.</p>
+  <div class="section" id="modifiers">
+<h1>17. Modifiers</h1>
+<p>A modifier allows for changing certain properties and guarantees of an object or
+a group of objects.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="constant.html">17.1. Constant</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visibility.html">17.2. Visibility</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pragma.html">17.3. Pragma</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="syntax">
-<h2>5.1.1. Syntax</h2>
+<h2>17.4. Syntax</h2>
 <pre>
-<strong id="grammar-token-Integer">Integer</strong> ::=  [0-9] [ [0-9_]*[0-9] ]
+<strong id="grammar-token-Modifier">Modifier     </strong> ::=  <a class="reference internal" href="constant.html#grammar-token-Constant"><code class="xref docutils literal"><span class="pre">Constant</span></code></a> | <a class="reference internal" href="pragma.html#grammar-token-Pragma"><code class="xref docutils literal"><span class="pre">Pragma</span></code></a>
+<strong id="grammar-token-ModifierValue">ModifierValue</strong> ::=  (\n <a class="reference internal" href="../instructions.html#grammar-token-InstructionSet"><code class="xref docutils literal"><span class="pre">InstructionSet</span></code></a> &quot;end&quot;) | <a class="reference internal" href="../values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
 </pre>
-<div class="section" id="examples">
-<h3>5.1.1.1. Examples</h3>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Mass of an object (kg)</span>
-<span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-
-<span class="c"># The speed of light (m/s)</span>
-<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">299_792_458</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -135,7 +138,7 @@ regarding the Integer type.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/docs/jam/literals/integers.txt"
+  <a href="../../../_sources/docs/jam/modifiers/index.txt"
      rel="nofollow">Source</a>
 </div>
       

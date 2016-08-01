@@ -101,19 +101,14 @@
 <p>Arrays are a zero indexed, ordered set of values as a singular value. Arrays
 can either be dynamic, where the number of elements may change, or static, where
 it may not.</p>
-<p>Array values may be created either by defining separate elements individually,
-or by defining one element over a range of indices. Mixing both is also valid.</p>
-<div class="section" id="types">
-<h2>14.1. Types</h2>
-<p>The type of an array is identical to normal array values, except that values are
-replaced by types.</p>
-</div>
+<p>Array values may be created by defining separate elements individually, or
+inclusively by defining one element over a range of indices.</p>
 <div class="section" id="syntax">
-<h2>14.2. Syntax</h2>
+<h2>14.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-ArrayType">ArrayType   </strong> ::=  &quot;[&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a> [ &quot;;&quot; <a class="reference internal" href="literals/integers.html#grammar-token-Integer"><code class="xref docutils literal"><span class="pre">Integer</span></code></a> ] &quot;]&quot;
-<strong id="grammar-token-ArrayValue">ArrayValue  </strong> ::=  &quot;[&quot; <a class="reference internal" href="#grammar-token-ArrayElement"><code class="xref docutils literal"><span class="pre">ArrayElement</span></code></a> (( &quot;,&quot; | \n ) <a class="reference internal" href="#grammar-token-ArrayElement"><code class="xref docutils literal"><span class="pre">ArrayElement</span></code></a>)* &quot;]&quot;
-<strong id="grammar-token-ArrayElement">ArrayElement</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> [&quot;;&quot; <a class="reference internal" href="literals/integers.html#grammar-token-Integer"><code class="xref docutils literal"><span class="pre">Integer</span></code></a>]
+<strong id="grammar-token-ArraySeparator">ArraySeparator</strong> ::=  &quot;,&quot; | \n
+<strong id="grammar-token-ArrayValue">ArrayValue    </strong> ::=  &quot;[&quot; <a class="reference internal" href="#grammar-token-ArrayElement"><code class="xref docutils literal"><span class="pre">ArrayElement</span></code></a> ( <a class="reference internal" href="#grammar-token-ArraySeparator"><code class="xref docutils literal"><span class="pre">ArraySeparator</span></code></a> <a class="reference internal" href="#grammar-token-ArrayElement"><code class="xref docutils literal"><span class="pre">ArrayElement</span></code></a> )* &quot;]&quot;
+<strong id="grammar-token-ArrayElement">ArrayElement  </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> [ &quot;;&quot; <a class="reference internal" href="literals/integers.html#grammar-token-Integer"><code class="xref docutils literal"><span class="pre">Integer</span></code></a> ]
 </pre>
 </div>
 </div>

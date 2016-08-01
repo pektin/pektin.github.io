@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
-    <link rel="up" title="5. Literals" href="../literals.html" />
+    <link rel="up" title="5. Literals" href="index.html" />
     <link rel="next" title="5.5. Booleans" href="booleans.html" />
     <link rel="prev" title="5.3. Strings" href="strings.html" />
 <meta charset='utf-8'>
@@ -104,8 +104,25 @@ thereby identical symbols are identical objects.</p>
 <div class="section" id="syntax">
 <h2>5.4.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-Symbol">Symbol</strong> ::=  &quot;$&quot;<a class="reference internal" href="../identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a>
+<strong id="grammar-token-Symbol">Symbol</strong> ::=  &quot;$&quot; <a class="reference internal" href="../identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a>
 </pre>
+<div class="section" id="examples">
+<h3>5.4.1.1. Examples</h3>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$symbol</span>
+<span class="n">bar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;symbol&quot;</span>
+<span class="n">baz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$symbol</span>
+
+<span class="c"># foo and baz hold the same object</span>
+<span class="nb">puts</span>(<span class="n">foo</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">baz</span>)<span class="w"> </span><span class="c">#=&gt; true</span>
+
+<span class="c"># foo, baz and bar all hold the same data</span>
+<span class="nb">puts</span>(<span class="n">foo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">bar</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">baz</span>)<span class="w"> </span><span class="c">#=&gt; true</span>
+
+<span class="c"># foo (or baz) does not hold the same object as bar</span>
+<span class="nb">puts</span>(<span class="n">foo</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">bar</span>)<span class="w"> </span><span class="c">#=&gt; false</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

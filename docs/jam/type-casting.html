@@ -100,22 +100,15 @@
 <h1>13. Type Casting</h1>
 <p>Type casting allows the programmer to convert between different types of
 variables. Type casting is either implicit or explicit. Implicit casts are
-inferred by the compiler, while explicit casts require the programmer to specify
-the cast.</p>
-<p>When an operation is done to a value all implicit casts are checked for that
-same operation. Although the direct type of the value takes precedence, having
-ambiguity between implicitly cast types is invalid.</p>
-<p>When a value is passed to a method, the value may be implicitly cast to the type
-of the respective argument if required.</p>
+inferred by the compiler, while explicit casts require the programmer to
+explicitly perform the cast.</p>
+<p>When a value is used in an invalid situation (eg. wrong type), all implicit
+casts of that value are checked for a working variant. Only one implicit cast
+may be a valid cast at any time.</p>
 <div class="section" id="syntax">
 <h2>13.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-TypeCast">TypeCast       </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;as&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a>
-<strong id="grammar-token-TypeCastDef">TypeCastDef    </strong> ::=  <a class="reference internal" href="#grammar-token-ImplicitCastDef"><code class="xref docutils literal"><span class="pre">ImplicitCastDef</span></code></a> | <a class="reference internal" href="#grammar-token-ExplicitCastDef"><code class="xref docutils literal"><span class="pre">ExplicitCastDef</span></code></a>
-<strong id="grammar-token-ImplicitCastDef">ImplicitCastDef</strong> ::=  &quot;def&quot; &quot;self&quot; &quot;:&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a>
-                       <a class="reference internal" href="instructions.html#grammar-token-InstructionSet"><code class="xref docutils literal"><span class="pre">InstructionSet</span></code></a>
-                     &quot;end&quot;
-<strong id="grammar-token-ExplicitCastDef">ExplicitCastDef</strong> ::=  &quot;def&quot; &quot;self&quot; &quot;as&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a>
+<strong id="grammar-token-TypeCast">TypeCast</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;as&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
 </pre>
 </div>
 </div>

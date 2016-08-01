@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>20. Traits &mdash; Jam</title>
+    <title>19. Traits &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -35,8 +35,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="index.html" />
-    <link rel="next" title="21. Unittests" href="unittests.html" />
-    <link rel="prev" title="19. Foreign Language Interface" href="foreign-language-interface.html" />
+    <link rel="next" title="Library Reference" href="../lib/index.html" />
+    <link rel="prev" title="18. Imports" href="imports.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -97,24 +97,26 @@
     <div class="col-md-12">
       
   <div class="section" id="traits">
-<h1>20. Traits</h1>
+<h1>19. Traits</h1>
 <p>Traits represent a promise of a type. It combines the functionality of an
-abstract base class and an interface. A trait may define a set of functions,
-with or without implementation, and instance variables.</p>
+abstract base class and an interface. A trait may define a set of
+<a class="reference internal" href="methods.html"><span class="doc">Methods</span></a>, with or without implementation, and instance variables.</p>
 <p>A class may enforce fulfilment of a trait by inheriting it. By inheriting a
 trait, the class mixes in the set of methods and instance variables, while
-ensuring unimplemented methods are implemented. Traits may also inherit from
+enforcing unimplemented methods are implemented. Traits may also inherit from
 each other in the same way as classes.</p>
 <div class="section" id="syntax">
-<h2>20.1. Syntax</h2>
+<h2>19.1. Syntax</h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A syntax for undefined methods is yet to be determined</p>
+</div>
 <pre>
-<strong id="grammar-token-Trait">Trait</strong> ::=  &quot;trait&quot; <code class="xref docutils literal"><span class="pre">identifier</span></code>
-             <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><code class="xref docutils literal"><span class="pre">ClassInstructionSet</span></code></a>
-           &quot;end&quot;
+<strong id="grammar-token-Trait">Trait</strong> ::=  &quot;trait&quot; <code class="xref docutils literal"><span class="pre">identifier</span></code> <a class="reference internal" href="types.html#grammar-token-ClassInstructionSet"><code class="xref docutils literal"><span class="pre">ClassInstructionSet</span></code></a> &quot;end&quot;
 </pre>
 </div>
 <div class="section" id="examples">
-<h2>20.2. Examples</h2>
+<h2>19.2. Examples</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">trait</span><span class="w"> </span><span class="n">Person</span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="n">String</span>
 

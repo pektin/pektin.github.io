@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>5.1. Integers &mdash; Jam</title>
+    <title>9.1. Loops &mdash; Jam</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -34,9 +34,9 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
-    <link rel="up" title="5. Literals" href="index.html" />
-    <link rel="next" title="5.2. Floats" href="floats.html" />
-    <link rel="prev" title="5. Literals" href="index.html" />
+    <link rel="up" title="9. Flow Control" href="index.html" />
+    <link rel="next" title="9.2. Conditionals" href="conditionals.html" />
+    <link rel="prev" title="9. Flow Control" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -96,26 +96,24 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="integers">
-<h1>5.1. Integers</h1>
-<p>A integer is a whole number of the builtin type <code class="docutils literal"><span class="pre">Int</span></code>.</p>
-<p>See the <a class="reference internal" href="../../lib/builtins/types.html"><span class="doc">builtin library</span></a> for more information
-regarding the Integer type.</p>
+  <div class="section" id="loops">
+<h1>9.1. Loops</h1>
+<p>Loops group a section of instructions and loops them. Jam has three kinds of
+loops. A generic loops without a condition, a while loop with a simple condition
+and a for loop for interaction.</p>
+<p>While inside of a loop, the break and next statements can be used to control the
+behaviour of the loop.</p>
 <div class="section" id="syntax">
-<h2>5.1.1. Syntax</h2>
+<h2>9.1.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-Integer">Integer</strong> ::=  [0-9] [ [0-9_]*[0-9] ]
+<strong id="grammar-token-Break">Break             </strong> ::=  &quot;break&quot;
+<strong id="grammar-token-Next">Next              </strong> ::=  &quot;next&quot;
+<strong id="grammar-token-LoopInstruction">LoopInstruction   </strong> ::=  <a class="reference internal" href="../instructions.html#grammar-token-Instruction"><code class="xref docutils literal"><span class="pre">Instruction</span></code></a> | <a class="reference internal" href="#grammar-token-Break"><code class="xref docutils literal"><span class="pre">Break</span></code></a> | <a class="reference internal" href="#grammar-token-Next"><code class="xref docutils literal"><span class="pre">Next</span></code></a>
+<strong id="grammar-token-LoopInstructionSet">LoopInstructionSet</strong> ::=  ( <a class="reference internal" href="#grammar-token-LoopInstruction"><code class="xref docutils literal"><span class="pre">LoopInstruction</span></code></a> \n )*
+<strong id="grammar-token-Loop">Loop              </strong> ::=  <a class="reference internal" href="#grammar-token-GenericLoop"><code class="xref docutils literal"><span class="pre">GenericLoop</span></code></a> | <a class="reference internal" href="#grammar-token-WhileLoop"><code class="xref docutils literal"><span class="pre">WhileLoop</span></code></a> | <code class="xref docutils literal"><span class="pre">ForLoop</span></code>
+<strong id="grammar-token-GenericLoop">GenericLoop       </strong> ::=  &quot;loop&quot; <a class="reference internal" href="#grammar-token-LoopInstructionSet"><code class="xref docutils literal"><span class="pre">LoopInstructionSet</span></code></a> &quot;end&quot;
+<strong id="grammar-token-WhileLoop">WhileLoop         </strong> ::=  &quot;while&quot; <a class="reference internal" href="../values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> <a class="reference internal" href="#grammar-token-LoopInstructionSet"><code class="xref docutils literal"><span class="pre">LoopInstructionSet</span></code></a> &quot;end&quot;
 </pre>
-<div class="section" id="examples">
-<h3>5.1.1.1. Examples</h3>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Mass of an object (kg)</span>
-<span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
-
-<span class="c"># The speed of light (m/s)</span>
-<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">299_792_458</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -135,7 +133,7 @@ regarding the Integer type.</p>
         <br/>
         
 <div id="sourcelink">
-  <a href="../../../_sources/docs/jam/literals/integers.txt"
+  <a href="../../../_sources/docs/jam/control-flow/loops.txt"
      rel="nofollow">Source</a>
 </div>
       

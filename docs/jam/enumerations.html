@@ -35,7 +35,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Jam" href="../../index.html" />
     <link rel="up" title="The Jam Language Reference" href="index.html" />
-    <link rel="next" title="17. Visibility" href="visibility.html" />
+    <link rel="next" title="17. Modifiers" href="modifiers/index.html" />
     <link rel="prev" title="15. Associative Arrays" href="associative-arrays.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -104,9 +104,9 @@ enumeration itself.</p>
 <div class="section" id="syntax">
 <h2>16.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-Enumeration">Enumeration</strong> ::=  [<a class="reference internal" href="visibility.html#grammar-token-Visibility"><code class="xref docutils literal"><span class="pre">Visibility</span></code></a>] &quot;enum&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a>
-                   (<a class="reference internal" href="identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a>[ &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> ]
-                 )* &quot;end&quot;
+<strong id="grammar-token-EnumerationItem">EnumerationItem </strong> ::=  <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a> [ &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> ]
+<strong id="grammar-token-EnumerationItems">EnumerationItems</strong> ::=  ( <a class="reference internal" href="#grammar-token-EnumerationItem"><code class="xref docutils literal"><span class="pre">EnumerationItem</span></code></a> \n )*
+<strong id="grammar-token-Enumeration">Enumeration     </strong> ::=  &quot;enum&quot; <a class="reference internal" href="identifiers.html#grammar-token-Identifier"><code class="xref docutils literal"><span class="pre">Identifier</span></code></a> <a class="reference internal" href="#grammar-token-EnumerationItems"><code class="xref docutils literal"><span class="pre">EnumerationItems</span></code></a> &quot;end&quot;
 </pre>
 </div>
 </div>

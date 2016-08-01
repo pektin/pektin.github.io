@@ -163,11 +163,17 @@ exactly two values, while unary require exactly one.</p>
 <tr class="row-odd"><td><code class="docutils literal"><span class="pre">in</span></code></td>
 <td>Containment</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">&amp;&amp;</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">!in</span></code></td>
+<td>Inverse Containment</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">&amp;&amp;</span></code></td>
 <td>Logical And</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">||</span></code></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">||</span></code></td>
 <td>Logical Or</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">^^</span></code></td>
+<td>Logical Exclusive Or</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">&amp;</span></code></td>
 <td>Bitwise And</td>
@@ -177,6 +183,9 @@ exactly two values, while unary require exactly one.</p>
 </tr>
 <tr class="row-even"><td><code class="docutils literal"><span class="pre">^</span></code></td>
 <td>Bitwise Exclusive Or</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">:</span></code></td>
+<td>Type of</td>
 </tr>
 </tbody>
 </table>
@@ -212,25 +221,38 @@ will be executed from left to right.</p>
 <p>Indexing is an operation on a value that maps one or more values to another
 value. This includes using an integer to map the index of an element in an array
 to the element itself.</p>
+</div>
+<div class="section" id="type-of">
+<h2>6.4. Type of</h2>
+<p>The &#8220;Type of&#8221; operation is a constraint on the type system that the LHS must be
+of the type given on the RHS. This can be used to override type inference for
+<a class="reference internal" href="variables.html"><span class="doc">Variables</span></a>.</p>
 <div class="section" id="syntax">
-<h3>6.3.1. Syntax</h3>
+<h3>6.4.1. Syntax</h3>
 <pre>
-<strong id="grammar-token-ComparisonOperator">ComparisonOperator </strong> ::=  &quot;!=&quot; | &quot;==&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot; | &quot;is&quot; | &quot;!is&quot;
-<strong id="grammar-token-ComparisonOperation">ComparisonOperation</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> [<a class="reference internal" href="#grammar-token-ComparisonOperator"><code class="xref docutils literal"><span class="pre">ComparisonOperator</span></code></a> <a class="reference internal" href="#grammar-token-ComparisonOperation"><code class="xref docutils literal"><span class="pre">ComparisonOperation</span></code></a>]
-<strong id="grammar-token-BinaryOperator">BinaryOperator     </strong> ::=  &quot;%&quot; | &quot;^&quot; | &quot;&amp;&quot; | &quot;&amp;&amp;&quot; | &quot;*&quot; | &quot;**&quot; | &quot;-&quot; | &quot;+&quot; | &quot;|&quot; | &quot;||&quot; | &quot;/&quot; | &quot;//&quot; | &quot;in&quot;
-<strong id="grammar-token-BinaryOperation">BinaryOperation    </strong> ::=  (<a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> <a class="reference internal" href="#grammar-token-BinaryOperator"><code class="xref docutils literal"><span class="pre">BinaryOperator</span></code></a> <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>) | <a class="reference internal" href="#grammar-token-ComparisonOperation"><code class="xref docutils literal"><span class="pre">ComparisonOperation</span></code></a>
-<strong id="grammar-token-UnaryOperator">UnaryOperator      </strong> ::=  &quot;~&quot; | &quot;!&quot;
-<strong id="grammar-token-UnaryOperation">UnaryOperation     </strong> ::=  [<a class="reference internal" href="#grammar-token-UnaryOperator"><code class="xref docutils literal"><span class="pre">UnaryOperator</span></code></a>] <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
-<strong id="grammar-token-IndexOperation">IndexOperation     </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;[&quot; [ <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;,&quot; ]* <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;]&quot;
-<strong id="grammar-token-Operation">Operation          </strong> ::=  <a class="reference internal" href="#grammar-token-UnaryOperation"><code class="xref docutils literal"><span class="pre">UnaryOperation</span></code></a> | <a class="reference internal" href="#grammar-token-BinaryOperation"><code class="xref docutils literal"><span class="pre">BinaryOperation</span></code></a> | <a class="reference internal" href="#grammar-token-IndexOperation"><code class="xref docutils literal"><span class="pre">IndexOperation</span></code></a>
+<strong id="grammar-token-UnaryOperator">UnaryOperator       </strong> ::=  &quot;~&quot; | &quot;!&quot;
+<strong id="grammar-token-MathematicalOperator">MathematicalOperator</strong> ::=  &quot;+&quot; | &quot;-&quot; | &quot;*&quot; | &quot;/&quot; | &quot;//&quot; | &quot;**&quot; | &quot;%&quot;
+<strong id="grammar-token-EquivalenceOperator">EquivalenceOperator </strong> ::=  &quot;==&quot; | &quot;!=&quot;
+<strong id="grammar-token-RelationalOperator">RelationalOperator  </strong> ::=  &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot;
+<strong id="grammar-token-IdentityOperator">IdentityOperator    </strong> ::=  &quot;is&quot; | &quot;!is&quot;
+<strong id="grammar-token-ContainmentOperator">ContainmentOperator </strong> ::=  &quot;in&quot; | &quot;!in&quot;
+<strong id="grammar-token-LogicalOperator">LogicalOperator     </strong> ::=  &quot;&amp;&amp;&quot; | &quot;||&quot; | &quot;^^&quot;
+<strong id="grammar-token-BitwiseOperator">BitwiseOperator     </strong> ::=  &quot;&amp;&quot; | &quot;|&quot; | &quot;^&quot;
+<strong id="grammar-token-ComparisonOperator">ComparisonOperator  </strong> ::=  <a class="reference internal" href="#grammar-token-EquivalenceOperator"><code class="xref docutils literal"><span class="pre">EquivalenceOperator</span></code></a> | <a class="reference internal" href="#grammar-token-RelationalOperator"><code class="xref docutils literal"><span class="pre">RelationalOperator</span></code></a> | <a class="reference internal" href="#grammar-token-IdentityOperator"><code class="xref docutils literal"><span class="pre">IdentityOperator</span></code></a>
+<strong id="grammar-token-ComparisonOperation">ComparisonOperation </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> [ <a class="reference internal" href="#grammar-token-ComparisonOperator"><code class="xref docutils literal"><span class="pre">ComparisonOperator</span></code></a> <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> ]+
+<strong id="grammar-token-Operator">Operator            </strong> ::=  <a class="reference internal" href="#grammar-token-MathematicalOperator"><code class="xref docutils literal"><span class="pre">MathematicalOperator</span></code></a> | <a class="reference internal" href="#grammar-token-ComparisonOperator"><code class="xref docutils literal"><span class="pre">ComparisonOperator</span></code></a> | <a class="reference internal" href="#grammar-token-ContainmentOperator"><code class="xref docutils literal"><span class="pre">ContainmentOperator</span></code></a> | <a class="reference internal" href="#grammar-token-LogicalOperator"><code class="xref docutils literal"><span class="pre">LogicalOperator</span></code></a> | <a class="reference internal" href="#grammar-token-BitwiseOperator"><code class="xref docutils literal"><span class="pre">BitwiseOperator</span></code></a>
+<strong id="grammar-token-BinaryOperation">BinaryOperation     </strong> ::=  <a class="reference internal" href="#grammar-token-ComparisonOperation"><code class="xref docutils literal"><span class="pre">ComparisonOperation</span></code></a> | ( <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> <code class="xref docutils literal"><span class="pre">BinaryOperator</span></code> <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> )
+<strong id="grammar-token-UnaryOperation">UnaryOperation      </strong> ::=  [<a class="reference internal" href="#grammar-token-UnaryOperator"><code class="xref docutils literal"><span class="pre">UnaryOperator</span></code></a>] <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
+<strong id="grammar-token-IndexOperation">IndexOperation      </strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;[&quot; [ <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;,&quot; ]* <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;]&quot;
+<strong id="grammar-token-Operation">Operation           </strong> ::=  <a class="reference internal" href="#grammar-token-UnaryOperation"><code class="xref docutils literal"><span class="pre">UnaryOperation</span></code></a> | <a class="reference internal" href="#grammar-token-BinaryOperation"><code class="xref docutils literal"><span class="pre">BinaryOperation</span></code></a> | <a class="reference internal" href="#grammar-token-IndexOperation"><code class="xref docutils literal"><span class="pre">IndexOperation</span></code></a>
 </pre>
 </div>
 <div class="section" id="examples">
-<h3>6.3.2. Examples</h3>
+<h3>6.4.2. Examples</h3>
 </div>
 </div>
 <div class="section" id="mathematical">
-<h2>6.4. Mathematical</h2>
+<h2>6.5. Mathematical</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Addition</span>
 <span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="c">#=&gt; 8</span>
 <span class="n">total_volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6.8</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2.3</span><span class="w"> </span><span class="c">#=&gt; 9.1</span>
@@ -260,7 +282,7 @@ to the element itself.</p>
 </div>
 </div>
 <div class="section" id="equivalence">
-<h2>6.5. Equivalence</h2>
+<h2>6.6. Equivalence</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Equality</span>
 <span class="k">if</span><span class="w"> </span><span class="n">num_sides</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">4</span>
 <span class="w">    </span><span class="nb">puts</span>(<span class="s">&quot;Shape is a square&quot;</span>)
@@ -274,7 +296,7 @@ to the element itself.</p>
 </div>
 </div>
 <div class="section" id="relational">
-<h2>6.6. Relational</h2>
+<h2>6.7. Relational</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Smaller than</span>
 <span class="k">while</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span>
 <span class="w">    </span><span class="nb">puts</span>(<span class="n">count</span>)
@@ -295,7 +317,7 @@ to the element itself.</p>
 </div>
 </div>
 <div class="section" id="identity">
-<h2>6.7. Identity</h2>
+<h2>6.8. Identity</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Identity Equivalence</span>
 <span class="c">#TODO</span>
 
@@ -305,13 +327,13 @@ to the element itself.</p>
 </div>
 </div>
 <div class="section" id="containment">
-<h2>6.8. Containment</h2>
+<h2>6.9. Containment</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c">#TODO</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="logical">
-<h2>6.9. Logical</h2>
+<h2>6.10. Logical</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># And</span>
 <span class="k">if</span><span class="w"> </span><span class="n">total_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">final_exam_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">50</span>
 <span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c">#passed</span>
@@ -324,13 +346,16 @@ to the element itself.</p>
 <span class="w">    </span><span class="n">difficulty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
 <span class="k">end</span>
 
+<span class="c"># Exclusive Or</span>
+<span class="c">#TODO</span>
+
 <span class="c"># Logical Not</span>
 <span class="c">#TODO</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="bitwise">
-<h2>6.10. Bitwise</h2>
+<h2>6.11. Bitwise</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># And</span>
 <span class="c">#TODO</span>
 
@@ -346,17 +371,23 @@ to the element itself.</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2>6.11. Indexing</h2>
+<h2>6.12. Indexing</h2>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Arrays</span>
 <span class="n">primes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">[</span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">3</span><span class="n">,</span><span class="w"> </span><span class="m">5</span><span class="n">,</span><span class="w"> </span><span class="m">7</span><span class="n">,</span><span class="w"> </span><span class="m">11</span><span class="n">,</span><span class="w"> </span><span class="m">13</span><span class="n">,</span><span class="w"> </span><span class="m">17</span><span class="n">,</span><span class="w"> </span><span class="m">19</span><span class="n">,</span><span class="w"> </span><span class="m">23</span><span class="n">]</span>
 <span class="n">fifth_prime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">primes[</span><span class="m">4</span><span class="n">]</span>
 
 <span class="c"># Associative Arrays</span>
-<span class="n">emergency_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">[</span>
-<span class="w">    </span><span class="s">&quot;AUS&quot; -&gt; &quot;000&quot;</span><span class="n">,</span>
-<span class="w">    </span><span class="s">&quot;USA&quot; -&gt; &quot;911&quot;</span><span class="n">,</span>
-<span class="n">]</span>
-<span class="n">aus_emergency_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emergency_numbers[</span><span class="s">&quot;AUS&quot;</span><span class="n">]</span>
+<span class="n">emergency_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">{</span>
+<span class="w">    </span><span class="n">$AUS</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;000&quot;</span>
+<span class="w">    </span><span class="n">$USA</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;911&quot;</span>
+<span class="n">}</span>
+<span class="n">aus_emergency_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emergency_numbers[$AUS]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>6.13. Type of</h2>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">:</span><span class="nb">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">long_math_function</span>()<span class="w"> </span><span class="c"># Ensures `result` is of type `Int`</span>
 </pre></div>
 </div>
 </div>

@@ -98,20 +98,12 @@
       
   <div class="section" id="associative-arrays">
 <h1>15. Associative Arrays</h1>
-<p>Associative arrays, also known as dictionaries and hash tables, are a
+<p>Associative arrays, also known as dictionaries and hash tables/maps, are a
 collection of key-value pairs, with keys being unique.</p>
-<p>Associative arrays are created through a set of key-value pairs.</p>
-<div class="section" id="types">
-<h2>15.1. Types</h2>
-<p>The type of an associative array is defined in the same way it&#8217;s values are,
-through a single map of a type to another.</p>
-</div>
 <div class="section" id="syntax">
-<h2>15.2. Syntax</h2>
+<h2>15.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-AssociativeArrayType">AssociativeArrayType   </strong> ::=  &quot;{&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a> &quot;-&gt;&quot; <a class="reference internal" href="types.html#grammar-token-Type"><code class="xref docutils literal"><span class="pre">Type</span></code></a> &quot;}&quot;
-<strong id="grammar-token-AssociativeArrayValue">AssociativeArrayValue  </strong> ::=  &quot;{&quot; <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><code class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></code></a> ((&quot;,&quot; |
-                             ) <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><code class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></code></a>)* &quot;}&quot;
+<strong id="grammar-token-AssociativeArrayValue">AssociativeArrayValue  </strong> ::=  &quot;{&quot; <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><code class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></code></a> ( <a class="reference internal" href="arrays.html#grammar-token-ArraySeparator"><code class="xref docutils literal"><span class="pre">ArraySeparator</span></code></a> <a class="reference internal" href="#grammar-token-AssociativeArrayElement"><code class="xref docutils literal"><span class="pre">AssociativeArrayElement</span></code></a> )* &quot;}&quot;
 <strong id="grammar-token-AssociativeArrayElement">AssociativeArrayElement</strong> ::=  <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a> &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
 </pre>
 </div>

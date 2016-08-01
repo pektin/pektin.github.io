@@ -98,19 +98,21 @@
       
   <div class="section" id="lambdas">
 <h1>11. Lambdas</h1>
-<p>Lambdas are identical to <a class="reference internal" href="methods.html"><span class="doc">methods</span></a>, except that they are anonymous
-and therefore cannot be overloaded. They provide a quicker syntax for defining
-small, one use methods.</p>
+<p>Lambdas are identical to <a class="reference internal" href="methods.html"><span class="doc">Methods</span></a>, except that they are anonymous and
+therefore cannot be overloaded. They provide a quicker syntax for defining
+small, limited use methods.</p>
 <div class="section" id="syntax">
 <h2>11.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-Lambda">Lambda</strong> ::=  [ &quot;(&quot; [ [<a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a> &quot;,&quot;]* <a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a> ] &quot;)&quot; | <a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a> ] &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
+<strong id="grammar-token-LambdaArgumentList">LambdaArgumentList</strong> ::=  &quot;(&quot; [ <a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a> [ &quot;,&quot; <a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a> ]* ] &quot;)&quot;
+<strong id="grammar-token-LambdaArguments">LambdaArguments   </strong> ::=  <a class="reference internal" href="#grammar-token-LambdaArgumentList"><code class="xref docutils literal"><span class="pre">LambdaArgumentList</span></code></a> | <a class="reference internal" href="methods.html#grammar-token-Argument"><code class="xref docutils literal"><span class="pre">Argument</span></code></a>
+<strong id="grammar-token-Lambda">Lambda            </strong> ::=  [<a class="reference internal" href="#grammar-token-LambdaArguments"><code class="xref docutils literal"><span class="pre">LambdaArguments</span></code></a>] &quot;=&gt;&quot; <a class="reference internal" href="values.html#grammar-token-Value"><code class="xref docutils literal"><span class="pre">Value</span></code></a>
 </pre>
 </div>
 <div class="section" id="example">
 <h2>11.2. Example</h2>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">map</span>(<span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">**</span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="n">[</span><span class="m">1</span><span class="n">,</span><span class="w"> </span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">3</span><span class="n">,</span><span class="w"> </span><span class="m">4</span><span class="n">]</span>)<span class="w"> </span><span class="c">#=&gt; [1, 4, 9, 16]</span>
-<span class="n">reduce</span>((<span class="n">a,</span><span class="w"> </span><span class="n">b</span>)<span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">b,</span><span class="w"> </span><span class="n">[</span><span class="m">1</span><span class="n">,</span><span class="w"> </span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">3</span><span class="n">,</span><span class="w"> </span><span class="m">4</span><span class="n">]</span>)<span class="w"> </span><span class="c">#=&gt; 24</span>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">[</span><span class="m">1</span><span class="n">,</span><span class="w"> </span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">3</span><span class="n">,</span><span class="w"> </span><span class="m">4</span><span class="n">]</span><span class="o">.</span><span class="n">map</span>(<span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">**</span><span class="m">2</span>)<span class="w"> </span><span class="c">#=&gt; [1, 4, 9, 16]</span>
+<span class="n">[</span><span class="m">1</span><span class="n">,</span><span class="w"> </span><span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">3</span><span class="n">,</span><span class="w"> </span><span class="m">4</span><span class="n">]</span><span class="o">.</span><span class="n">reduce</span>((<span class="n">a,</span><span class="w"> </span><span class="n">b</span>)<span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">b</span>)<span class="w"> </span><span class="c">#=&gt; 24</span>
 <span class="m">12</span><span class="o">.</span><span class="n">times</span>(<span class="o">=&gt;</span><span class="w"> </span><span class="nb">puts</span>(<span class="s">&quot;Hi&quot;</span>))
 </pre></div>
 </div>

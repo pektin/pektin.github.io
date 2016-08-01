@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="top" title="Jam" href="../../../index.html" />
-    <link rel="up" title="5. Literals" href="../literals.html" />
+    <link rel="up" title="5. Literals" href="index.html" />
     <link rel="next" title="5.4. Symbols" href="symbols.html" />
     <link rel="prev" title="5.2. Floats" href="floats.html" />
 <meta charset='utf-8'>
@@ -106,7 +106,8 @@ type <code class="docutils literal"><span class="pre">String</span></code>.</p>
 <div class="section" id="syntax">
 <h2>5.3.1. Syntax</h2>
 <pre>
-<strong id="grammar-token-String">String</strong> ::=  &quot;\&quot;&quot; .* &quot;\&quot;&quot;
+<strong id="grammar-token-String">String          </strong> ::=  (&quot;) <a class="reference internal" href="#grammar-token-StringCharacters"><code class="xref docutils literal"><span class="pre">StringCharacters</span></code></a>* (&quot;)
+<strong id="grammar-token-StringCharacters">StringCharacters</strong> ::=  (.) | (\&quot;) | &quot;\\&quot; | &quot;\0&quot; | &quot;\a&quot; | &quot;\b&quot; | &quot;\f&quot; | &quot;\n&quot; | &quot;\r&quot; | &quot;\t&quot; | &quot;\v&quot;
 </pre>
 <p>Format strings start and end with double quotes (<code class="docutils literal"><span class="pre">&quot;</span></code>) and may contain any of
 the following escape sequences:</p>
