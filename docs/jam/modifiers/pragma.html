@@ -110,7 +110,7 @@ particular value.</p>
 <div class="section" id="example">
 <h3>17.3.1.1. Example</h3>
 <div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Enforces that `Kind` is evaluated at compile time</span>
-<span class="k">def</span><span class="w"> </span><span class="n">spawn</span>(<span class="n">pragma</span><span class="w"> </span><span class="n">Kind,</span><span class="w"> </span><span class="n">position</span><span class="o">:</span><span class="n">Vec2</span>)
+<span class="k">def</span><span class="w"> </span><span class="n">spawn</span>(<span class="k">pragma</span><span class="w"> </span><span class="n">Kind,</span><span class="w"> </span><span class="n">position</span><span class="o">:</span><span class="n">Vec2</span>)
 <span class="w">  </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kind</span>()
 <span class="w">  </span><span class="n">object</span><span class="o">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">position</span>
 <span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">object</span>
@@ -124,7 +124,7 @@ particular value.</p>
 <span class="n">new_enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spawn</span>(<span class="n">EnemyKind,</span><span class="w"> </span><span class="n">Vec2</span>(<span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">1</span>))
 
 <span class="c"># Force evaluation of `read` at compile time</span>
-<span class="n">enemy_kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pragma</span><span class="w"> </span><span class="n">read</span>(<span class="s">&quot;enemy.txt&quot;</span>)
+<span class="n">enemy_kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">pragma</span><span class="w"> </span><span class="n">read</span>(<span class="s">&quot;enemy.txt&quot;</span>)
 <span class="c"># `EnemyKind` is known at compile time</span>
 <span class="n">EnemyKind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enemy_kind</span><span class="o">.</span><span class="n">constantize</span>
 <span class="c"># This succeeds</span>

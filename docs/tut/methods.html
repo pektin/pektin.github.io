@@ -142,7 +142,7 @@ The type of the return value may be explicitly stated.</p>
 <p>Methods may be &#8216;overloaded&#8217; with different arguments/argument types. This
 concept should be used sparingly, but avoids unnecessary name clutter (ie.
 <code class="docutils literal"><span class="pre">printf</span></code>, <code class="docutils literal"><span class="pre">fprintf</span></code>, <code class="docutils literal"><span class="pre">sprintf</span></code> and <code class="docutils literal"><span class="pre">snprintf</span></code> from C)</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_hello_to</span>(<span class="n">name</span><span class="o">:</span><span class="nb">String</span>)
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;Hello, #{name}!&quot;</span>)
 <span class="k">end</span>
 
@@ -198,8 +198,8 @@ for specialisation.</p>
 <p>Methods always operate inside the context they are defined in. Methods are
 allowed to be defined within non-static (created at runtime) contexts, such as
 other methods.</p>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_factory</span>(<span class="n">greeting</span><span class="o">:</span><span class="n">String</span>)
-<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">say_greeting</span>(<span class="n">name</span><span class="o">:</span><span class="n">String</span>)
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="n">say_factory</span>(<span class="n">greeting</span><span class="o">:</span><span class="nb">String</span>)
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="n">say_greeting</span>(<span class="n">name</span><span class="o">:</span><span class="nb">String</span>)
 <span class="w">    </span><span class="nb">puts</span>(<span class="s">&quot;#{greeting} #{name}&quot;</span>)
 <span class="w">  </span><span class="k">end</span>
 
