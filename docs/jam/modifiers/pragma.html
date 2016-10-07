@@ -99,36 +99,48 @@
   <div class="section" id="pragma">
 <h1>17.3. Pragma</h1>
 <p>Pragma is a modifier that enforces that its value must be evaluated at compile
-time. This is designed to be used as a guarantee that CTFE (Compile Time
-Function Evaluation) and constant folding are used as an optimisation for a
-particular value.</p>
+time. This is designed to be used as a guarantee that something is evaluated at
+compile time, such as calculating a complicated constant, reading a file or even
+testing.</p>
 <div class="section" id="syntax">
 <h2>17.3.1. Syntax</h2>
 <pre>
 <strong id="grammar-token-Pragma">Pragma</strong> ::=  &quot;pragma&quot; <a class="reference internal" href="index.html#grammar-token-ModifierValue"><code class="xref docutils literal"><span class="pre">ModifierValue</span></code></a>
 </pre>
-<div class="section" id="example">
-<h3>17.3.1.1. Example</h3>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Enforces that `Kind` is evaluated at compile time</span>
-<span class="k">def</span><span class="w"> </span><span class="n">spawn</span>(<span class="k">pragma</span><span class="w"> </span><span class="n">Kind,</span><span class="w"> </span><span class="n">position</span><span class="o">:</span><span class="n">Vec2</span>)
-<span class="w">  </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kind</span>()
-<span class="w">  </span><span class="n">object</span><span class="o">.</span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">position</span>
-<span class="w">  </span><span class="n">return</span><span class="w"> </span><span class="n">object</span>
+<div class="section" id="examples">
+<h3>17.3.1.1. Examples</h3>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="n">fibonacci_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">[</span><span class="m">1</span><span class="n">,</span><span class="w"> </span><span class="m">1</span><span class="n">]</span>
+
+<span class="c"># Pre-fill fibonacci_cache with the first 200 values</span>
+<span class="k">pragma</span><span class="w"> </span><span class="n">build_fibonacci_cache</span>(<span class="m">200</span>)
+
+<span class="k">def</span><span class="w"> </span><span class="n">build_fibonacci_cache</span>(<span class="n">n</span><span class="o">:</span><span class="nb">Int</span>)
+<span class="w">  </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="c"># fibonacci auto-fills the cache</span>
+<span class="w">    </span><span class="n">fibonacci</span>(<span class="n">i</span>)
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="k">end</span>
 <span class="k">end</span>
 
-<span class="n">new_enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spawn</span>(<span class="n">Enemy,</span><span class="w"> </span><span class="n">Vec2</span>(<span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">1</span>))<span class="w"> </span><span class="c"># `Enemy` is a constant, so this is valid</span>
+<span class="c"># Naive cached fibonacci implementation</span>
+<span class="k">def</span><span class="w"> </span><span class="n">fibonacci</span>(<span class="n">n</span><span class="o">:</span><span class="nb">Int</span>)
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fibonacci_cache</span><span class="o">.</span><span class="n">length</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">fibonacci_cache[n]</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fibonacci</span>(<span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span>)<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fibonacci</span>(<span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span>)
+<span class="w">    </span><span class="n">fibonacci_cache[n]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="n">return</span><span class="w"> </span><span class="n">value</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Read a file at compile time</span>
+<span class="n">constants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">pragma</span><span class="w"> </span><span class="n">read</span>(<span class="s">&quot;player_constants.txt&quot;</span>)<span class="o">.</span><span class="n">lines</span>
 
-<span class="c"># `EnemyKind` is not known at compile time</span>
-<span class="n">EnemyKind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span>(<span class="s">&quot;enemy.txt&quot;</span>)<span class="o">.</span><span class="n">constantize</span>
-<span class="c"># This fails</span>
-<span class="n">new_enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spawn</span>(<span class="n">EnemyKind,</span><span class="w"> </span><span class="n">Vec2</span>(<span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">1</span>))
-
-<span class="c"># Force evaluation of `read` at compile time</span>
-<span class="n">enemy_kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">pragma</span><span class="w"> </span><span class="n">read</span>(<span class="s">&quot;enemy.txt&quot;</span>)
-<span class="c"># `EnemyKind` is known at compile time</span>
-<span class="n">EnemyKind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enemy_kind</span><span class="o">.</span><span class="n">constantize</span>
-<span class="c"># This succeeds</span>
-<span class="n">new_enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spawn</span>(<span class="n">EnemyKind,</span><span class="w"> </span><span class="n">Vec2</span>(<span class="m">2</span><span class="n">,</span><span class="w"> </span><span class="m">1</span>))
+<span class="k">const</span><span class="w"> </span><span class="n">MAX_HEALTH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constants[</span><span class="m">0</span><span class="n">]</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MAX_ARMOUR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constants[</span><span class="m">1</span><span class="n">]</span>
+<span class="k">const</span><span class="w"> </span><span class="n">MAX_SPEED</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">constants[</span><span class="m">1</span><span class="n">]</span>
 </pre></div>
 </div>
 </div>
