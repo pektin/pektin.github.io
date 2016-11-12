@@ -30,12 +30,14 @@ The Jam Programming Language
 Features
 ========
 
-* Strong, static duck-typing, with optional type annotations
-* Common value semantics between values and types
-* Fast compiling*
-* Compiles to efficient native code
+* Strong, static duck-typing, with
+  :doc:`optional type annotations<docs/jam/methods>`
+* Common value semantics between :doc:`values<docs/jam/values>` and
+  :doc:`types<docs/jam/types>`
+* Fast compiling* to efficient native code
 * Non-restrictive towards programming paradigms
-* Powerful meta-programming (dependent types, meta-classes)
+* Powerful meta-programming (:doc:`dependent types<docs/jam/dependent-types>`\*,
+  :doc:`meta-classes<docs/jam/types>`\*)
 * Efficient C bindings*
 
 \* Some features are yet to be implemented
