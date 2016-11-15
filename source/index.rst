@@ -38,6 +38,7 @@ Features
 * Non-restrictive towards programming paradigms
 * Powerful meta-programming (:doc:`dependent types<docs/jam/dependent-types>`\*,
   :doc:`meta-classes<docs/jam/types>`\*)
+* :doc:`Compile-time evaluation<docs/jam/modifiers/pragma>`
 * Efficient C bindings*
 
 \* Some features are yet to be implemented
