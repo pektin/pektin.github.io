@@ -65,7 +65,10 @@ html_extra_path = ["_extra", "_extra/.nojekyll", "_extra/.gitignore"]
 #html_last_updated_fmt = '%b %d, %Y'
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+    # Display sidebar for docs
+    'docs/*/**': ['globaltoc.html']
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
