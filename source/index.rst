@@ -24,7 +24,6 @@ The Jam Programming Language
 .. toctree::
     :hidden:
 
-    about
     docs/index
 
 Features
