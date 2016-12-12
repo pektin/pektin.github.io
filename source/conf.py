@@ -31,7 +31,8 @@ html_theme_options = {
         ("Github", "http://github.com/pektin/jam", True),
     ],
 
-    'source_link_position': "footer"
+    'source_link_position': "footer",
+    'navbar_fixed_top': "false",
 }
 
 # The name for this set of Sphinx documents.
