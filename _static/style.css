@@ -1,5 +1,6 @@
 .navbar-default {
     background-image: linear-gradient(to bottom, #F5F5F5 0px, #C0C0C0 100%);
+    margin-bottom: 0;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -59,4 +60,18 @@ body {
 
 img {
     max-height: 100%;
+}
+
+/* Hide specific parts of the toctree in the sidebar */
+.toctree-l2:not(.current) {
+    display: none !important;
+}
+
+/* Special highlighting for currently active elements in toctree */
+.current > a {
+    background-color: #e5e3e9;
+}
+
+.current > a[href="#"], .current > a[href="#"]:hover {
+    background-color: #cdcdcd !important;
 }
