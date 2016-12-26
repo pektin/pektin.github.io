@@ -171,6 +171,18 @@ in a boolean (such as a method call, or comparison).</p>
 <span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;n must be &gt;= 0&quot;</span>)
 <span class="k">end</span>
 
+<span class="c"># Jam does not have a deep understanding</span>
+<span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="nb">puts</span>(<span class="s">&quot;n is &lt; 0&quot;</span>)
+<span class="k">else</span>
+<span class="w">  </span><span class="c"># Type error, n doesn&#39;t meet condition n &gt;= 0</span>
+<span class="w">  </span><span class="nb">puts</span>(<span class="n">sqrt</span>(<span class="n">n</span>))
+<span class="k">end</span>
+
+<span class="c"># Can be explicitly overridden, if required</span>
+<span class="n">assume</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span>
+<span class="nb">puts</span>(<span class="n">sqrt</span>(<span class="n">n</span>))
+
 <span class="c"># Will fail at runtime if assertion is not met</span>
 <span class="c"># Thus it also implicitly creates an assumption</span>
 <span class="n">assert</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span>

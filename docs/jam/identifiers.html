@@ -135,13 +135,12 @@
       
   <div class="section" id="identifiers">
 <h1>4. Identifiers</h1>
-<p>Identifiers are used to identify values in Jam. When an identifier is used by
-itself, it is understood as a reference to everything that was defined with that
-same identifier.</p>
-<p>When a reference is resolved, each scope up the tree is checked for the
-reference as an attribute. When no references are found, or when there is an
-ambiguity for which attribute is referenced, the reference becomes invalid.</p>
-<p>Identifiers are also used to get attributes of values explicit.</p>
+<p>Identifiers are names used to reference values in Jam. Any identifier must
+uniquely map to a single value inside the current scope, or any parent scopes.
+Identifiers with a leading <code class="docutils literal"><span class="pre">&quot;.&quot;</span></code> do not check the current scope for matching
+values.</p>
+<p>Identifiers may contain more than one name, separated by a <code class="docutils literal"><span class="pre">&quot;.&quot;</span></code>. Any names
+after the first are used to access attributes on the referenced value.</p>
 <div class="section" id="syntax">
 <h2>4.1. Syntax</h2>
 <pre>
@@ -151,16 +150,25 @@ ambiguity for which attribute is referenced, the reference becomes invalid.</p>
 </div>
 <div class="section" id="examples">
 <h2>4.2. Examples</h2>
-<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Identifiers can begin with a lower case letter and then follow CamelCase structure</span>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These are non-working examples, purely meant to display the syntax of
+identifiers</p>
+</div>
+<div class="highlight-Jam"><div class="highlight"><pre><span></span><span class="c"># Valid Identifiers</span>
 <span class="n">fooBar</span>
+<span class="n">foo_bar</span>
+<span class="n">_foo_bar_</span>
+<span class="n">foo9</span>
+<span class="n">foo</span><span class="o">.</span><span class="n">bar</span>
+<span class="o">.</span><span class="n">foo</span>
+<span class="o">.</span><span class="n">_foo_</span><span class="o">.</span><span class="n">_bar_</span>
 
-
-<span class="c"># They can also start with an underscore and then follow _under_score structure</span>
-<span class="n">_foo_bar_fizz_bazz_</span>
-
-
-<span class="c"># Identifiers can also be Natural numbers</span>
-<span class="n">_9</span>
+<span class="c"># Invalid Identifiers</span>
+<span class="m">9</span><span class="n">foo</span>
+<span class="n">bar</span><span class="o">.</span>
+<span class="n">foo</span><span class="o">-</span><span class="n">bar</span>
+<span class="n">foo</span><span class="o">::</span><span class="n">bar</span>
 </pre></div>
 </div>
 </div>
