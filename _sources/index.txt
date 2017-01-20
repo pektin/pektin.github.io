@@ -19,7 +19,7 @@ The Jam Programming Language
     puts("Average line length: #{average}")
 
 .. note::
-    The above example is not yet entirely supported by the language
+    The above example is not yet fully supported by the language
 
 .. toctree::
     :hidden:
@@ -35,12 +35,14 @@ Features
   :doc:`types<docs/jam/types>`
 * Fast compiling* to efficient native code
 * Non-restrictive towards programming paradigms
-* Powerful meta-programming (:doc:`dependent types<docs/jam/dependent-types>`\*,
+* Powerful meta-programming concepts (
+  :doc:`Compile-time evaluation<docs/jam/modifiers/pragma>`,
   :doc:`meta-classes<docs/jam/types>`\*)
-* :doc:`Compile-time evaluation<docs/jam/modifiers/pragma>`
+* First order :doc:`dependent types<docs/jam/dependent-types>`\*
 * Efficient C bindings*
 
-\* Some features are yet to be implemented
+\* Some features are yet to be implemented, please see the
+:doc:`roadmap<docs/roadmap/index>` for development details.
 
 Open Source
 ===========

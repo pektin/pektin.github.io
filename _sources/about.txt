@@ -7,7 +7,7 @@ Concept
 =======
 
 Jam is an attempt to bridge the gap between dynamic, interpreted languages and
-static compiles ones.
+static, compiles ones.
 
 Effectively most useful language constructs from languages such as Ruby_ and
 Python_ can be statically verified and compiled to something as natively
@@ -21,8 +21,8 @@ duck-typing.
 Syntax
 ======
 
-Jam syntax is heavily inspired by Ruby_ with a hint of Python_ and D_, designed
-with readability and writeability in mind.
+Jam syntax is inspired by Ruby_ with a hint of Python_ and D_, designed with
+readability and writeability in mind.
 
 .. _D: http://dlang.org
 .. _Rust: http://rust-lang.org
