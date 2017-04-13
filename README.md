@@ -9,7 +9,6 @@ bootstrap theme. You will need to install all of the following:
 
 - [Sphinx](http://sphinx-doc.org/)
 - [Sphinx Boostrap](http://ryan-roemer.github.io/sphinx-bootstrap-theme/)
-- make
 
 ### On Ubuntu
 
