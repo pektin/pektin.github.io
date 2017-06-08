@@ -1,0 +1,132 @@
+
+A few things to set aside first, Jam is a statically typed language. This means
+that every variable must be of one single type. A value of type A cannot be
+assigned to a variable of type B.
+
+This doesn't have much of an affect on local variables, since their type can
+always be inferred from their first assignment::
+
+    a = 2     # a : Int
+    b = "foo" # b : String
+    c = 2 + 5 # c : Int
+
+But this isn't the case for function arguments. Jam needs to verify that a
+function contains valid code, if that code uses a argument it needs to know the
+type of that argument to verify the code. This would mean that every argument
+for a function must have an explicit type, since you could only infer the type
+of a variable at call-time::
+
+    # There's no way to know the types of a and b here, they could be anything
+    def add(a, b)
+      return a + b
+    end
+    add(2, 4) # We now know a and b should be Int
+    add("foo", "bar") # Now it should be String?
+
+    # Instead we have to be explicit
+    def add(a:Int, b:Int)
+      return a + b
+    end
+
+To circumvent this issue we could use template meta-programming and define the
+function as a template instead::
+
+    def add<T>(a:T, b:T)
+      return a + b
+    end
+    # The compiler can now make a new instance of the function for every type
+    add(2, 4)         # Will call add<Int>
+    add("foo", "bar") # Will call add<String>
+
+Except this code does not do the same thing as the general function we defined
+earlier. It enforces that the type of ``a`` must be identical to the type of
+``b``. We could instead define a template parameter per argument::
+
+    def add<A, B>(a:A, b:B)
+      return a + b
+    end
+    add(2, 5.3) # Will call add<Int, Float>
+
+Now we have what we want, but this seems overly verbose. Maybe we can add some
+syntactic sugar to hide it::
+
+    # implicit template arguments?
+    def add(a, b)
+      return a + b
+    end
+
+But this is just shoving the template under the rug. Lets look at the previous
+template implementation again, but this time lets write the template out fully::
+
+    template add<A, B>
+      def add(a:A, b:B)
+        return a + b
+      end
+    end
+
+If we think of templates as functions run at compile time, then this is a very
+interesting function: Nowhere do we define the types of its arguments. A
+compiler can do this by deferring the type checking to call-time, and creating a
+copy of the templated code for unique calls. It then checks types on those
+copies, later using them for code generation.
+
+Maybe we can apply the same concept to regular functions, maybe with some other changes.
+
+Introducing Forward Types
+-------------------------
+
+Forward types are a way for the compiler to define an expectation for a type.
+Within the scope of its definition, the type assumes it is valid and gathers
+expectations it must meet to be valid. For our ``add`` example those
+expectations would look something like this::
+
+    def add(a, b)
+      return a + b
+    end
+
+    # Lets give a and b forward types A and B
+    # Within the scope of the function, A and B are assumed valid
+    # They gather the following expectations:
+    # * an A must be addable to a B
+    # * the result of adding A and B must not be void
+
+Now when we call the function we only have to check whether the types we use are
+compatible with A and B::
+
+    add(2, 3) # Int can be added to Int and returns an Int, therefore valid
+    add("foo", "bar") # String can be added to String and returns a String, therefore valid
+    add("foo", 2) # String cannot be added to Int, therefore invalid
+
+Unlike templates we do not need to make a instance of the function in order to
+validate it. This makes should make compilation faster, but it should allows us
+to give better error messages.
+
+However ``add`` is starting to look like a pretty simplistic example. So lets
+look at a more complicated example::
+
+    # A simple linear search implementation
+    def contains(collection, value)
+      for item in collection
+        if value == item
+          return true
+        end
+      end
+
+      return false
+    end
+
+The expectations for the argument types are a little more complicated. Lets call
+the type of ``collection`` C and the type of ``value`` V.
+* C must be iterable with an item type I
+* V must be equality checkable with I, returning a Bool
+
+Now we can verify that a function call is valid if its arguments are compatible
+with C and V, eg::
+
+    # An array of Int has an item type Int
+    # Float can be equality checked with Int and returns a Bool
+    contains([1, 2, 3], 2.0) # Therefore: valid
+
+    # A String has an item type Char
+    # Char cannot be equality checked with a String
+    contains("float", "foo") # Therefore: invalid
