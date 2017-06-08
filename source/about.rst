@@ -18,6 +18,14 @@ neat features from static compiled languages with the dynamic nature common to
 interpreted ones. This includes types as values, monkey-patching and effective
 duck-typing.
 
+Design Goals
+============
+
+* Easy to read, understand and reason about.
+* A tight set of complimentary language features that expand to more powerful concepts.
+* Good, large set of standardised tools/libraries.
+* Efficiently compile-able to fast native code.
+
 Syntax
 ======
 
@@ -25,6 +33,5 @@ Jam syntax is inspired by Ruby_ with a hint of Python_ and D_, designed with
 readability and writeability in mind.
 
 .. _D: http://dlang.org
-.. _Rust: http://rust-lang.org
 .. _Ruby: http://ruby-lang.org
 .. _Python: http://python.org
